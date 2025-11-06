@@ -1,10 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://biy4cnfchh7il"]
+[gd_scene load_steps=12 format=3 uid="uid://biy4cnfchh7il"]
 
 [ext_resource type="Texture2D" uid="uid://buu2h0kqj86as" path="res://Textures/dry_decay_leaves_4k.blend/textures/dry_decay_leaves_diff_4k.jpg" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://655ydmwn4ug4" path="res://models/tree_1.glb" id="1_1bvp3"]
 [ext_resource type="Script" uid="uid://chqiu1v51an5n" path="res://Scripts/player.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://d37agylm7sqqt" path="res://models/tree_3.glb" id="2_lquwl"]
+[ext_resource type="PackedScene" uid="uid://7653mj84oei0" path="res://models/bush_1.glb" id="5_lquwl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
+albedo_color = Color(0.560955, 0.560955, 0.560955, 1)
 albedo_texture = ExtResource("1_0xm2m")
+detail_blend_mode = 2
 uv1_scale = Vector3(8, 8, 8)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
@@ -37,16 +42,36 @@ height = 1.2
 
 [node name="stage" type="Node3D" parent="."]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="stage"]
-transform = Transform3D(1.85513, 0, 0, 0, 1, 0, 0, 0, 1.54319, 0, -0.5, 0)
+[node name="CSGBox3D2" type="CSGBox3D" parent="stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3476, 1.90568, 1.16168)
+use_collision = true
+size = Vector3(20, 1, 44.1522)
+
+[node name="Nature" type="Node" parent="stage"]
+
+[node name="tree_1" parent="stage/Nature" instance=ExtResource("1_1bvp3")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.61163, -0.477972, 6.82446)
+
+[node name="tree_3" parent="stage/Nature" instance=ExtResource("2_lquwl")]
+transform = Transform3D(0.397361, 0, -0.303487, 0, 0.5, 0, 0.303487, 0, 0.397361, 3.30917, -0.352939, -6.07476)
+
+[node name="BaseGround" type="CSGBox3D" parent="stage/Nature"]
+transform = Transform3D(1.85513, 0, 0, 0, 1, 0, 0, 0, 1.54319, 1.00142, -0.605088, -1.82968)
 use_collision = true
 size = Vector3(30, 1, 30)
 material = SubResource("StandardMaterial3D_h2yge")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="stage"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4769, 1.90568, -2.34412)
-use_collision = true
-size = Vector3(20, 1, 20)
+[node name="tree_4" parent="stage/Nature" instance=ExtResource("2_lquwl")]
+transform = Transform3D(0.449024, 0, 0.0296195, 0, 0.45, 0, -0.0296195, 0, 0.449024, 0.550036, -0.272568, 6.13619)
+
+[node name="tree_2" parent="stage/Nature" instance=ExtResource("1_1bvp3")]
+transform = Transform3D(0.237751, 0, -0.256855, 0, 0.35, 0, 0.256855, 0, 0.237751, 3.56249, -0.268111, 3.97996)
+
+[node name="tree_5" parent="stage/Nature" instance=ExtResource("2_lquwl")]
+transform = Transform3D(-0.0756421, 0, 0.443597, 0, 0.45, 0, -0.443597, 0, -0.0756421, 3.28357, -0.218858, -2.22689)
+
+[node name="tree_6" parent="stage/Nature" instance=ExtResource("1_1bvp3")]
+transform = Transform3D(0.231042, 0, 0.262906, 0, 0.35, 0, -0.262906, 0, 0.231042, 0.828956, -0.24386, -5.00162)
 
 [node name="env" type="Node3D" parent="."]
 
@@ -56,6 +81,9 @@ visible = false
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
+environment = SubResource("Environment_0xm2m")
+
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="env"]
 environment = SubResource("Environment_0xm2m")
 
 [node name="player" type="CharacterBody3D" parent="."]
@@ -84,3 +112,15 @@ spot_angle_attenuation = 2.92817
 
 [node name="RayCast3D" type="RayCast3D" parent="player"]
 target_position = Vector3(0, 2, 0)
+
+[node name="bush_1" parent="." instance=ExtResource("5_lquwl")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -2.00876, -0.281192, 4.07373)
+
+[node name="bush_1" parent="bush_1" instance=ExtResource("5_lquwl")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 4.70005, -0.281192, 5.36681)
+
+[node name="bush_2" parent="bush_1" instance=ExtResource("5_lquwl")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 4.94492, 0.310162, -12.3713)
+
+[node name="bush_1" parent="bush_1/bush_2" instance=ExtResource("5_lquwl")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 4.70005, -0.281192, 5.36681)
