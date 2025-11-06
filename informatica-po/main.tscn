@@ -5,7 +5,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
 albedo_texture = ExtResource("1_0xm2m")
-uv1_scale = Vector3(6, 6, 6)
+uv1_scale = Vector3(8, 8, 8)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_top_color = Color(0.156863, 0.113725, 0.0745098, 1)
@@ -40,7 +40,7 @@ height = 1.2
 [node name="CSGBox3D" type="CSGBox3D" parent="stage"]
 transform = Transform3D(1.85513, 0, 0, 0, 1, 0, 0, 0, 1.54319, 0, -0.5, 0)
 use_collision = true
-size = Vector3(20, 1, 20)
+size = Vector3(30, 1, 30)
 material = SubResource("StandardMaterial3D_h2yge")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="stage"]
@@ -52,6 +52,7 @@ size = Vector3(20, 1, 20)
 
 [node name="TestingLight" type="DirectionalLight3D" parent="env"]
 transform = Transform3D(-1.67155, -0.634395, 0.182873, 0, 0.732536, 0.633489, -0.965073, 1.0988, -0.316745, 0, 0, 0)
+visible = false
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
