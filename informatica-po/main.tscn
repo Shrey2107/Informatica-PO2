@@ -8,8 +8,10 @@ albedo_texture = ExtResource("1_0xm2m")
 uv1_scale = Vector3(6, 6, 6)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+sky_top_color = Color(0.156863, 0.113725, 0.0745098, 1)
+sky_horizon_color = Color(0.187927, 0.122383, 0.103105, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Sky" id="Sky_ig7tw"]
 sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
@@ -17,11 +19,14 @@ sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
 [sub_resource type="Environment" id="Environment_0xm2m"]
 background_mode = 2
 sky = SubResource("Sky_ig7tw")
-tonemap_mode = 2
+tonemap_mode = 3
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.2184
-volumetric_fog_albedo = Color(0.435192, 0.435192, 0.435192, 1)
+volumetric_fog_albedo = Color(0.61339, 0.61339, 0.61339, 1)
+volumetric_fog_emission = Color(0.239216, 0.0745098, 0.0588235, 1)
+volumetric_fog_emission_energy = 0.1
 volumetric_fog_ambient_inject = 2.0
+adjustment_enabled = true
+adjustment_brightness = 1.3
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0xm2m"]
 
@@ -45,7 +50,7 @@ size = Vector3(20, 1, 20)
 
 [node name="env" type="Node3D" parent="."]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="env"]
+[node name="TestingLight" type="DirectionalLight3D" parent="env"]
 transform = Transform3D(-1.67155, -0.634395, 0.182873, 0, 0.732536, 0.633489, -0.965073, 1.0988, -0.316745, 0, 0, 0)
 shadow_enabled = true
 
@@ -68,6 +73,13 @@ disabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
 [node name="Camera3D" type="Camera3D" parent="player/head"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="player/head/Camera3D"]
+light_color = Color(0.929412, 0.823529, 0.796078, 1)
+light_energy = 4.0
+light_volumetric_fog_energy = 0.1
+spot_range = 36.229
+spot_angle_attenuation = 2.92817
 
 [node name="RayCast3D" type="RayCast3D" parent="player"]
 target_position = Vector3(0, 2, 0)
