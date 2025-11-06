@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://bk7dfcq6e1s7v"]
+
+[ext_resource type="PackedScene" uid="uid://d37agylm7sqqt" path="res://models/tree_3.glb" id="1_ajb8p"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ijxtg"]
+height = 4.0
+radius = 0.8
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ajb8p"]
+height = 3.81641
+radius = 0.380859
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_66s27"]
+height = 4.51465
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bktig"]
+height = 4.20752
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hsnf2"]
+height = 2.86621
+
+[node name="tree 3" type="Node3D"]
+
+[node name="tree_3" parent="." instance=ExtResource("1_ajb8p")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tree_3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tree_3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.09062, 0)
+shape = SubResource("CylinderShape3D_ijxtg")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="tree_3/StaticBody3D"]
+transform = Transform3D(0.987241, -0.152353, 0.046297, 0.159229, 0.946362, -0.281149, -0.000979688, 0.284934, 0.958547, -0.412291, 5.97262, 1.03346)
+shape = SubResource("CylinderShape3D_ajb8p")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="tree_3/StaticBody3D"]
+transform = Transform3D(0.959329, -0.282291, 0, 0.282016, 0.958392, -0.0441774, 0.0124709, 0.0423806, 0.999024, -0.863141, 5.3081, 0.286743)
+shape = SubResource("CylinderShape3D_66s27")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="tree_3/StaticBody3D"]
+transform = Transform3D(0.974703, 0.223505, 0, -0.223505, 0.974703, 0, 0, 0, 1, 0.828475, 5.35179, -0.20482)
+shape = SubResource("CylinderShape3D_bktig")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="tree_3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -0.935283, -0.353899, 0, 0.353899, -0.935283, 0.462463, 6.32903, -0.694751)
+shape = SubResource("CylinderShape3D_hsnf2")
