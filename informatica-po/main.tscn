@@ -1,14 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://biy4cnfchh7il"]
+[gd_scene load_steps=15 format=3 uid="uid://biy4cnfchh7il"]
 
-<<<<<<< HEAD
-[ext_resource type="Texture2D" uid="uid://buu2h0kqj86as" path="res://Textures/dry_decay_leaves_4k.blend/textures/dry_decay_leaves_diff_4k.jpg" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://655ydmwn4ug4" path="res://models/tree_1.glb" id="1_1bvp3"]
-=======
 [ext_resource type="Texture2D" uid="uid://buu2h0kqj86as" path="res://Textures/dry_decay_leaves_4k/textures/dry_decay_leaves_diff_4k.jpg" id="1_0xm2m"]
->>>>>>> 468456d2cc231a4e1e0925ef54514e217029c778
+[ext_resource type="PackedScene" uid="uid://655ydmwn4ug4" path="res://models/tree_1.glb" id="1_1bvp3"]
 [ext_resource type="Script" uid="uid://chqiu1v51an5n" path="res://Scripts/player.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://d37agylm7sqqt" path="res://models/tree_3.glb" id="2_lquwl"]
+[ext_resource type="Script" uid="uid://pbx83k7hsd7p" path="res://addons/road-generator/nodes/road_manager.gd" id="5_5vw27"]
 [ext_resource type="PackedScene" uid="uid://7653mj84oei0" path="res://models/bush_1.glb" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://wak2gi6r7hfp" path="res://addons/road-generator/nodes/road_container.gd" id="6_kek77"]
+[ext_resource type="Script" uid="uid://c14wylkyeg8px" path="res://addons/road-generator/nodes/road_point.gd" id="7_4c57u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
 albedo_color = Color(0.560955, 0.560955, 0.560955, 1)
@@ -47,35 +46,96 @@ height = 1.2
 [node name="stage" type="Node3D" parent="."]
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="stage"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3476, 1.90568, 1.16168)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.90286, 1.90568, -36.8197)
 use_collision = true
 size = Vector3(20, 1, 44.1522)
 
 [node name="Nature" type="Node" parent="stage"]
 
-[node name="tree_1" parent="stage/Nature" instance=ExtResource("1_1bvp3")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.61163, -0.477972, 6.82446)
+[node name="Bushes" type="Node" parent="stage/Nature"]
 
-[node name="tree_3" parent="stage/Nature" instance=ExtResource("2_lquwl")]
-transform = Transform3D(0.397361, 0, -0.303487, 0, 0.5, 0, 0.303487, 0, 0.397361, 3.30917, -0.352939, -6.07476)
+[node name="bush_1" parent="stage/Nature/Bushes" instance=ExtResource("5_lquwl")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.197431, -0.423644, 6.61202)
 
-[node name="BaseGround" type="CSGBox3D" parent="stage/Nature"]
+[node name="bush_2" parent="stage/Nature/Bushes" instance=ExtResource("5_lquwl")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 4.70005, -0.235778, 4.95434)
+
+[node name="bush_3" parent="stage/Nature/Bushes" instance=ExtResource("5_lquwl")]
+transform = Transform3D(0.79, 0, 0, 0, 0.79, 0, 0, 0, 0.79, 3.92584, -1.08683, -3.17719)
+
+[node name="bush_4" parent="stage/Nature/Bushes" instance=ExtResource("5_lquwl")]
+transform = Transform3D(0.141116, 0, -0.374281, 0, 0.4, 0, 0.374281, 0, 0.141116, -5.20752, -0.111803, 3.58204)
+
+[node name="bush_5" parent="stage/Nature/Bushes" instance=ExtResource("5_lquwl")]
+transform = Transform3D(0.36, 0, 0, 0, 0.36, 0, 0, 0, 0.36, 9.01428, -0.377245, -3.88332)
+
+[node name="Trees" type="Node" parent="stage/Nature"]
+
+[node name="tree_4" parent="stage/Nature/Trees" instance=ExtResource("2_lquwl")]
+transform = Transform3D(0.449024, 0, 0.0296195, 0, 0.45, 0, -0.0296195, 0, 0.449024, 0.550036, -0.272568, 4.60054)
+
+[node name="tree_2" parent="stage/Nature/Trees" instance=ExtResource("1_1bvp3")]
+transform = Transform3D(0.237751, 0, -0.256855, 0, 0.35, 0, 0.256855, 0, 0.237751, 4.82409, -0.268111, -1.13687)
+
+[node name="tree_5" parent="stage/Nature/Trees" instance=ExtResource("2_lquwl")]
+transform = Transform3D(-0.0756421, 0, 0.443597, 0, 0.45, 0, -0.443597, 0, -0.0756421, 3.28357, -0.218858, -2.78885)
+
+[node name="tree_6" parent="stage/Nature/Trees" instance=ExtResource("1_1bvp3")]
+transform = Transform3D(0.231042, 0, 0.262906, 0, 0.35, 0, -0.262906, 0, 0.231042, 0.828956, -0.24386, -2.26905)
+
+[node name="tree_1" parent="stage/Nature/Trees" instance=ExtResource("1_1bvp3")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 4.50711, -0.477972, 7.31913)
+
+[node name="tree_3" parent="stage/Nature/Trees" instance=ExtResource("2_lquwl")]
+transform = Transform3D(0.397361, 0, -0.303487, 0, 0.5, 0, 0.303487, 0, 0.397361, 0.103755, -0.352939, -4.20909)
+
+[node name="Other" type="Node" parent="stage/Nature"]
+
+[node name="BaseGround" type="CSGBox3D" parent="stage/Nature/Other"]
 transform = Transform3D(1.85513, 0, 0, 0, 1, 0, 0, 0, 1.54319, 1.00142, -0.605088, -1.82968)
 use_collision = true
 size = Vector3(30, 1, 30)
 material = SubResource("StandardMaterial3D_h2yge")
 
-[node name="tree_4" parent="stage/Nature" instance=ExtResource("2_lquwl")]
-transform = Transform3D(0.449024, 0, 0.0296195, 0, 0.45, 0, -0.0296195, 0, 0.449024, 0.550036, -0.272568, 6.13619)
+[node name="Road" type="Node" parent="stage"]
 
-[node name="tree_2" parent="stage/Nature" instance=ExtResource("1_1bvp3")]
-transform = Transform3D(0.237751, 0, -0.256855, 0, 0.35, 0, 0.256855, 0, 0.237751, 3.56249, -0.268111, 3.97996)
+[node name="RoadManager" type="Node3D" parent="stage/Road"]
+script = ExtResource("5_5vw27")
+metadata/_custom_type_script = "uid://pbx83k7hsd7p"
 
-[node name="tree_5" parent="stage/Nature" instance=ExtResource("2_lquwl")]
-transform = Transform3D(-0.0756421, 0, 0.443597, 0, 0.45, 0, -0.443597, 0, -0.0756421, 3.28357, -0.218858, -2.22689)
+[node name="RoadContainer" type="Node3D" parent="stage/Road/RoadManager"]
+script = ExtResource("6_kek77")
+use_lowpoly_preview = true
+edge_containers = Array[NodePath]([NodePath(""), NodePath(""), NodePath(""), NodePath("")])
+edge_rp_targets = Array[NodePath]([NodePath(""), NodePath(""), NodePath(""), NodePath("")])
+edge_rp_target_dirs = Array[int]([-1, -1, -1, -1])
+edge_rp_locals = Array[NodePath]([NodePath("RoadPoint"), NodePath("RoadPoint001"), NodePath("RP_001"), NodePath("RP_001")])
+edge_rp_local_dirs = Array[int]([0, 1, 0, 1])
+metadata/_custom_type_script = "uid://wak2gi6r7hfp"
 
-[node name="tree_6" parent="stage/Nature" instance=ExtResource("1_1bvp3")]
-transform = Transform3D(0.231042, 0, 0.262906, 0, 0.35, 0, -0.262906, 0, 0.231042, 0.828956, -0.24386, -5.00162)
+[node name="RoadPoint" type="Node3D" parent="stage/Road/RoadManager/RoadContainer"]
+transform = Transform3D(-0.00103478, 1.70518e-08, 0.999999, 0, 1, -1.70518e-08, -0.999999, -1.76448e-11, -0.00103478, 28, 0, 0)
+script = ExtResource("7_4c57u")
+traffic_dir = Array[int]([2, 1])
+lanes = Array[int]([5, 5])
+next_mag = 27.9641
+lane_width = 1.0
+shoulder_width_l = 0.0
+shoulder_width_r = 0.0
+prior_pt_init = NodePath("../RoadPoint001")
+metadata/_custom_type_script = "uid://c14wylkyeg8px"
+
+[node name="RoadPoint001" type="Node3D" parent="stage/Road/RoadManager/RoadContainer"]
+transform = Transform3D(-0.00103478, -0.0049088, 0.999987, 0, 0.999988, 0.0049088, -0.999999, 5.07953e-06, -0.00103477, -27.9281, 0.250001, 0.0578732)
+script = ExtResource("7_4c57u")
+traffic_dir = Array[int]([2, 1])
+lanes = Array[int]([5, 5])
+prior_mag = 27.9641
+next_mag = 27.9641
+lane_width = 1.0
+shoulder_width_l = 0.0
+shoulder_width_r = 0.0
+next_pt_init = NodePath("../RoadPoint")
 
 [node name="env" type="Node3D" parent="."]
 
@@ -87,10 +147,8 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
 environment = SubResource("Environment_0xm2m")
 
-[node name="WorldEnvironment2" type="WorldEnvironment" parent="env"]
-environment = SubResource("Environment_0xm2m")
-
 [node name="player" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.0877816, 0, 0.99614, 0, 1, 0, -0.99614, 0, 0.0877816, 6.7517, 0.184425, 0)
 script = ExtResource("1_ig7tw")
 
 [node name="standing_colision_shape" type="CollisionShape3D" parent="player"]
@@ -112,27 +170,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
 [node name="Camera3D" type="Camera3D" parent="player/head/eyes"]
 
-[node name="SpotLight3D" type="SpotLight3D" parent="player/head/eyes/Camera3D"]
+[node name="Placeholder_Flashlight" type="SpotLight3D" parent="player/head/eyes/Camera3D"]
 light_color = Color(0.929412, 0.823529, 0.796078, 1)
 light_energy = 4.0
 light_volumetric_fog_energy = 0.1
 spot_range = 36.229
 spot_angle_attenuation = 2.92817
-<<<<<<< HEAD
-
-[node name="RayCast3D" type="RayCast3D" parent="player"]
-target_position = Vector3(0, 2, 0)
-
-[node name="bush_1" parent="." instance=ExtResource("5_lquwl")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -2.00876, -0.281192, 4.07373)
-
-[node name="bush_1" parent="bush_1" instance=ExtResource("5_lquwl")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 4.70005, -0.281192, 5.36681)
-
-[node name="bush_2" parent="bush_1" instance=ExtResource("5_lquwl")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 4.94492, 0.310162, -12.3713)
-
-[node name="bush_1" parent="bush_1/bush_2" instance=ExtResource("5_lquwl")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 4.70005, -0.281192, 5.36681)
-=======
->>>>>>> 468456d2cc231a4e1e0925ef54514e217029c778
