@@ -62,7 +62,7 @@ func _physics_process(delta):
 	#bewegingstoestanden
 		#crouching
 	if Input.is_action_pressed("crouch"):
-		current_speed = crouch_speed
+		current_speed = lerp(crouch_speed,current_speed,delta*lerp_speed)
 		head.position.y = lerp(head.position.y,1.8+crouching_depth,delta*lerp_speed)
 		standing_colision_shape.disabled = true
 		crouching_colision_shape.disabled = false
@@ -76,13 +76,13 @@ func _physics_process(delta):
 		head.position.y = lerp(head.position.y,1.8,delta*lerp_speed)
 		#sprinten
 		if Input.is_action_pressed("sprint"):
-			current_speed = sprinting_speed
+			current_speed = lerp(sprinting_speed,current_speed,delta*lerp_speed)
 			sprinting = true
 			walking = false
 			crouching = false
 		#lopen
 		else:
-			current_speed = walking_speed
+			current_speed = lerp(walking_speed,current_speed,delta*lerp_speed)
 			sprinting = false
 			walking = true
 			crouching = false
