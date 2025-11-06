@@ -9,8 +9,8 @@ extends CharacterBody3D
 #snelheden
 var current_speed = 5.0
 const crouch_speed = 3.0
-const walking_speed = 5.0
-const sprinting_speed = 8.0
+const walking_speed = 5.0 #Hey werkt dit
+const sprinting_speed = 8.0 #ik hoop het
 const  jump_velocity = 4.5
 
 
