@@ -70,17 +70,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.608055, 0)
 shape = SubResource("CapsuleShape3D_ig7tw")
 disabled = true
 
+[node name="RayCast3D" type="RayCast3D" parent="player"]
+target_position = Vector3(0, 2, 0)
+
 [node name="head" type="Node3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
-[node name="Camera3D" type="Camera3D" parent="player/head"]
+[node name="eyes" type="Node3D" parent="player/head"]
 
-[node name="SpotLight3D" type="SpotLight3D" parent="player/head/Camera3D"]
+[node name="Camera3D" type="Camera3D" parent="player/head/eyes"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="player/head/eyes/Camera3D"]
 light_color = Color(0.929412, 0.823529, 0.796078, 1)
 light_energy = 4.0
 light_volumetric_fog_energy = 0.1
 spot_range = 36.229
 spot_angle_attenuation = 2.92817
-
-[node name="RayCast3D" type="RayCast3D" parent="player"]
-target_position = Vector3(0, 2, 0)
