@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://biy4cnfchh7il"]
+[gd_scene load_steps=18 format=3 uid="uid://biy4cnfchh7il"]
 
 [ext_resource type="Texture2D" uid="uid://buu2h0kqj86as" path="res://Textures/dry_decay_leaves_4k/textures/dry_decay_leaves_diff_4k.jpg" id="1_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://bumcggyqjwo5u" path="res://Scenes/Nature/tree 2.tscn" id="3_21xkr"]
@@ -14,6 +14,8 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdnlq"]
 albedo_texture = ExtResource("1_d1ilt")
 uv1_triplanar = true
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hptm8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_top_color = Color(0.156863, 0.113725, 0.0745098, 1)
@@ -64,7 +66,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4.70005, -0.235778, 4.9
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.92584, -0.532711, -3.17719)
 
 [node name="bush_4" parent="stage/Nature/Bushes" instance=ExtResource("5_lquwl")]
-transform = Transform3D(0.070558, 0, -0.187141, 0, 0.2, 0, 0.187141, 0, 0.070558, -5.20752, -0.111803, 3.58204)
+transform = Transform3D(0.070558, 0, -0.187141, 0, 0.2, 0, 0.187141, 0, 0.070558, -5.20752, -0.111803, 4.22404)
 
 [node name="bush_5" parent="stage/Nature/Bushes" instance=ExtResource("5_lquwl")]
 transform = Transform3D(0.36, 0, 0, 0, 0.36, 0, 0, 0, 0.36, 9.01428, -0.377245, -3.88332)
@@ -101,9 +103,9 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.75034, -0.105088, 10.
 [node name="Other" type="Node" parent="stage/Nature"]
 
 [node name="BaseGround" type="CSGBox3D" parent="stage/Nature/Other"]
-transform = Transform3D(1.85513, 0, 0, 0, 1, 0, 0, 0, 1.54319, 1.00142, -0.605088, -1.82968)
+transform = Transform3D(1.85513, 0, 0, 0, 1, 0, 0, 0, 1.54319, -9.51068, -0.605088, -1.82968)
 use_collision = true
-size = Vector3(30, 1, 30)
+size = Vector3(41.7764, 1, 50)
 material = SubResource("StandardMaterial3D_fdnlq")
 
 [node name="Struik" type="Node" parent="stage/Nature"]
@@ -118,6 +120,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84981, -0.250421, 9.05093)
 
 [node name="RoadManager" type="Node3D" parent="stage/Road"]
 script = ExtResource("5_5vw27")
+material_underside = SubResource("CanvasItemMaterial_hptm8")
 collision_layer = 0
 
 [node name="RoadContainer" type="Node3D" parent="stage/Road/RoadManager"]
@@ -126,7 +129,7 @@ use_lowpoly_preview = true
 edge_containers = Array[NodePath]([NodePath(""), NodePath("")])
 edge_rp_targets = Array[NodePath]([NodePath(""), NodePath("")])
 edge_rp_target_dirs = Array[int]([-1, -1])
-edge_rp_locals = Array[NodePath]([NodePath("RoadPoint"), NodePath("RoadPoint001")])
+edge_rp_locals = Array[NodePath]([NodePath("RoadPoint"), NodePath("RoadPoint002")])
 edge_rp_local_dirs = Array[int]([0, 1])
 
 [node name="RoadPoint" type="Node3D" parent="stage/Road/RoadManager/RoadContainer"]
@@ -134,8 +137,8 @@ transform = Transform3D(-0.00103478, 1.70518e-08, 0.999999, 0, 1, -1.70518e-08, 
 script = ExtResource("7_4c57u")
 traffic_dir = Array[int]([2, 1])
 lanes = Array[int]([5, 5])
-next_mag = 27.9641
-lane_width = 1.0
+next_mag = 26.43
+lane_width = 2.0
 shoulder_width_l = 0.0
 shoulder_width_r = 0.0
 prior_pt_init = NodePath("../RoadPoint001")
@@ -145,12 +148,25 @@ transform = Transform3D(-0.00103478, -0.0049088, 0.999987, 0, 0.999988, 0.004908
 script = ExtResource("7_4c57u")
 traffic_dir = Array[int]([2, 1])
 lanes = Array[int]([5, 5])
-prior_mag = 27.9641
+prior_mag = 7.76254
 next_mag = 27.9641
-lane_width = 1.0
+lane_width = 2.0
 shoulder_width_l = 0.0
 shoulder_width_r = 0.0
+prior_pt_init = NodePath("../RoadPoint002")
 next_pt_init = NodePath("../RoadPoint")
+
+[node name="RoadPoint002" type="Node3D" parent="stage/Road/RoadManager/RoadContainer"]
+transform = Transform3D(0.969656, 0.00894811, -0.244309, 0, 0.99933, 0.0366017, 0.244473, -0.0354911, 0.969006, -44.6451, 0.144908, -14.9447)
+script = ExtResource("7_4c57u")
+traffic_dir = Array[int]([2, 1])
+lanes = Array[int]([5, 5])
+prior_mag = 7.76254
+next_mag = 7.76254
+lane_width = 2.0
+shoulder_width_l = 0.0
+shoulder_width_r = 0.0
+next_pt_init = NodePath("../RoadPoint001")
 
 [node name="env" type="Node3D" parent="."]
 
@@ -159,9 +175,6 @@ transform = Transform3D(-1.67155, -0.634395, 0.182873, 0, 0.732536, 0.633489, -0
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
-environment = SubResource("Environment_0xm2m")
-
-[node name="WorldEnvironment2" type="WorldEnvironment" parent="env"]
 environment = SubResource("Environment_0xm2m")
 
 [node name="player" type="CharacterBody3D" parent="."]
