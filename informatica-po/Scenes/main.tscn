@@ -8,12 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://7653mj84oei0" path="res://models/bush_1.glb" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://wak2gi6r7hfp" path="res://addons/road-generator/nodes/road_container.gd" id="6_kek77"]
 [ext_resource type="Script" uid="uid://c14wylkyeg8px" path="res://addons/road-generator/nodes/road_point.gd" id="7_4c57u"]
+[ext_resource type="Texture2D" uid="uid://buu2h0kqj86as" path="res://Textures/dry_decay_leaves_4k/textures/dry_decay_leaves_diff_4k.jpg" id="1_21xkr"]
+[ext_resource type="PackedScene" uid="uid://bumcggyqjwo5u" path="res://Scenes/Nature/tree 2.tscn" id="3_21xkr"]
+[ext_resource type="PackedScene" uid="uid://bk7dfcq6e1s7v" path="res://Scenes/Nature/tree 3.tscn" id="4_6bp64"]
+[ext_resource type="PackedScene" uid="uid://bel2mtvy6pu1r" path="res://Scenes/Nature/tree 1.tscn" id="4_ynf5e"]
+[ext_resource type="Script" uid="uid://chqiu1v51an5n" path="res://Scripts/player.gd" id="5_hptm8"]
+[ext_resource type="PackedScene" uid="uid://7653mj84oei0" path="res://models/bush_1.glb" id="6_d1ilt"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
-albedo_color = Color(0.560955, 0.560955, 0.560955, 1)
-albedo_texture = ExtResource("1_21xkr")
-detail_blend_mode = 2
-uv1_scale = Vector3(8, 8, 8)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_top_color = Color(0.156863, 0.113725, 0.0745098, 1)
