@@ -134,6 +134,7 @@ next_pt_init = NodePath("../RoadPoint")
 
 [node name="TestingLight" type="DirectionalLight3D" parent="env"]
 transform = Transform3D(-1.67155, -0.634395, 0.182873, 0, 0.732536, 0.633489, -0.965073, 1.0988, -0.316745, 0, 0, 0)
+visible = false
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
