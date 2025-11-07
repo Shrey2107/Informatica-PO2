@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://chqiu1v51an5n" path="res://Scripts/player.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://d37agylm7sqqt" path="res://models/tree_3.glb" id="2_lquwl"]
 [ext_resource type="Script" uid="uid://pbx83k7hsd7p" path="res://addons/road-generator/nodes/road_manager.gd" id="5_5vw27"]
-[ext_resource type="PackedScene" uid="uid://7653mj84oei0" path="res://models/bush_1.glb" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://7653mj84oei0" path="res://models/bush 1.glb" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://wak2gi6r7hfp" path="res://addons/road-generator/nodes/road_container.gd" id="6_kek77"]
 [ext_resource type="Script" uid="uid://c14wylkyeg8px" path="res://addons/road-generator/nodes/road_point.gd" id="7_4c57u"]
 [ext_resource type="Texture2D" uid="uid://buu2h0kqj86as" path="res://Textures/dry_decay_leaves_4k/textures/dry_decay_leaves_diff_4k.jpg" id="1_21xkr"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bk7dfcq6e1s7v" path="res://Scenes/Nature/tree 3.tscn" id="4_6bp64"]
 [ext_resource type="PackedScene" uid="uid://bel2mtvy6pu1r" path="res://Scenes/Nature/tree 1.tscn" id="4_ynf5e"]
 [ext_resource type="Script" uid="uid://chqiu1v51an5n" path="res://Scripts/player.gd" id="5_hptm8"]
-[ext_resource type="PackedScene" uid="uid://7653mj84oei0" path="res://models/bush_1.glb" id="6_d1ilt"]
+[ext_resource type="PackedScene" uid="uid://7653mj84oei0" path="res://models/bush 1.glb" id="6_d1ilt"]
 
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
@@ -97,7 +97,7 @@ transform = Transform3D(0.397361, 0, -0.303487, 0, 0.5, 0, 0.303487, 0, 0.397361
 transform = Transform3D(1.85513, 0, 0, 0, 1, 0, 0, 0, 1.54319, 1.00142, -0.605088, -1.82968)
 use_collision = true
 size = Vector3(30, 1, 30)
-material = SubResource("StandardMaterial3D_h2yge")
+
 
 [node name="tree 1" parent="stage/Nature" instance=ExtResource("4_ynf5e")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.98209, -0.177089, 2.01384)
@@ -189,16 +189,3 @@ light_energy = 4.0
 light_volumetric_fog_energy = 0.1
 spot_range = 36.229
 spot_angle_attenuation = 2.92817
-
-[node name="bush_1" parent="." instance=ExtResource("6_d1ilt")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -2.00876, -0.281192, 4.07373)
-
-[node name="bush_1" parent="bush_1" instance=ExtResource("6_d1ilt")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 4.70005, -0.281192, 5.36681)
-
-[node name="bush_3" parent="bush_1" instance=ExtResource("6_d1ilt")]
-transform = Transform3D(0.36, 0, 0, 0, 0.36, 0, 0, 0, 0.36, 7.76495, 0.141447, -9.15121)
-
-[node name="bush_2" parent="bush_1" instance=ExtResource("6_d1ilt")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 4.94492, 0.310162, -12.3713)
-[node name="player" type="CharacterBody3D" parent="."]()
