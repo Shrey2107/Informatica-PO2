@@ -200,3 +200,4 @@ transform = Transform3D(0.36, 0, 0, 0, 0.36, 0, 0, 0, 0.36, 7.76495, 0.141447, -
 
 [node name="bush_2" parent="bush_1" instance=ExtResource("6_d1ilt")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 4.94492, 0.310162, -12.3713)
+[node name="player" type="CharacterBody3D" parent="."]()
