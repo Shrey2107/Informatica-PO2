@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq75krv2by71"]
+
+[ext_resource type="PackedScene" uid="uid://qtyp34adhcw" path="res://Scenes/Nature/bush_2.glb" id="1_i40u2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_56pxq"]
+radius = 1.29758
+
+[node name="Struik" type="Node3D"]
+
+[node name="bush_2" parent="." instance=ExtResource("1_i40u2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045819, 0, -7.69575)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="bush_2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bush_2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0919054, 0, 7.67986)
+shape = SubResource("SphereShape3D_56pxq")
