@@ -118,6 +118,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84981, -0.250421, 9.05093)
 
 [node name="RoadManager" type="Node3D" parent="stage/Road"]
 script = ExtResource("5_5vw27")
+collision_layer = 0
 
 [node name="RoadContainer" type="Node3D" parent="stage/Road/RoadManager"]
 script = ExtResource("6_kek77")
