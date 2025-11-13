@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://d37i6bf4utn57"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_w7c8y"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_w7c8y")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.200362)
+light_color = Color(0.671819, 0.670497, 0, 1)
+light_energy = 4.0
+light_volumetric_fog_energy = 6.0
+spot_angle = 30.0

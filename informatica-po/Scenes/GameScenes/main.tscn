@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://biy4cnfchh7il"]
+[gd_scene load_steps=20 format=3 uid="uid://biy4cnfchh7il"]
 
 [ext_resource type="PackedScene" uid="uid://7653mj84oei0" path="res://models/bush_1.glb" id="1_b1ank"]
 [ext_resource type="PackedScene" uid="uid://bel2mtvy6pu1r" path="res://Scenes/Nature/tree 1.tscn" id="2_krgib"]
@@ -6,11 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://bk7dfcq6e1s7v" path="res://Scenes/Nature/tree 3.tscn" id="4_x40c6"]
 [ext_resource type="Texture2D" uid="uid://buu2h0kqj86as" path="res://Textures/dry_decay_leaves_4k/textures/dry_decay_leaves_diff_4k.jpg" id="5_b728q"]
 [ext_resource type="PackedScene" uid="uid://dq75krv2by71" path="res://Scenes/Nature/struik.tscn" id="6_qvu0p"]
-[ext_resource type="Script" uid="uid://pbx83k7hsd7p" path="res://addons/road-generator/nodes/road_manager.gd" id="7_q24ky"]
-[ext_resource type="Script" uid="uid://wak2gi6r7hfp" path="res://addons/road-generator/nodes/road_container.gd" id="8_c4qg8"]
-[ext_resource type="Script" uid="uid://c14wylkyeg8px" path="res://addons/road-generator/nodes/road_point.gd" id="9_02sgy"]
+[ext_resource type="Script" path="res://addons/road-generator/nodes/road_manager.gd" id="7_q24ky"]
+[ext_resource type="Script" path="res://addons/road-generator/nodes/road_container.gd" id="8_c4qg8"]
+[ext_resource type="Script" path="res://addons/road-generator/nodes/road_point.gd" id="9_02sgy"]
 [ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="9_krgib"]
 [ext_resource type="Script" uid="uid://chqiu1v51an5n" path="res://Scripts/player.gd" id="10_dvl8e"]
+[ext_resource type="PackedScene" uid="uid://d37i6bf4utn57" path="res://Scenes/ObjectScenes/flashlight.tscn" id="12_x4gqf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdnlq"]
 albedo_texture = ExtResource("5_b728q")
@@ -203,9 +204,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
 [node name="Camera3D" type="Camera3D" parent="player/head/eyes"]
 
-[node name="SpotLight3D" type="SpotLight3D" parent="player/head/eyes/Camera3D"]
-light_color = Color(0.929412, 0.823529, 0.796078, 1)
-light_energy = 4.0
-light_volumetric_fog_energy = 0.1
-spot_range = 36.229
-spot_angle_attenuation = 2.92817
+[node name="Flashlight" parent="player/head" instance=ExtResource("12_x4gqf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.328244, -0.742496, -0.526445)
