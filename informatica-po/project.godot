@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Informatica PO"
-run/main_scene="uid://biy4cnfchh7il"
+run/main_scene="uid://djc7yi57uk0md"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

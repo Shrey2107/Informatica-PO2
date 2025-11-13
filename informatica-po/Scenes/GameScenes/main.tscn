@@ -1,18 +1,19 @@
-[gd_scene load_steps=18 format=3 uid="uid://biy4cnfchh7il"]
+[gd_scene load_steps=19 format=3 uid="uid://biy4cnfchh7il"]
 
-[ext_resource type="Texture2D" uid="uid://buu2h0kqj86as" path="res://Textures/dry_decay_leaves_4k/textures/dry_decay_leaves_diff_4k.jpg" id="1_d1ilt"]
-[ext_resource type="PackedScene" uid="uid://bumcggyqjwo5u" path="res://Scenes/Nature/tree 2.tscn" id="3_21xkr"]
-[ext_resource type="PackedScene" uid="uid://bk7dfcq6e1s7v" path="res://Scenes/Nature/tree 3.tscn" id="4_6bp64"]
-[ext_resource type="PackedScene" uid="uid://bel2mtvy6pu1r" path="res://Scenes/Nature/tree 1.tscn" id="4_ynf5e"]
-[ext_resource type="Script" uid="uid://pbx83k7hsd7p" path="res://addons/road-generator/nodes/road_manager.gd" id="5_5vw27"]
-[ext_resource type="Script" uid="uid://chqiu1v51an5n" path="res://Scripts/player.gd" id="5_hptm8"]
-[ext_resource type="PackedScene" uid="uid://7653mj84oei0" path="res://models/bush_1.glb" id="5_lquwl"]
-[ext_resource type="PackedScene" uid="uid://dq75krv2by71" path="res://Scenes/Nature/struik.tscn" id="6_hptm8"]
-[ext_resource type="Script" uid="uid://wak2gi6r7hfp" path="res://addons/road-generator/nodes/road_container.gd" id="6_kek77"]
-[ext_resource type="Script" uid="uid://c14wylkyeg8px" path="res://addons/road-generator/nodes/road_point.gd" id="7_4c57u"]
+[ext_resource type="PackedScene" uid="uid://7653mj84oei0" path="res://models/bush_1.glb" id="1_b1ank"]
+[ext_resource type="PackedScene" uid="uid://bel2mtvy6pu1r" path="res://Scenes/Nature/tree 1.tscn" id="2_krgib"]
+[ext_resource type="PackedScene" uid="uid://bumcggyqjwo5u" path="res://Scenes/Nature/tree 2.tscn" id="3_x4gqf"]
+[ext_resource type="PackedScene" uid="uid://bk7dfcq6e1s7v" path="res://Scenes/Nature/tree 3.tscn" id="4_x40c6"]
+[ext_resource type="Texture2D" uid="uid://buu2h0kqj86as" path="res://Textures/dry_decay_leaves_4k/textures/dry_decay_leaves_diff_4k.jpg" id="5_b728q"]
+[ext_resource type="PackedScene" uid="uid://dq75krv2by71" path="res://Scenes/Nature/struik.tscn" id="6_qvu0p"]
+[ext_resource type="Script" uid="uid://pbx83k7hsd7p" path="res://addons/road-generator/nodes/road_manager.gd" id="7_q24ky"]
+[ext_resource type="Script" uid="uid://wak2gi6r7hfp" path="res://addons/road-generator/nodes/road_container.gd" id="8_c4qg8"]
+[ext_resource type="Script" uid="uid://c14wylkyeg8px" path="res://addons/road-generator/nodes/road_point.gd" id="9_02sgy"]
+[ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="9_krgib"]
+[ext_resource type="Script" uid="uid://chqiu1v51an5n" path="res://Scripts/player.gd" id="10_dvl8e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdnlq"]
-albedo_texture = ExtResource("1_d1ilt")
+albedo_texture = ExtResource("5_b728q")
 uv1_triplanar = true
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hptm8"]
@@ -56,48 +57,48 @@ size = Vector3(20, 1, 44.1522)
 
 [node name="Bushes" type="Node" parent="stage/Nature"]
 
-[node name="bush_1" parent="stage/Nature/Bushes" instance=ExtResource("5_lquwl")]
+[node name="bush_1" parent="stage/Nature/Bushes" instance=ExtResource("1_b1ank")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.197431, -0.423644, 6.61202)
 
-[node name="bush_2" parent="stage/Nature/Bushes" instance=ExtResource("5_lquwl")]
+[node name="bush_2" parent="stage/Nature/Bushes" instance=ExtResource("1_b1ank")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4.70005, -0.235778, 4.95434)
 
-[node name="bush_3" parent="stage/Nature/Bushes" instance=ExtResource("5_lquwl")]
+[node name="bush_3" parent="stage/Nature/Bushes" instance=ExtResource("1_b1ank")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.92584, -0.532711, -3.17719)
 
-[node name="bush_4" parent="stage/Nature/Bushes" instance=ExtResource("5_lquwl")]
+[node name="bush_4" parent="stage/Nature/Bushes" instance=ExtResource("1_b1ank")]
 transform = Transform3D(0.070558, 0, -0.187141, 0, 0.2, 0, 0.187141, 0, 0.070558, -5.20752, -0.111803, 4.22404)
 
-[node name="bush_5" parent="stage/Nature/Bushes" instance=ExtResource("5_lquwl")]
+[node name="bush_5" parent="stage/Nature/Bushes" instance=ExtResource("1_b1ank")]
 transform = Transform3D(0.36, 0, 0, 0, 0.36, 0, 0, 0, 0.36, 9.01428, -0.377245, -3.88332)
 
 [node name="Trees" type="Node" parent="stage/Nature"]
 
-[node name="tree 1" parent="stage/Nature/Trees" instance=ExtResource("4_ynf5e")]
+[node name="tree 1" parent="stage/Nature/Trees" instance=ExtResource("2_krgib")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.98209, -0.202966, 5.10135)
 
-[node name="tree 2" parent="stage/Nature/Trees" instance=ExtResource("3_21xkr")]
+[node name="tree 2" parent="stage/Nature/Trees" instance=ExtResource("3_x4gqf")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.47841, -0.175071, 6.77522)
 
-[node name="tree 3" parent="stage/Nature/Trees" instance=ExtResource("4_6bp64")]
+[node name="tree 3" parent="stage/Nature/Trees" instance=ExtResource("4_x40c6")]
 transform = Transform3D(0.498746, 0, 0.0353831, 0, 0.5, 0, -0.0353831, 0, 0.498746, 1.35783, -0.133444, -4.75035)
 
-[node name="tree 4" parent="stage/Nature/Trees" instance=ExtResource("3_21xkr")]
+[node name="tree 4" parent="stage/Nature/Trees" instance=ExtResource("3_x4gqf")]
 transform = Transform3D(0.493489, 0, 0.341275, 0, 0.6, 0, -0.341275, 0, 0.493489, 5.84656, -0.476976, 4.93529)
 
-[node name="tree 5" parent="stage/Nature/Trees" instance=ExtResource("4_ynf5e")]
+[node name="tree 5" parent="stage/Nature/Trees" instance=ExtResource("2_krgib")]
 transform = Transform3D(0.476455, 0, -0.151626, 0, 0.5, 0, 0.151626, 0, 0.476455, -6.30457, -0.10509, -8.26706)
 
-[node name="tree 6" parent="stage/Nature/Trees" instance=ExtResource("4_ynf5e")]
+[node name="tree 6" parent="stage/Nature/Trees" instance=ExtResource("2_krgib")]
 transform = Transform3D(0.243848, 0, -0.317078, 0, 0.4, 0, 0.317078, 0, 0.243848, 6.72237, -0.10509, -13.4503)
 
-[node name="tree 7" parent="stage/Nature/Trees" instance=ExtResource("4_ynf5e")]
+[node name="tree 7" parent="stage/Nature/Trees" instance=ExtResource("2_krgib")]
 transform = Transform3D(-0.0430736, 0, 0.498141, 0, 0.5, 0, -0.498141, 0, -0.0430736, 4.56334, -0.105088, 7.59658)
 
-[node name="tree 8" parent="stage/Nature/Trees" instance=ExtResource("3_21xkr")]
+[node name="tree 8" parent="stage/Nature/Trees" instance=ExtResource("3_x4gqf")]
 transform = Transform3D(-0.259365, 0, -0.304516, 0, 0.4, 0, 0.304516, 0, -0.259365, -1.66736, -0.105088, 7.68322)
 
-[node name="tree 9" parent="stage/Nature/Trees" instance=ExtResource("4_ynf5e")]
+[node name="tree 9" parent="stage/Nature/Trees" instance=ExtResource("2_krgib")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.75034, -0.105088, 10.3632)
 
 [node name="Other" type="Node" parent="stage/Nature"]
@@ -110,21 +111,22 @@ material = SubResource("StandardMaterial3D_fdnlq")
 
 [node name="Struik" type="Node" parent="stage/Nature"]
 
-[node name="Struik2" parent="stage/Nature/Struik" instance=ExtResource("6_hptm8")]
+[node name="Struik2" parent="stage/Nature/Struik" instance=ExtResource("6_qvu0p")]
 transform = Transform3D(0.837032, 0, -0.547154, 0, 1, 0, 0.547154, 0, 0.837032, 4.14196, -0.105088, 4.738)
 
-[node name="Struik" parent="stage/Nature/Struik" instance=ExtResource("6_hptm8")]
+[node name="Struik" parent="stage/Nature/Struik" instance=ExtResource("6_qvu0p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84981, -0.250421, 9.05093)
 
 [node name="Road" type="Node" parent="stage"]
 
 [node name="RoadManager" type="Node3D" parent="stage/Road"]
-script = ExtResource("5_5vw27")
+script = ExtResource("7_q24ky")
 material_underside = SubResource("CanvasItemMaterial_hptm8")
 collision_layer = 0
 
 [node name="RoadContainer" type="Node3D" parent="stage/Road/RoadManager"]
-script = ExtResource("6_kek77")
+script = ExtResource("8_c4qg8")
+material_resource = ExtResource("9_krgib")
 use_lowpoly_preview = true
 edge_containers = Array[NodePath]([NodePath(""), NodePath("")])
 edge_rp_targets = Array[NodePath]([NodePath(""), NodePath("")])
@@ -134,7 +136,7 @@ edge_rp_local_dirs = Array[int]([0, 1])
 
 [node name="RoadPoint" type="Node3D" parent="stage/Road/RoadManager/RoadContainer"]
 transform = Transform3D(-0.00103478, 1.70518e-08, 0.999999, 0, 1, -1.70518e-08, -0.999999, -1.76448e-11, -0.00103478, 28, 0, 0)
-script = ExtResource("7_4c57u")
+script = ExtResource("9_02sgy")
 traffic_dir = Array[int]([2, 1])
 lanes = Array[int]([5, 5])
 next_mag = 26.43
@@ -145,7 +147,7 @@ prior_pt_init = NodePath("../RoadPoint001")
 
 [node name="RoadPoint001" type="Node3D" parent="stage/Road/RoadManager/RoadContainer"]
 transform = Transform3D(-0.00103478, -0.0049088, 0.999987, 0, 0.999988, 0.0049088, -0.999999, 5.07953e-06, -0.00103477, -27.9281, 0.250001, 0.0578732)
-script = ExtResource("7_4c57u")
+script = ExtResource("9_02sgy")
 traffic_dir = Array[int]([2, 1])
 lanes = Array[int]([5, 5])
 prior_mag = 7.76254
@@ -158,7 +160,7 @@ next_pt_init = NodePath("../RoadPoint")
 
 [node name="RoadPoint002" type="Node3D" parent="stage/Road/RoadManager/RoadContainer"]
 transform = Transform3D(0.969656, 0.00894811, -0.244309, 0, 0.99933, 0.0366017, 0.244473, -0.0354911, 0.969006, -44.6451, 0.144908, -14.9447)
-script = ExtResource("7_4c57u")
+script = ExtResource("9_02sgy")
 traffic_dir = Array[int]([2, 1])
 lanes = Array[int]([5, 5])
 prior_mag = 7.76254
@@ -172,6 +174,7 @@ next_pt_init = NodePath("../RoadPoint001")
 
 [node name="TestingLight" type="DirectionalLight3D" parent="env"]
 transform = Transform3D(-1.67155, -0.634395, 0.182873, 0, 0.732536, 0.633489, -0.965073, 1.0988, -0.316745, 0, 0, 0)
+visible = false
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
@@ -179,7 +182,7 @@ environment = SubResource("Environment_0xm2m")
 
 [node name="player" type="CharacterBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.16914, 0.338629, 0)
-script = ExtResource("5_hptm8")
+script = ExtResource("10_dvl8e")
 
 [node name="standing_colision_shape" type="CollisionShape3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

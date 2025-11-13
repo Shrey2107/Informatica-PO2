@@ -1,0 +1,226 @@
+[gd_scene load_steps=19 format=3 uid="uid://djc7yi57uk0md"]
+
+[ext_resource type="Script" uid="uid://dchihm58leiq8" path="res://Scenes/GameScenes/home_screen.gd" id="1_2uado"]
+[ext_resource type="Script" uid="uid://dsqdf0e4bbprx" path="res://Scenes/GameScenes/buttonControl.gd" id="2_2uado"]
+[ext_resource type="Texture2D" uid="uid://buu2h0kqj86as" path="res://Textures/dry_decay_leaves_4k/textures/dry_decay_leaves_diff_4k.jpg" id="2_3wmos"]
+[ext_resource type="Script" uid="uid://pbx83k7hsd7p" path="res://addons/road-generator/nodes/road_manager.gd" id="3_jmol1"]
+[ext_resource type="Script" uid="uid://wak2gi6r7hfp" path="res://addons/road-generator/nodes/road_container.gd" id="4_jb6to"]
+[ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="5_o33tr"]
+[ext_resource type="Script" uid="uid://c14wylkyeg8px" path="res://addons/road-generator/nodes/road_point.gd" id="6_jb6to"]
+[ext_resource type="PackedScene" uid="uid://dq75krv2by71" path="res://Scenes/Nature/struik.tscn" id="7_v3aoa"]
+[ext_resource type="PackedScene" uid="uid://d3uok2jb6tm3b" path="res://Scenes/Nature/bush 1.tscn" id="8_4werr"]
+[ext_resource type="Texture2D" uid="uid://5qha6a8dkosm" path="res://Textures/dry_decay_leaves_4k/textures/generated_text.png" id="8_o33tr"]
+[ext_resource type="PackedScene" uid="uid://bk7dfcq6e1s7v" path="res://Scenes/Nature/tree 3.tscn" id="9_4werr"]
+[ext_resource type="PackedScene" uid="uid://bumcggyqjwo5u" path="res://Scenes/Nature/tree 2.tscn" id="12_6kru5"]
+[ext_resource type="PackedScene" uid="uid://bel2mtvy6pu1r" path="res://Scenes/Nature/tree 1.tscn" id="13_msk27"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_igg4g"]
+albedo_texture = ExtResource("2_3wmos")
+uv1_scale = Vector3(20, 20, 20)
+
+[sub_resource type="Environment" id="Environment_4werr"]
+background_mode = 1
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.2
+volumetric_fog_albedo = Color(0.103789, 0.0518642, 0.00382432, 1)
+volumetric_fog_emission = Color(0.201527, 0.201527, 0.201527, 1)
+volumetric_fog_detail_spread = 3.0
+
+[sub_resource type="SystemFont" id="SystemFont_6iokp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qelbj"]
+bg_color = Color(0, 0, 0, 0.470588)
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2uado"]
+bg_color = Color(0, 0, 0, 0.286275)
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+
+[node name="HomeScreen" type="Node3D"]
+script = ExtResource("1_2uado")
+
+[node name="3d_Scene" type="Node3D" parent="."]
+
+[node name="Env" type="Node3D" parent="3d_Scene"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="3d_Scene/Env"]
+transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 0, -0.31876, -14.6394)
+material = SubResource("StandardMaterial3D_igg4g")
+
+[node name="RoadManager" type="Node3D" parent="3d_Scene/Env"]
+script = ExtResource("3_jmol1")
+metadata/_custom_type_script = "uid://pbx83k7hsd7p"
+
+[node name="RoadContainer" type="Node3D" parent="3d_Scene/Env/RoadManager"]
+script = ExtResource("4_jb6to")
+material_resource = ExtResource("5_o33tr")
+use_lowpoly_preview = true
+edge_containers = Array[NodePath]([NodePath(""), NodePath("")])
+edge_rp_targets = Array[NodePath]([NodePath(""), NodePath("")])
+edge_rp_target_dirs = Array[int]([-1, -1])
+edge_rp_locals = Array[NodePath]([NodePath("RoadPoint"), NodePath("RoadPoint001")])
+edge_rp_local_dirs = Array[int]([0, 1])
+metadata/_custom_type_script = "uid://wak2gi6r7hfp"
+
+[node name="RoadPoint" type="Node3D" parent="3d_Scene/Env/RoadManager/RoadContainer"]
+transform = Transform3D(0.999736, 0, 0.0229726, 0, 1, 0, -0.0229726, 0, 0.999736, 0, 0.2, 0)
+script = ExtResource("6_jb6to")
+traffic_dir = Array[int]([2, 1])
+lanes = Array[int]([5, 5])
+next_mag = 14.1807
+lane_width = 1.0
+shoulder_width_l = 0.0
+shoulder_width_r = 0.0
+gutter_profile = Vector2(0, 0)
+prior_pt_init = NodePath("../RoadPoint001")
+metadata/_custom_type_script = "uid://c14wylkyeg8px"
+
+[node name="RoadPoint001" type="Node3D" parent="3d_Scene/Env/RoadManager/RoadContainer"]
+transform = Transform3D(0.999736, -0.000245825, 0.0229713, 0, 0.999943, 0.0107008, -0.0229726, -0.010698, 0.999679, -0.652, 0.2, -28.354)
+script = ExtResource("6_jb6to")
+traffic_dir = Array[int]([2, 1])
+lanes = Array[int]([5, 5])
+prior_mag = 14.1807
+next_mag = 14.1807
+lane_width = 1.0
+shoulder_width_l = 0.0
+shoulder_width_r = 0.0
+gutter_profile = Vector2(0, 0)
+next_pt_init = NodePath("../RoadPoint")
+
+[node name="Atmoshpere" type="Node3D" parent="3d_Scene"]
+
+[node name="Camera3D" type="Camera3D" parent="3d_Scene/Atmoshpere"]
+transform = Transform3D(1, 0, 0, 0, 0.984162, -0.177274, 0, 0.177274, 0.984162, 0, 0.57613, 0)
+environment = SubResource("Environment_4werr")
+far = 100.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="3d_Scene/Atmoshpere/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 5.96046e-08, 0, -5.96046e-08, 1, 0, 0.187362, 1.04017)
+light_color = Color(0.999167, 0.984748, 7.70092e-07, 1)
+light_energy = 1.5
+light_volumetric_fog_energy = 8.0
+spot_range = 7.0
+spot_attenuation = -2.07
+spot_angle = 30.0
+spot_angle_attenuation = 1.03527
+
+[node name="Struik" parent="3d_Scene/Atmoshpere" instance=ExtResource("7_v3aoa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1854, -0.767499, -2.6508)
+
+[node name="Node3D" parent="3d_Scene/Atmoshpere" instance=ExtResource("8_4werr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.30155, -0.241238, -1.01939)
+
+[node name="Struik2" parent="3d_Scene/Atmoshpere" instance=ExtResource("7_v3aoa")]
+transform = Transform3D(0.702377, 0, -0.711805, 0, 1, 0, 0.711805, 0, 0.702377, 2.96638, 0.0310018, -1.77463)
+
+[node name="tree 3" parent="3d_Scene/Atmoshpere" instance=ExtResource("9_4werr")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.4459, 2.38419e-07, -2.92042)
+
+[node name="Struik3" parent="3d_Scene/Atmoshpere" instance=ExtResource("7_v3aoa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64137, -0.126279, -7)
+
+[node name="Struik4" parent="3d_Scene/Atmoshpere" instance=ExtResource("7_v3aoa")]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 2.1196, -0.284231, -10.2352)
+
+[node name="Struik4" parent="3d_Scene/Atmoshpere/Struik4" instance=ExtResource("7_v3aoa")]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 5.95154, -0.106015, -3.33944)
+
+[node name="Struik6" parent="3d_Scene/Atmoshpere/Struik4" instance=ExtResource("7_v3aoa")]
+transform = Transform3D(0.76286, 0, -0.646563, 0, 1, 0, 0.646563, 0, 0.76286, 8.01128, 0.289544, -1.80749)
+
+[node name="Node3D2" parent="3d_Scene/Atmoshpere" instance=ExtResource("8_4werr")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.60268, 0, -4)
+
+[node name="tree 4" parent="3d_Scene/Atmoshpere" instance=ExtResource("9_4werr")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.21232, 0.0726455, -8.37982)
+
+[node name="Struik5" parent="3d_Scene/Atmoshpere" instance=ExtResource("7_v3aoa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.61534, -0.150352, -9.26073)
+
+[node name="Struik6" parent="3d_Scene/Atmoshpere" instance=ExtResource("7_v3aoa")]
+transform = Transform3D(0.76286, 0, -0.646563, 0, 1, 0, 0.646563, 0, 0.76286, 4.17934, 0.111328, -8.70329)
+
+[node name="Node3D3" parent="3d_Scene/Atmoshpere" instance=ExtResource("8_4werr")]
+transform = Transform3D(0.3, 0, 0, 0, 0.299996, -0.00157079, 0, 0.00157079, 0.299996, 1.76566, 0, -3.33477)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("2_2uado")
+
+[node name="START" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 2
+offset_left = -1.0
+offset_top = 415.0
+offset_right = 245.0
+offset_bottom = 473.0
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_6iokp")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_qelbj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2uado")
+text = "START"
+
+[node name="SETTINGS" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 2
+offset_left = -1.0
+offset_top = 480.0
+offset_right = 246.0
+offset_bottom = 538.0
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_6iokp")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_qelbj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2uado")
+text = "SETTINGS"
+
+[node name="EXIT" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = 221.0
+offset_right = 246.0
+offset_bottom = 280.0
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_6iokp")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_qelbj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2uado")
+text = "EXIT"
+
+[node name="GeneratedText" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(577, 124)
+scale = Vector2(0.696721, 0.696721)
+texture = ExtResource("8_o33tr")
+metadata/_edit_group_ = true
+
+[node name="tree 2" parent="." instance=ExtResource("12_6kru5")]
+transform = Transform3D(0.498823, -0.0342862, 0, 0.0342862, 0.498823, 0, 0, 0, 0.5, 1.97453, -0.134728, -12.3026)
+
+[node name="tree 1" parent="." instance=ExtResource("13_msk27")]
+transform = Transform3D(0.225619, 0, -0.389354, 0, 0.45, 0, 0.389354, 0, 0.225619, 4.63506, 0, -9.58584)
+
+[node name="tree 3" parent="." instance=ExtResource("13_msk27")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.38477, 0, -14.7369)
+
+[node name="tree 4" parent="." instance=ExtResource("12_6kru5")]
+transform = Transform3D(0.399458, 0.0208159, 0, -0.0208159, 0.399458, 0, 0, 0, 0.4, -2.3662, 0, -2.08495)
+
+[node name="tree 5" parent="." instance=ExtResource("13_msk27")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4.14054, 0, -13.4222)
+
+[node name="tree 6" parent="." instance=ExtResource("12_6kru5")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -3.34946, 0, -17.753)
+
+[connection signal="pressed" from="CanvasLayer/Control/START" to="CanvasLayer/Control" method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/SETTINGS" to="CanvasLayer/Control" method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/EXIT" to="CanvasLayer/Control" method="_on_exit_pressed"]
