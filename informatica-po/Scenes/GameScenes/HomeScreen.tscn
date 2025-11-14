@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://dchihm58leiq8" path="res://Scenes/GameScenes/home_screen.gd" id="1_2uado"]
 [ext_resource type="Script" uid="uid://dsqdf0e4bbprx" path="res://Scenes/GameScenes/buttonControl.gd" id="2_2uado"]
 [ext_resource type="Texture2D" uid="uid://buu2h0kqj86as" path="res://Textures/dry_decay_leaves_4k/textures/dry_decay_leaves_diff_4k.jpg" id="2_3wmos"]
-[ext_resource type="Script" path="res://addons/road-generator/nodes/road_manager.gd" id="3_jmol1"]
-[ext_resource type="Script" path="res://addons/road-generator/nodes/road_container.gd" id="4_jb6to"]
+[ext_resource type="Script" uid="uid://pbx83k7hsd7p" path="res://addons/road-generator/nodes/road_manager.gd" id="3_jmol1"]
+[ext_resource type="Script" uid="uid://wak2gi6r7hfp" path="res://addons/road-generator/nodes/road_container.gd" id="4_jb6to"]
 [ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="5_o33tr"]
-[ext_resource type="Script" path="res://addons/road-generator/nodes/road_point.gd" id="6_jb6to"]
+[ext_resource type="Script" uid="uid://c14wylkyeg8px" path="res://addons/road-generator/nodes/road_point.gd" id="6_jb6to"]
 [ext_resource type="PackedScene" uid="uid://dq75krv2by71" path="res://Scenes/Nature/struik.tscn" id="7_v3aoa"]
 [ext_resource type="PackedScene" uid="uid://d3uok2jb6tm3b" path="res://Scenes/Nature/bush 1.tscn" id="8_4werr"]
 [ext_resource type="Texture2D" uid="uid://5qha6a8dkosm" path="res://Textures/dry_decay_leaves_4k/textures/generated_text.png" id="8_o33tr"]
@@ -28,7 +28,7 @@ volumetric_fog_detail_spread = 3.0
 
 [sub_resource type="Animation" id="Animation_6kru5"]
 resource_name = "Light_Flicker"
-length = 15.0
+length = 30.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -37,10 +37,10 @@ tracks/0/path = NodePath(".:light_energy")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(-0.1, 1.93333, 2.1, 2.23333, 2.4, 4.2, 6.30158, 6.43333, 6.54762, 6.66479, 8.41514, 8.5469, 8.66119, 8.77835),
-"transitions": PackedFloat32Array(0.366021, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(-0.1, 1.93333, 2.1, 2.23333, 2.4, 4.2, 6.30158, 6.43333, 6.54762, 6.66479, 8.41514, 8.5469, 8.66119, 8.77835, 9.8, 10.6333),
+"transitions": PackedFloat32Array(0.366021, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.8, 0.8, 0.3, 0.5, 0.2, 0.7, 0.7, 0.1, 0.3, 0.3, 0.7, 0.1, 0.3, 0.3]
+"values": [0.8, 0.8, 0.3, 0.5, 0.2, 0.7, 0.7, 0.1, 0.3, 0.3, 0.7, 0.1, 0.3, 0.3, 0.8, 0.4]
 }
 
 [sub_resource type="Animation" id="Animation_msk27"]
@@ -65,6 +65,7 @@ _data = {
 }
 
 [sub_resource type="SystemFont" id="SystemFont_6iokp"]
+font_names = PackedStringArray("Verdana")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qelbj"]
 bg_color = Color(0, 0, 0, 0.470588)
@@ -146,6 +147,7 @@ spot_angle_attenuation = 1.03527
 libraries = {
 &"": SubResource("AnimationLibrary_8fcc5")
 }
+autoplay = "Light_Flicker"
 
 [node name="Nature" type="Node3D" parent="3d_Scene/Atmoshpere"]
 
@@ -240,6 +242,7 @@ offset_top = 415.0
 offset_right = 245.0
 offset_bottom = 473.0
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.724643, 0.724643, 0.724643, 1)
 theme_override_fonts/font = SubResource("SystemFont_6iokp")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/hover = SubResource("StyleBoxFlat_qelbj")
@@ -253,6 +256,7 @@ offset_top = 480.0
 offset_right = 246.0
 offset_bottom = 538.0
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.72549, 0.72549, 0.72549, 1)
 theme_override_fonts/font = SubResource("SystemFont_6iokp")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/hover = SubResource("StyleBoxFlat_qelbj")
@@ -269,6 +273,7 @@ offset_top = 221.0
 offset_right = 246.0
 offset_bottom = 280.0
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.72549, 0.72549, 0.72549, 1)
 theme_override_fonts/font = SubResource("SystemFont_6iokp")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/hover = SubResource("StyleBoxFlat_qelbj")
