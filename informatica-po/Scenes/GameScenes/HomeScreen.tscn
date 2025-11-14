@@ -28,7 +28,7 @@ volumetric_fog_detail_spread = 3.0
 
 [sub_resource type="Animation" id="Animation_6kru5"]
 resource_name = "Light_Flicker"
-length = 30.0
+length = 20.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -37,10 +37,10 @@ tracks/0/path = NodePath(".:light_energy")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(-0.1, 1.93333, 2.1, 2.23333, 2.4, 4.2, 6.30158, 6.43333, 6.54762, 6.66479, 8.41514, 8.5469, 8.66119, 8.77835, 9.8, 10.6333),
-"transitions": PackedFloat32Array(0.366021, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(-0.1, 1.93333, 2.1, 2.23333, 2.4, 4.2, 6.30158, 6.43333, 6.54762, 6.66479, 8.41514, 8.5469, 8.66119, 8.77835, 9.36667, 10.6333, 10.95, 11.05, 11.15, 11.22, 11.77, 13.4105, 13.5422, 13.6565, 13.7737, 14.6993, 14.831, 14.9453, 15.0625, 17.3472, 17.479, 17.5933, 17.7105, 18.2988),
+"transitions": PackedFloat32Array(0.366021, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.8, 0.8, 0.3, 0.5, 0.2, 0.7, 0.7, 0.1, 0.3, 0.3, 0.7, 0.1, 0.3, 0.3, 0.8, 0.4]
+"values": [0.8, 0.8, 0.3, 0.5, 0.2, 0.7, 0.7, 0.1, 0.3, 0.3, 0.7, 0.1, 0.3, 0.3, 0.8, 0.4, 0.4, 0.0, 0.4, 0.0, 0.7, 0.7, 0.1, 0.5, 0.3, 0.7, 0.1, 0.3, 0.3, 0.7, 0.1, 0.3, 0.3, 0.8]
 }
 
 [sub_resource type="Animation" id="Animation_msk27"]
@@ -69,6 +69,7 @@ font_names = PackedStringArray("Verdana")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qelbj"]
 bg_color = Color(0, 0, 0, 0.470588)
+border_blend = true
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 
@@ -244,7 +245,7 @@ offset_bottom = 473.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.724643, 0.724643, 0.724643, 1)
 theme_override_fonts/font = SubResource("SystemFont_6iokp")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 33
 theme_override_styles/hover = SubResource("StyleBoxFlat_qelbj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2uado")
 text = "START"
@@ -258,7 +259,7 @@ offset_bottom = 538.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.72549, 0.72549, 0.72549, 1)
 theme_override_fonts/font = SubResource("SystemFont_6iokp")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 33
 theme_override_styles/hover = SubResource("StyleBoxFlat_qelbj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2uado")
 text = "SETTINGS"
@@ -275,7 +276,7 @@ offset_bottom = 280.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.72549, 0.72549, 0.72549, 1)
 theme_override_fonts/font = SubResource("SystemFont_6iokp")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 33
 theme_override_styles/hover = SubResource("StyleBoxFlat_qelbj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2uado")
 text = "EXIT"
