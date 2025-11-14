@@ -31,6 +31,9 @@ sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
 [sub_resource type="Environment" id="Environment_0xm2m"]
 background_mode = 2
 sky = SubResource("Sky_ig7tw")
+ambient_light_color = Color(0.266575, 0.266575, 0.266575, 1)
+ambient_light_sky_contribution = 0.9
+ambient_light_energy = 2.25
 tonemap_mode = 3
 volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.61339, 0.61339, 0.61339, 1)
