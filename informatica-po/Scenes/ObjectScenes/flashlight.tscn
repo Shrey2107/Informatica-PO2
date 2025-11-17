@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://d37i6bf4utn57"]
+[gd_scene load_steps=3 format=3 uid="uid://d37i6bf4utn57"]
+
+[ext_resource type="Script" uid="uid://drp5omctmvdkj" path="res://Scenes/ObjectScenes/flashlight.gd" id="1_6lf3s"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_w7c8y"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Flashlight" type="Node3D"]
+script = ExtResource("1_6lf3s")
 
 [node name="Node3D" type="Node3D" parent="."]
 
@@ -13,8 +16,24 @@ mesh = SubResource("BoxMesh_w7c8y")
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.482545)
 light_color = Color(1, 1, 0.733333, 1)
-light_energy = 12.0
+light_energy = 0.0
 spot_range = 10.0
 spot_attenuation = 1.5
 spot_angle = 30.0
 spot_angle_attenuation = 0.34151
+
+[node name="Battery" type="ProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = 249.0
+offset_right = 147.0
+offset_bottom = 276.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1000.0
+step = 1.0
+value = 1000.0
