@@ -35,7 +35,6 @@ ambient_light_color = Color(0.266575, 0.266575, 0.266575, 1)
 ambient_light_sky_contribution = 0.9
 ambient_light_energy = 2.25
 tonemap_mode = 3
-glow_enabled = true
 fog_enabled = true
 fog_light_color = Color(0.266667, 0.266667, 0.266667, 1)
 fog_light_energy = 0.14
