@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://djc7yi57uk0md"]
+[gd_scene load_steps=25 format=3 uid="uid://djc7yi57uk0md"]
 
 [ext_resource type="Script" uid="uid://dchihm58leiq8" path="res://Scenes/GameScenes/home_screen.gd" id="1_2uado"]
 [ext_resource type="Script" uid="uid://dsqdf0e4bbprx" path="res://Scenes/GameScenes/buttonControl.gd" id="2_2uado"]
@@ -12,7 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://5qha6a8dkosm" path="res://Textures/dry_decay_leaves_4k/textures/generated_text.png" id="8_o33tr"]
 [ext_resource type="PackedScene" uid="uid://bk7dfcq6e1s7v" path="res://Scenes/Nature/tree 3.tscn" id="9_4werr"]
 [ext_resource type="PackedScene" uid="uid://bumcggyqjwo5u" path="res://Scenes/Nature/tree 2.tscn" id="12_6kru5"]
+[ext_resource type="Texture2D" uid="uid://efplrp8um2jp" path="res://Textures/Text/generated_text (7).png" id="13_cf50i"]
 [ext_resource type="PackedScene" uid="uid://bel2mtvy6pu1r" path="res://Scenes/Nature/tree 1.tscn" id="13_msk27"]
+[ext_resource type="Texture2D" uid="uid://edw7upmtgyo3" path="res://Textures/Text/generated_text (11).png" id="14_22pr7"]
+[ext_resource type="Texture2D" uid="uid://2vh3xi48ucek" path="res://Textures/Text/generated_text (9).png" id="15_g643a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_igg4g"]
 albedo_texture = ExtResource("2_3wmos")
@@ -65,7 +68,8 @@ _data = {
 }
 
 [sub_resource type="SystemFont" id="SystemFont_6iokp"]
-font_names = PackedStringArray("Verdana")
+font_names = PackedStringArray("Corbel")
+font_weight = 999
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qelbj"]
 bg_color = Color(0, 0, 0, 0.470588)
@@ -231,55 +235,68 @@ transform = Transform3D(0.239338, 0, -0.438996, 0, 0.5, 0, 0.438996, 0, 0.239338
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("2_2uado")
 
 [node name="START" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 2
 offset_left = -1.0
 offset_top = 415.0
-offset_right = 245.0
+offset_right = 272.0
 offset_bottom = 473.0
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.724643, 0.724643, 0.724643, 1)
+theme_override_colors/font_color = Color(0.621524, 0.621524, 0.621524, 1)
 theme_override_fonts/font = SubResource("SystemFont_6iokp")
 theme_override_font_sizes/font_size = 33
 theme_override_styles/hover = SubResource("StyleBoxFlat_qelbj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2uado")
-text = "START"
+icon = ExtResource("13_cf50i")
+icon_alignment = 1
 
 [node name="SETTINGS" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 2
 offset_left = -1.0
 offset_top = 480.0
-offset_right = 246.0
+offset_right = 272.0
 offset_bottom = 538.0
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.72549, 0.72549, 0.72549, 1)
+theme_override_colors/font_color = Color(0.619608, 0.619608, 0.619608, 1)
 theme_override_fonts/font = SubResource("SystemFont_6iokp")
 theme_override_font_sizes/font_size = 33
 theme_override_styles/hover = SubResource("StyleBoxFlat_qelbj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2uado")
-text = "SETTINGS"
+icon = ExtResource("14_22pr7")
+icon_alignment = 1
 
 [node name="EXIT" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -1.0
+offset_left = 3.0
 offset_top = 221.0
-offset_right = 246.0
+offset_right = 273.0
 offset_bottom = 280.0
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.72549, 0.72549, 0.72549, 1)
+theme_override_colors/font_color = Color(0.619608, 0.619608, 0.619608, 1)
 theme_override_fonts/font = SubResource("SystemFont_6iokp")
 theme_override_font_sizes/font_size = 33
 theme_override_styles/hover = SubResource("StyleBoxFlat_qelbj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2uado")
-text = "EXIT"
+icon = ExtResource("15_g643a")
+icon_alignment = 1
 
 [node name="GeneratedText" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(577, 124)
