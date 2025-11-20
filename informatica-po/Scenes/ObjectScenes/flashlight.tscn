@@ -7,6 +7,7 @@
 
 [sub_resource type="SystemFont" id="SystemFont_6t02g"]
 font_names = PackedStringArray("Book Antiqua")
+subpixel_positioning = 0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6t02g"]
 bg_color = Color(0, 0, 0, 1)
