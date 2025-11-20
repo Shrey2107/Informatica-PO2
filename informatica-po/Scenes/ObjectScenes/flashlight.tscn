@@ -1,8 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://d37i6bf4utn57"]
+[gd_scene load_steps=6 format=3 uid="uid://d37i6bf4utn57"]
 
 [ext_resource type="Script" uid="uid://drp5omctmvdkj" path="res://Scenes/ObjectScenes/flashlight.gd" id="1_6lf3s"]
+[ext_resource type="Texture2D" uid="uid://of0uqinnkqlf" path="res://Textures/UI_Folder/battery icon.png" id="2_6t02g"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_w7c8y"]
+
+[sub_resource type="SystemFont" id="SystemFont_6t02g"]
+font_names = PackedStringArray("Book Antiqua")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6t02g"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0.408329, 0.408329, 0.408329, 0.6)
+shadow_size = 4
 
 [node name="Flashlight" type="Node3D"]
 script = ExtResource("1_6lf3s")
@@ -28,12 +41,26 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -180.0
-offset_top = 249.0
-offset_right = 147.0
-offset_bottom = 276.0
+offset_left = -518.0
+offset_top = 272.0
+offset_right = -268.0
+offset_bottom = 299.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_6t02g")
+theme_override_styles/background = SubResource("StyleBoxFlat_6t02g")
 max_value = 1000.0
 step = 1.0
 value = 1000.0
+
+[node name="Battery_Icon" type="TextureRect" parent="Battery"]
+modulate = Color(0.712129, 0.712129, 0.712129, 0.72549)
+self_modulate = Color(1, 1, 1, 0.768627)
+layout_mode = 0
+offset_left = -42.0
+offset_top = -12.0
+offset_right = 8.0
+offset_bottom = 38.0
+texture = ExtResource("2_6t02g")
+expand_mode = 1
