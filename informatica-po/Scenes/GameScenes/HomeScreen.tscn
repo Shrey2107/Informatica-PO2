@@ -1,12 +1,12 @@
-[gd_scene load_steps=25 format=3 uid="uid://djc7yi57uk0md"]
+[gd_scene load_steps=37 format=3 uid="uid://djc7yi57uk0md"]
 
 [ext_resource type="Script" uid="uid://dchihm58leiq8" path="res://Scenes/GameScenes/home_screen.gd" id="1_2uado"]
 [ext_resource type="Script" uid="uid://dsqdf0e4bbprx" path="res://Scenes/GameScenes/buttonControl.gd" id="2_2uado"]
 [ext_resource type="Texture2D" uid="uid://buu2h0kqj86as" path="res://Textures/dry_decay_leaves_4k/textures/dry_decay_leaves_diff_4k.jpg" id="2_3wmos"]
-[ext_resource type="Script" path="res://addons/road-generator/nodes/road_manager.gd" id="3_jmol1"]
-[ext_resource type="Script" path="res://addons/road-generator/nodes/road_container.gd" id="4_jb6to"]
+[ext_resource type="Script" uid="uid://pbx83k7hsd7p" path="res://addons/road-generator/nodes/road_manager.gd" id="3_jmol1"]
+[ext_resource type="Script" uid="uid://wak2gi6r7hfp" path="res://addons/road-generator/nodes/road_container.gd" id="4_jb6to"]
 [ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="5_o33tr"]
-[ext_resource type="Script" path="res://addons/road-generator/nodes/road_point.gd" id="6_jb6to"]
+[ext_resource type="Script" uid="uid://c14wylkyeg8px" path="res://addons/road-generator/nodes/road_point.gd" id="6_jb6to"]
 [ext_resource type="PackedScene" uid="uid://dq75krv2by71" path="res://Scenes/Nature/struik.tscn" id="7_v3aoa"]
 [ext_resource type="PackedScene" uid="uid://d3uok2jb6tm3b" path="res://Scenes/Nature/bush 1.tscn" id="8_4werr"]
 [ext_resource type="Texture2D" uid="uid://5qha6a8dkosm" path="res://Textures/dry_decay_leaves_4k/textures/generated_text.png" id="8_o33tr"]
@@ -14,8 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://bumcggyqjwo5u" path="res://Scenes/Nature/tree 2.tscn" id="12_6kru5"]
 [ext_resource type="Texture2D" uid="uid://efplrp8um2jp" path="res://Textures/UI_Folder/generated_text (7).png" id="13_cf50i"]
 [ext_resource type="PackedScene" uid="uid://bel2mtvy6pu1r" path="res://Scenes/Nature/tree 1.tscn" id="13_msk27"]
+[ext_resource type="Texture2D" uid="uid://nyjc8qo7ac6w" path="res://Textures/UI_Folder/generated_text (14).png" id="13_ta6jp"]
 [ext_resource type="Texture2D" uid="uid://edw7upmtgyo3" path="res://Textures/UI_Folder/generated_text (11).png" id="14_22pr7"]
+[ext_resource type="Texture2D" uid="uid://fgm7sw8hnx6k" path="res://Textures/UI_Folder/generated_text (13).png" id="15_22pr7"]
 [ext_resource type="Texture2D" uid="uid://2vh3xi48ucek" path="res://Textures/UI_Folder/generated_text (9).png" id="15_g643a"]
+[ext_resource type="Texture2D" uid="uid://jqm072g4h50f" path="res://Textures/UI_Folder/generated_text (12).png" id="15_s7gfn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_igg4g"]
 albedo_texture = ExtResource("2_3wmos")
@@ -67,20 +70,41 @@ _data = {
 &"RESET": SubResource("Animation_msk27")
 }
 
-[sub_resource type="SystemFont" id="SystemFont_6iokp"]
-font_names = PackedStringArray("Corbel")
-font_weight = 999
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_alxq4"]
+texture = ExtResource("13_cf50i")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qelbj"]
-bg_color = Color(0, 0, 0, 0.470588)
-border_blend = true
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_onx6f"]
+texture = ExtResource("13_ta6jp")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2uado"]
-bg_color = Color(0, 0, 0, 0.286275)
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s7gfn"]
+texture = ExtResource("13_cf50i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uani0"]
+texture = ExtResource("13_cf50i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sxts5"]
+texture = ExtResource("14_22pr7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0fmhi"]
+texture = ExtResource("15_s7gfn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekedo"]
+texture = ExtResource("14_22pr7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ljq8"]
+texture = ExtResource("14_22pr7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tq2wm"]
+texture = ExtResource("15_g643a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g643a"]
+texture = ExtResource("15_22pr7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yknf6"]
+texture = ExtResource("15_g643a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ta6jp"]
+texture = ExtResource("15_g643a")
 
 [node name="HomeScreen" type="Node3D"]
 script = ExtResource("1_2uado")
@@ -252,32 +276,28 @@ script = ExtResource("2_2uado")
 
 [node name="START" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 2
-offset_left = -1.0
-offset_top = 415.0
-offset_right = 272.0
-offset_bottom = 473.0
+offset_left = 73.0
+offset_top = 438.0
+offset_right = 261.0
+offset_bottom = 483.0
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.621524, 0.621524, 0.621524, 1)
-theme_override_fonts/font = SubResource("SystemFont_6iokp")
-theme_override_font_sizes/font_size = 33
-theme_override_styles/hover = SubResource("StyleBoxFlat_qelbj")
-theme_override_styles/normal = SubResource("StyleBoxFlat_2uado")
-icon = ExtResource("13_cf50i")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_alxq4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_onx6f")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_s7gfn")
+theme_override_styles/normal = SubResource("StyleBoxTexture_uani0")
 icon_alignment = 1
 
 [node name="SETTINGS" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 2
-offset_left = -1.0
-offset_top = 480.0
-offset_right = 272.0
-offset_bottom = 538.0
+offset_left = 50.0
+offset_top = 496.0
+offset_right = 286.0
+offset_bottom = 542.0
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.619608, 0.619608, 0.619608, 1)
-theme_override_fonts/font = SubResource("SystemFont_6iokp")
-theme_override_font_sizes/font_size = 33
-theme_override_styles/hover = SubResource("StyleBoxFlat_qelbj")
-theme_override_styles/normal = SubResource("StyleBoxFlat_2uado")
-icon = ExtResource("14_22pr7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_sxts5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0fmhi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ekedo")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1ljq8")
 icon_alignment = 1
 
 [node name="EXIT" type="Button" parent="CanvasLayer/Control"]
@@ -285,17 +305,15 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 3.0
-offset_top = 221.0
-offset_right = 273.0
-offset_bottom = 280.0
+offset_left = 114.0
+offset_top = 230.0
+offset_right = 221.0
+offset_bottom = 276.0
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.619608, 0.619608, 0.619608, 1)
-theme_override_fonts/font = SubResource("SystemFont_6iokp")
-theme_override_font_sizes/font_size = 33
-theme_override_styles/hover = SubResource("StyleBoxFlat_qelbj")
-theme_override_styles/normal = SubResource("StyleBoxFlat_2uado")
-icon = ExtResource("15_g643a")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_tq2wm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_g643a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yknf6")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ta6jp")
 icon_alignment = 1
 
 [node name="GeneratedText" type="Sprite2D" parent="CanvasLayer"]
