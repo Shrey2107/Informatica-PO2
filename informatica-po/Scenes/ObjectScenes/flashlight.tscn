@@ -51,9 +51,9 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("SystemFont_6t02g")
 theme_override_styles/background = SubResource("StyleBoxFlat_6t02g")
-max_value = 1000.0
-step = 1.0
-value = 1000.0
+max_value = 10000.0
+step = 0.5
+value = 10000.0
 
 [node name="Battery_Icon" type="TextureRect" parent="Battery"]
 modulate = Color(0.712129, 0.712129, 0.712129, 0.72549)

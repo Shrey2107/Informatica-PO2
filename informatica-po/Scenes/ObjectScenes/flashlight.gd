@@ -9,5 +9,7 @@ func _input(event: InputEvent) -> void:
 	
 
 func _physics_process(delta: float) -> void:
+	Global.battery =1000
+	
 	if $SpotLight3D.light_energy == 12.0:
 		$Battery.value -= 1
