@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://biy4cnfchh7il"]
+[gd_scene load_steps=23 format=3 uid="uid://biy4cnfchh7il"]
 
 [ext_resource type="PackedScene" uid="uid://7653mj84oei0" path="res://models/bush_1.glb" id="1_b1ank"]
 [ext_resource type="PackedScene" uid="uid://bel2mtvy6pu1r" path="res://Scenes/Nature/tree 1.tscn" id="2_krgib"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://addons/road-generator/nodes/road_point.gd" id="9_02sgy"]
 [ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="9_krgib"]
 [ext_resource type="Script" uid="uid://chqiu1v51an5n" path="res://Scripts/player.gd" id="10_dvl8e"]
+[ext_resource type="PackedScene" uid="uid://bfb6wemwnyuhq" path="res://Scenes/GameScenes/checkpoint.tscn" id="11_b728q"]
 [ext_resource type="PackedScene" uid="uid://d37i6bf4utn57" path="res://Scenes/ObjectScenes/flashlight.tscn" id="12_x4gqf"]
 [ext_resource type="PackedScene" uid="uid://bhmj8bonoey0h" path="res://Scenes/UI-scenes/Pause_menu.tscn" id="13_x40c6"]
 
@@ -186,11 +187,13 @@ shoulder_width_l = 0.0
 shoulder_width_r = 0.0
 next_pt_init = NodePath("../RoadPoint001")
 
+[node name="Checkpoint" parent="stage" instance=ExtResource("11_b728q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.01317, 0.205786, 0)
+
 [node name="env" type="Node3D" parent="."]
 
 [node name="TestingLight" type="DirectionalLight3D" parent="env"]
 transform = Transform3D(-1.67155, -0.634395, 0.182873, 0, 0.732536, 0.633489, -0.965073, 1.0988, -0.316745, 0, 0, 0)
-visible = false
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="env"]

@@ -1,3 +1,3 @@
 extends Node
-
-var battery = 100000
+var battery = 0
+var refills = 0

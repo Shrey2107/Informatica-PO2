@@ -1,17 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfb6wemwnyuhq"]
+[gd_scene load_steps=4 format=3 uid="uid://bfb6wemwnyuhq"]
 
 [ext_resource type="Script" uid="uid://bqbuiujad7d8x" path="res://Scripts/checkpoint.gd" id="1_x67c6"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_nfy6i"]
-size = Vector3(10, 6, 10)
+[sub_resource type="BoxShape3D" id="BoxShape3D_x67c6"]
+size = Vector3(5, 3, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_x67c6"]
+size = Vector3(5, 3, 5)
 
 [node name="Checkpoint" type="Node3D"]
 script = ExtResource("1_x67c6")
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="StaticBody3D" type="Area3D" parent="."]
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_x67c6")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-shape = SubResource("BoxShape3D_nfy6i")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("BoxMesh_x67c6")
+skeleton = NodePath("")
+
+[connection signal="body_entered" from="StaticBody3D" to="." method="_on_static_body_3d_body_entered"]

@@ -1,14 +1,17 @@
 extends Node3D
 
-
-
-
-
 func _physics_process(delta):
+	#Zorgt ervoor dat we de batterij kunnen gebruiken bij de checkpoint
 	Global.battery = $Battery.value
+	
 	
 	if $SpotLight3D.light_energy == 12.0:
 		$Battery.value -= 1
+	
+	if Global.refills == 1:
+		Global.refills = 0;
+		$Battery.value = $Battery.max_value
+	
 
 
 #flashlight aan en uit zetten
