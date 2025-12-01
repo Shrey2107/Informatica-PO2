@@ -8,11 +8,11 @@ extends CharacterBody3D
 @onready var ray_cast_3d = $RayCast3D
 @onready var Camera_3d = $head/eyes/Camera3D
 
-#snelheden
+#snelheden variables
 var current_speed = 5.0
 const crouch_speed = 3.0
-const walking_speed = 5.0 #Hey werkt dit
-const sprinting_speed = 8.0 #ik hoop het
+const walking_speed = 5.0 
+const sprinting_speed = 8.0 
 const  jump_velocity = 4.5
 
 #looptoestanden
