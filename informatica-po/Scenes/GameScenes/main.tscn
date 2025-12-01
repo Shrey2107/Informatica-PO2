@@ -226,6 +226,20 @@ attributes = SubResource("CameraAttributesPractical_x4gqf")
 [node name="Flashlight" parent="player/head" instance=ExtResource("12_x4gqf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.328244, -0.742496, -0.526445)
 
+[node name="Sprintbar" type="ProgressBar" parent="player"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 54.0
+offset_top = -87.0
+offset_right = 306.0
+offset_bottom = -60.0
+grow_vertical = 0
+size_flags_horizontal = 2
+max_value = 1000.0
+step = 1.0
+value = 1000.0
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("13_x40c6")]

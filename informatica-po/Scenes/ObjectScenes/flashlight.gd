@@ -1,7 +1,6 @@
 extends Node3D
 
 func _physics_process(delta):
-	#Zorgt ervoor dat we de batterij kunnen gebruiken bij de checkpoint
 	Global.battery = $Battery.value
 	
 	

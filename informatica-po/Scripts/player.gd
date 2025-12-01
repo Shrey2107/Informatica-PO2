@@ -43,6 +43,7 @@ var crouching_depth = -0.5
 
 var lerp_speed = 10.0
 
+
 func _ready():
 	#zorgt ervoor dat het muis in het spel blijft
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -59,7 +60,14 @@ func _input(event):
 func _physics_process(delta):
 	var input_dir := Input.get_vector("left", "right", "forward", "backward")
 	
-	#bewegingstoestanden
+	#sprinten_stamina opnieuw opvullen
+	if Global.sprint_stamina == 1:
+		Global.sprint_stamina = 0
+		$Sprintbar.value = $Sprintbar.max_value
+		
+
+
+		#bewegingstoestanden
 		#crouching
 	if Input.is_action_pressed("crouch"):
 		current_speed = lerp(crouch_speed,current_speed,delta*lerp_speed)
@@ -75,11 +83,12 @@ func _physics_process(delta):
 		crouching_colision_shape.disabled = true
 		head.position.y = lerp(head.position.y,1.8,delta*lerp_speed)
 		#sprinten
-		if Input.is_action_pressed("sprint"):
+		if Input.is_action_pressed("sprint") and $Sprintbar.value >0 and input_dir != Vector2.ZERO:
 			current_speed = lerp(sprinting_speed,current_speed,delta*lerp_speed)
 			sprinting = true
 			walking = false
 			crouching = false
+			$Sprintbar.value -=1
 		#lopen
 		else:
 			current_speed = lerp(walking_speed,current_speed,delta*lerp_speed)
