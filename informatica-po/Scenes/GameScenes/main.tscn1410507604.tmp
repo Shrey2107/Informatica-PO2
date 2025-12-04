@@ -227,7 +227,6 @@ attributes = SubResource("CameraAttributesPractical_x4gqf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.328244, -0.742496, -0.526445)
 
 [node name="Sprintbar" type="ProgressBar" parent="player"]
-visible = false
 modulate = Color(1, 1, 1, 0.611765)
 self_modulate = Color(1, 1, 1, 0.607843)
 anchors_preset = 2
@@ -244,6 +243,9 @@ step = 1.0
 value = 400.0
 show_percentage = false
 
+[node name="SprintRegenTimer" type="Timer" parent="player"]
+one_shot = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("13_x40c6")]
@@ -251,3 +253,5 @@ offset_left = -556.0
 offset_top = -304.0
 offset_right = -556.0
 offset_bottom = -304.0
+
+[connection signal="timeout" from="player/SprintRegenTimer" to="player" method="_on_sprint_regen_timer_timeout"]
