@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bk7dfcq6e1s7v" path="res://Scenes/Nature/tree 3.tscn" id="4_x40c6"]
 [ext_resource type="Texture2D" uid="uid://buu2h0kqj86as" path="res://Textures/dry_decay_leaves_4k/textures/dry_decay_leaves_diff_4k.jpg" id="5_b728q"]
 [ext_resource type="PackedScene" uid="uid://dq75krv2by71" path="res://Scenes/Nature/struik.tscn" id="6_qvu0p"]
-[ext_resource type="Script" uid="uid://pbx83k7hsd7p" path="res://addons/road-generator/nodes/road_manager.gd" id="7_q24ky"]
-[ext_resource type="Script" uid="uid://wak2gi6r7hfp" path="res://addons/road-generator/nodes/road_container.gd" id="8_c4qg8"]
-[ext_resource type="Script" uid="uid://c14wylkyeg8px" path="res://addons/road-generator/nodes/road_point.gd" id="9_02sgy"]
+[ext_resource type="Script" path="res://addons/road-generator/nodes/road_manager.gd" id="7_q24ky"]
+[ext_resource type="Script" path="res://addons/road-generator/nodes/road_container.gd" id="8_c4qg8"]
+[ext_resource type="Script" path="res://addons/road-generator/nodes/road_point.gd" id="9_02sgy"]
 [ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="9_krgib"]
 [ext_resource type="Script" uid="uid://chqiu1v51an5n" path="res://Scripts/player.gd" id="10_dvl8e"]
 [ext_resource type="PackedScene" uid="uid://bfb6wemwnyuhq" path="res://Scenes/GameScenes/checkpoint.tscn" id="11_b728q"]
@@ -32,11 +32,11 @@ sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
 
 [sub_resource type="Environment" id="Environment_0xm2m"]
 background_mode = 2
-background_energy_multiplier = 0.5
+background_energy_multiplier = 0.7
 sky = SubResource("Sky_ig7tw")
 ambient_light_color = Color(0.266575, 0.266575, 0.266575, 1)
 ambient_light_sky_contribution = 0.9
-ambient_light_energy = 2.48
+ambient_light_energy = 2.7
 tonemap_mode = 4
 tonemap_exposure = 0.6
 fog_enabled = true
