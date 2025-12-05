@@ -37,8 +37,8 @@ sky = SubResource("Sky_ig7tw")
 ambient_light_color = Color(0.266575, 0.266575, 0.266575, 1)
 ambient_light_sky_contribution = 0.9
 ambient_light_energy = 2.48
-tonemap_mode = 4
-tonemap_exposure = 0.6
+tonemap_mode = 2
+tonemap_exposure = 0.5
 fog_enabled = true
 fog_light_color = Color(0.266667, 0.266667, 0.266667, 1)
 fog_light_energy = 0.14
@@ -194,7 +194,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.01317, 0.205786, 0)
 
 [node name="TestingLight" type="DirectionalLight3D" parent="env"]
 transform = Transform3D(-1.67155, -0.634395, 0.182873, 0, 0.732536, 0.633489, -0.965073, 1.0988, -0.316745, 0, 0, 0)
-visible = false
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
@@ -228,7 +227,6 @@ attributes = SubResource("CameraAttributesPractical_x4gqf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.328244, -0.742496, -0.526445)
 
 [node name="Sprintbar" type="ProgressBar" parent="player"]
-visible = false
 modulate = Color(1, 1, 1, 0.611765)
 self_modulate = Color(1, 1, 1, 0.607843)
 anchors_preset = 2
@@ -245,6 +243,9 @@ step = 1.0
 value = 400.0
 show_percentage = false
 
+[node name="SprintRegenTimer" type="Timer" parent="player"]
+one_shot = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("13_x40c6")]
@@ -252,3 +253,5 @@ offset_left = -556.0
 offset_top = -304.0
 offset_right = -556.0
 offset_bottom = -304.0
+
+[connection signal="timeout" from="player/SprintRegenTimer" to="player" method="_on_sprint_regen_timer_timeout"]

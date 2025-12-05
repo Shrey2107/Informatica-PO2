@@ -7,6 +7,7 @@ extends CharacterBody3D
 @onready var crouching_colision_shape = $crouching_colision_shape
 @onready var ray_cast_3d = $RayCast3D
 @onready var Camera_3d = $head/eyes/Camera3D
+@onready var sprint_bar := $Sprintbar
 
 #snelheden variables
 var current_speed = 5.0
@@ -15,7 +16,7 @@ const walking_speed = 5.0
 const sprinting_speed = 8.0 
 const  jump_velocity = 4.5
 
-#looptoestanden
+#looptoestanden	
 var crouching = false
 var walking = false
 var sprinting = false
@@ -37,10 +38,10 @@ var head_bobbing_current_intensity = 0.00
 var direction = Vector3.ZERO
 const mouse_sensitivty = 0.4
 
-
-
 var crouching_depth = -0.5
 
+var max_stamina := 400
+var stamina := max_stamina
 var lerp_speed = 10.0
 
 
@@ -64,9 +65,6 @@ func _physics_process(delta):
 	if Global.sprint_stamina == 1:
 		Global.sprint_stamina = 0
 		$Sprintbar.value = $Sprintbar.max_value
-		
-
-
 		#bewegingstoestanden
 		#crouching
 	if Input.is_action_pressed("crouch"):
@@ -88,13 +86,22 @@ func _physics_process(delta):
 			sprinting = true
 			walking = false
 			crouching = false
-			$Sprintbar.value -=1
+			$Sprintbar.value -= 1
+			sprint_bar.visible = sprinting or sprint_bar.value < max_stamina
+			
 		#lopen
 		else:
 			current_speed = lerp(walking_speed,current_speed,delta*lerp_speed)
 			sprinting = false
 			walking = true
 			crouching = false
+			
+			if sprint_bar.value < max_stamina:
+				$Sprintbar.value += 0.5
+				
+			if sprint_bar.value == max_stamina:
+				sprint_bar.visible = false 
+
 			
 	#hoofd beweegingen tijdens het lopen
 	if sprinting:
