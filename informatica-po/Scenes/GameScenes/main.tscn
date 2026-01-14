@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://biy4cnfchh7il"]
+[gd_scene load_steps=24 format=3 uid="uid://biy4cnfchh7il"]
 
 [ext_resource type="PackedScene" uid="uid://7653mj84oei0" path="res://models/bush_1.glb" id="1_b1ank"]
 [ext_resource type="PackedScene" uid="uid://bel2mtvy6pu1r" path="res://Scenes/Nature/tree 1.tscn" id="2_krgib"]
@@ -14,6 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://bfb6wemwnyuhq" path="res://Scenes/GameScenes/checkpoint.tscn" id="11_b728q"]
 [ext_resource type="PackedScene" uid="uid://d37i6bf4utn57" path="res://Scenes/ObjectScenes/flashlight.tscn" id="12_x4gqf"]
 [ext_resource type="PackedScene" uid="uid://bhmj8bonoey0h" path="res://Scenes/UI-scenes/Pause_menu.tscn" id="13_x40c6"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_b728q"]
+cell_height = 0.1
+agent_radius = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdnlq"]
 albedo_texture = ExtResource("5_b728q")
@@ -65,12 +69,62 @@ dof_blur_amount = 0.2
 
 [node name="stage" type="Node3D" parent="."]
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="stage"]
+[node name="Nature" type="Node" parent="stage"]
+
+[node name="Colision objects" type="Node" parent="stage/Nature"]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="stage/Nature/Colision objects"]
+navigation_mesh = SubResource("NavigationMesh_b728q")
+
+[node name="Struik" type="Node" parent="stage/Nature/Colision objects/NavigationRegion3D"]
+
+[node name="Struik2" parent="stage/Nature/Colision objects/NavigationRegion3D/Struik" instance=ExtResource("6_qvu0p")]
+transform = Transform3D(0.837032, 0, -0.547154, 0, 1, 0, 0.547154, 0, 0.837032, 4.14196, -0.105088, 4.738)
+
+[node name="Struik" parent="stage/Nature/Colision objects/NavigationRegion3D/Struik" instance=ExtResource("6_qvu0p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84981, -0.250421, 9.05093)
+
+[node name="Other" type="Node" parent="stage/Nature/Colision objects/NavigationRegion3D"]
+
+[node name="BaseGround" type="CSGBox3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other"]
+transform = Transform3D(1.85513, 0, 0, 0, 1, 0, 0, 0, 1.54319, -9.51068, -0.605088, -1.82968)
+use_collision = true
+size = Vector3(41.7764, 1, 50)
+material = SubResource("StandardMaterial3D_fdnlq")
+
+[node name="Trees" type="Node" parent="stage/Nature/Colision objects/NavigationRegion3D"]
+
+[node name="tree 1" parent="stage/Nature/Colision objects/NavigationRegion3D/Trees" instance=ExtResource("2_krgib")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.98209, -0.202966, 5.10135)
+
+[node name="tree 2" parent="stage/Nature/Colision objects/NavigationRegion3D/Trees" instance=ExtResource("3_x4gqf")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.47841, -0.175071, 6.77522)
+
+[node name="tree 3" parent="stage/Nature/Colision objects/NavigationRegion3D/Trees" instance=ExtResource("4_x40c6")]
+transform = Transform3D(0.498746, 0, 0.0353831, 0, 0.5, 0, -0.0353831, 0, 0.498746, 1.35783, -0.133444, -4.75035)
+
+[node name="tree 4" parent="stage/Nature/Colision objects/NavigationRegion3D/Trees" instance=ExtResource("3_x4gqf")]
+transform = Transform3D(0.493489, 0, 0.341275, 0, 0.6, 0, -0.341275, 0, 0.493489, 5.84656, -0.476976, 4.93529)
+
+[node name="tree 5" parent="stage/Nature/Colision objects/NavigationRegion3D/Trees" instance=ExtResource("2_krgib")]
+transform = Transform3D(0.476455, 0, -0.151626, 0, 0.5, 0, 0.151626, 0, 0.476455, -6.30457, -0.10509, -8.26706)
+
+[node name="tree 6" parent="stage/Nature/Colision objects/NavigationRegion3D/Trees" instance=ExtResource("2_krgib")]
+transform = Transform3D(0.243848, 0, -0.317078, 0, 0.4, 0, 0.317078, 0, 0.243848, 6.72237, -0.10509, -13.4503)
+
+[node name="tree 7" parent="stage/Nature/Colision objects/NavigationRegion3D/Trees" instance=ExtResource("2_krgib")]
+transform = Transform3D(-0.0430736, 0, 0.498141, 0, 0.5, 0, -0.498141, 0, -0.0430736, 4.56334, -0.105088, 7.59658)
+
+[node name="tree 8" parent="stage/Nature/Colision objects/NavigationRegion3D/Trees" instance=ExtResource("3_x4gqf")]
+transform = Transform3D(-0.259365, 0, -0.304516, 0, 0.4, 0, 0.304516, 0, -0.259365, -1.66736, -0.105088, 7.68322)
+
+[node name="tree 9" parent="stage/Nature/Colision objects/NavigationRegion3D/Trees" instance=ExtResource("2_krgib")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.75034, -0.105088, 10.3632)
+
+[node name="Floor_crouch" type="CSGBox3D" parent="stage/Nature/Colision objects/NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.90286, 1.90568, -36.8197)
 use_collision = true
 size = Vector3(20, 1, 44.1522)
-
-[node name="Nature" type="Node" parent="stage"]
 
 [node name="Bushes" type="Node" parent="stage/Nature"]
 
@@ -88,51 +142,6 @@ transform = Transform3D(0.070558, 0, -0.187141, 0, 0.2, 0, 0.187141, 0, 0.070558
 
 [node name="bush_5" parent="stage/Nature/Bushes" instance=ExtResource("1_b1ank")]
 transform = Transform3D(0.36, 0, 0, 0, 0.36, 0, 0, 0, 0.36, 9.01428, -0.377245, -3.88332)
-
-[node name="Trees" type="Node" parent="stage/Nature"]
-
-[node name="tree 1" parent="stage/Nature/Trees" instance=ExtResource("2_krgib")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.98209, -0.202966, 5.10135)
-
-[node name="tree 2" parent="stage/Nature/Trees" instance=ExtResource("3_x4gqf")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.47841, -0.175071, 6.77522)
-
-[node name="tree 3" parent="stage/Nature/Trees" instance=ExtResource("4_x40c6")]
-transform = Transform3D(0.498746, 0, 0.0353831, 0, 0.5, 0, -0.0353831, 0, 0.498746, 1.35783, -0.133444, -4.75035)
-
-[node name="tree 4" parent="stage/Nature/Trees" instance=ExtResource("3_x4gqf")]
-transform = Transform3D(0.493489, 0, 0.341275, 0, 0.6, 0, -0.341275, 0, 0.493489, 5.84656, -0.476976, 4.93529)
-
-[node name="tree 5" parent="stage/Nature/Trees" instance=ExtResource("2_krgib")]
-transform = Transform3D(0.476455, 0, -0.151626, 0, 0.5, 0, 0.151626, 0, 0.476455, -6.30457, -0.10509, -8.26706)
-
-[node name="tree 6" parent="stage/Nature/Trees" instance=ExtResource("2_krgib")]
-transform = Transform3D(0.243848, 0, -0.317078, 0, 0.4, 0, 0.317078, 0, 0.243848, 6.72237, -0.10509, -13.4503)
-
-[node name="tree 7" parent="stage/Nature/Trees" instance=ExtResource("2_krgib")]
-transform = Transform3D(-0.0430736, 0, 0.498141, 0, 0.5, 0, -0.498141, 0, -0.0430736, 4.56334, -0.105088, 7.59658)
-
-[node name="tree 8" parent="stage/Nature/Trees" instance=ExtResource("3_x4gqf")]
-transform = Transform3D(-0.259365, 0, -0.304516, 0, 0.4, 0, 0.304516, 0, -0.259365, -1.66736, -0.105088, 7.68322)
-
-[node name="tree 9" parent="stage/Nature/Trees" instance=ExtResource("2_krgib")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.75034, -0.105088, 10.3632)
-
-[node name="Other" type="Node" parent="stage/Nature"]
-
-[node name="BaseGround" type="CSGBox3D" parent="stage/Nature/Other"]
-transform = Transform3D(1.85513, 0, 0, 0, 1, 0, 0, 0, 1.54319, -9.51068, -0.605088, -1.82968)
-use_collision = true
-size = Vector3(41.7764, 1, 50)
-material = SubResource("StandardMaterial3D_fdnlq")
-
-[node name="Struik" type="Node" parent="stage/Nature"]
-
-[node name="Struik2" parent="stage/Nature/Struik" instance=ExtResource("6_qvu0p")]
-transform = Transform3D(0.837032, 0, -0.547154, 0, 1, 0, 0.547154, 0, 0.837032, 4.14196, -0.105088, 4.738)
-
-[node name="Struik" parent="stage/Nature/Struik" instance=ExtResource("6_qvu0p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84981, -0.250421, 9.05093)
 
 [node name="Road" type="Node" parent="stage"]
 
@@ -194,7 +203,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.01317, 0.205786, 0)
 
 [node name="TestingLight" type="DirectionalLight3D" parent="env"]
 transform = Transform3D(-1.67155, -0.634395, 0.182873, 0, 0.732536, 0.633489, -0.965073, 1.0988, -0.316745, 0, 0, 0)
-visible = false
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
