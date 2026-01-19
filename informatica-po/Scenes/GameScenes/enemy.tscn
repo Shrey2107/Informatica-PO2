@@ -10,7 +10,9 @@ albedo_color = Color(0.918358, 0, 0.0681677, 1)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4gyqm"]
 
 [node name="Enemy" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_7k104")
+player_path = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_7xaro")
