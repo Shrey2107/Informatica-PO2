@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwe4wrt8hby57"]
+[gd_scene load_steps=5 format=3 uid="uid://0b1gwnq3rt86"]
 
-[ext_resource type="Script" uid="uid://o646nlcb2558" path="res://Scripts/enemy.gd" id="1_7k104"]
+[ext_resource type="Script" uid="uid://o646nlcb2558" path="res://Scripts/enemy.gd" id="1_mvpfc"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7xaro"]
 
@@ -11,7 +11,7 @@ albedo_color = Color(0.918358, 0, 0.0681677, 1)
 
 [node name="Enemy" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-script = ExtResource("1_7k104")
+script = ExtResource("1_mvpfc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_7xaro")
@@ -21,6 +21,4 @@ surface_material_override/0 = SubResource("StandardMaterial3D_7k104")
 shape = SubResource("CapsuleShape3D_4gyqm")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-path_height_offset = -1.0
 avoidance_enabled = true
-radius = 0.6

@@ -1,8 +1,8 @@
 [gd_scene load_steps=25 format=3 uid="uid://biy4cnfchh7il"]
 
 [ext_resource type="PackedScene" uid="uid://7653mj84oei0" path="res://models/bush_1.glb" id="1_b1ank"]
+[ext_resource type="PackedScene" uid="uid://bg58mwg3i16c3" path="res://Scenes/GameScenes/EnemySpawner.tscn" id="2_c4qg8"]
 [ext_resource type="PackedScene" uid="uid://bel2mtvy6pu1r" path="res://Scenes/Nature/tree 1.tscn" id="2_krgib"]
-[ext_resource type="PackedScene" uid="uid://cwe4wrt8hby57" path="res://Scenes/GameScenes/enemy.tscn" id="2_q24ky"]
 [ext_resource type="PackedScene" uid="uid://bumcggyqjwo5u" path="res://Scenes/Nature/tree 2.tscn" id="3_x4gqf"]
 [ext_resource type="PackedScene" uid="uid://bk7dfcq6e1s7v" path="res://Scenes/Nature/tree 3.tscn" id="4_x40c6"]
 [ext_resource type="Texture2D" uid="uid://buu2h0kqj86as" path="res://Textures/dry_decay_leaves_4k/textures/dry_decay_leaves_diff_4k.jpg" id="5_b728q"]
@@ -79,8 +79,8 @@ navigation_mesh = SubResource("NavigationMesh_b728q")
 
 [node name="Enemy" type="Node" parent="stage/Nature/Colision objects/NavigationRegion3D"]
 
-[node name="Enemy" parent="stage/Nature/Colision objects/NavigationRegion3D/Enemy" instance=ExtResource("2_q24ky")]
-player_path = NodePath("../../../../../../player")
+[node name="EnemySpawner" parent="stage/Nature/Colision objects/NavigationRegion3D/Enemy" instance=ExtResource("2_c4qg8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.78367, 0, 0)
 
 [node name="Struik" type="Node" parent="stage/Nature/Colision objects/NavigationRegion3D"]
 
@@ -214,7 +214,7 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
 environment = SubResource("Environment_0xm2m")
 
-[node name="player" type="CharacterBody3D" parent="."]
+[node name="player" type="CharacterBody3D" parent="." groups=["player"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.16914, 0.338629, 0)
 script = ExtResource("10_dvl8e")
 

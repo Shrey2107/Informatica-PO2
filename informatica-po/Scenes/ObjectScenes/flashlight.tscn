@@ -33,8 +33,10 @@ light_color = Color(1, 1, 0.733333, 1)
 light_energy = 0.0
 spot_range = 10.0
 spot_attenuation = 1.5
-spot_angle = 30.0
+spot_angle = 20.0
 spot_angle_attenuation = 0.34151
+
+[node name="BeamOrigin" type="Node3D" parent="."]
 
 [node name="Battery" type="ProgressBar" parent="."]
 anchors_preset = 8
