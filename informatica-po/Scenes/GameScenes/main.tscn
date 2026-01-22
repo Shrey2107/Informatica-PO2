@@ -219,12 +219,12 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.169
 script = ExtResource("10_dvl8e")
 
 [node name="standing_colision_shape" type="CollisionShape3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-visible = false
+transform = Transform3D(1.4, 0, 0, 0, 1, 0, 0, 0, 1.4, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_0xm2m")
 
 [node name="crouching_colision_shape" type="CollisionShape3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.608055, 0)
+visible = false
 shape = SubResource("CapsuleShape3D_ig7tw")
 disabled = true
 
@@ -240,7 +240,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 attributes = SubResource("CameraAttributesPractical_x4gqf")
 
 [node name="Flashlight" parent="player/head" instance=ExtResource("12_x4gqf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.328244, -0.742496, -0.526445)
+transform = Transform3D(0.965926, 0.0449435, 0.254887, 0, 0.984808, -0.173648, -0.258819, 0.167731, 0.951251, 0.207257, -0.427025, -0.395806)
 
 [node name="Sprintbar" type="ProgressBar" parent="player"]
 visible = false

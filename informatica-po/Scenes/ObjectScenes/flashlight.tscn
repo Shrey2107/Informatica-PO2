@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://of0uqinnkqlf" path="res://Textures/UI_Folder/battery icon.png" id="2_6t02g"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_w7c8y"]
+size = Vector3(1, 1, 0.5)
 
 [sub_resource type="SystemFont" id="SystemFont_6t02g"]
 font_names = PackedStringArray("Book Antiqua")
@@ -28,7 +29,7 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_w7c8y")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.482545)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.258493)
 light_color = Color(1, 1, 0.733333, 1)
 light_energy = 0.0
 distance_fade_enabled = true
