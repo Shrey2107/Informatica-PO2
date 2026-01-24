@@ -35,3 +35,7 @@ func _physics_process(delta):
 	velocity = nav_agent.get_velocity()
 
 	move_and_slide()
+
+
+func die():
+	queue_free()
