@@ -1,10 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://d37i6bf4utn57"]
+[gd_scene load_steps=10 format=3 uid="uid://d37i6bf4utn57"]
 
 [ext_resource type="Script" uid="uid://drp5omctmvdkj" path="res://Scenes/ObjectScenes/flashlight.gd" id="1_6lf3s"]
 [ext_resource type="Texture2D" uid="uid://of0uqinnkqlf" path="res://Textures/UI_Folder/battery icon.png" id="2_6t02g"]
+[ext_resource type="ArrayMesh" uid="uid://dm0dx50qlb1ah" path="res://models/Flashlight.obj" id="2_ampcr"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_w7c8y"]
-size = Vector3(1, 1, 0.5)
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ampcr"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6p5hk"]
+height = 50
+invert = true
+noise = SubResource("FastNoiseLite_ampcr")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ampcr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6p5hk"]
+albedo_color = Color(0.439049, 0.439049, 0.439049, 1)
+albedo_texture = SubResource("NoiseTexture2D_6p5hk")
+metallic = 1.0
+metallic_specular = 0.0
+metallic_texture = SubResource("CanvasTexture_ampcr")
 
 [sub_resource type="SystemFont" id="SystemFont_6t02g"]
 font_names = PackedStringArray("Book Antiqua")
@@ -23,20 +37,21 @@ shadow_size = 4
 script = ExtResource("1_6lf3s")
 
 [node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0.368377)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("BoxMesh_w7c8y")
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = ExtResource("2_ampcr")
+surface_material_override/0 = SubResource("StandardMaterial3D_6p5hk")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.258493)
 light_color = Color(1, 1, 0.733333, 1)
-light_energy = 0.0
-distance_fade_enabled = true
-distance_fade_begin = 10.0
-spot_range = 10.0
+light_energy = 8.0
+light_volumetric_fog_energy = 1.8
+spot_range = 20.0
 spot_attenuation = 2.0
-spot_angle = 20.0
+spot_angle = 15.0
 spot_angle_attenuation = 0.34151
 
 [node name="BeamOrigin" type="Node3D" parent="."]

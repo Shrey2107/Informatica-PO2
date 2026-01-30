@@ -9,6 +9,9 @@ extends CharacterBody3D
 @onready var Camera_3d = $head/eyes/Camera3D
 @onready var sprint_bar := $Sprintbar
 
+@onready var WalkAudio = $PlayerAudios/Footsteps
+@onready var RunAudio = $PlayerAudios/Footsteps2
+
 #snelheden variables
 var current_speed = 5.0
 const crouch_speed = 3.0
@@ -73,13 +76,12 @@ func _physics_process(delta):
 		standing_colision_shape.disabled = true
 		crouching_colision_shape.disabled = false
 		crouching = true
-		walking = false
-		sprinting = false
 		#staan
 	elif !ray_cast_3d.is_colliding():
 		standing_colision_shape.disabled = false
 		crouching_colision_shape.disabled = true
 		head.position.y = lerp(head.position.y,1.8,delta*lerp_speed)
+		
 		#sprinten
 		if Input.is_action_pressed("sprint") and $Sprintbar.value >0 and input_dir != Vector2.ZERO:
 			current_speed = lerp(sprinting_speed,current_speed,delta*lerp_speed)
@@ -89,13 +91,14 @@ func _physics_process(delta):
 			$Sprintbar.value -= 1
 			sprint_bar.visible = sprinting or sprint_bar.value < max_stamina
 			
+
 		#lopen
 		else:
 			current_speed = lerp(walking_speed,current_speed,delta*lerp_speed)
 			sprinting = false
 			walking = true
 			crouching = false
-			
+				
 			if sprint_bar.value < max_stamina:
 				$Sprintbar.value += 0.5
 				
@@ -115,6 +118,7 @@ func _physics_process(delta):
 		head_bobbing_index += head_bobbing_crouching_speed*delta
 	
 	if input_dir != Vector2.ZERO && is_on_floor():
+		
 		head_bobbing_vector.y = sin(head_bobbing_index)
 		head_bobbing_vector.x = sin(head_bobbing_index/2)+0.5
 		
@@ -123,6 +127,7 @@ func _physics_process(delta):
 	else:
 		eyes.position.y = lerp(eyes.position.y,0.0,delta*lerp_speed)
 		eyes.position.x = lerp(eyes.position.x,0.0	,delta*lerp_speed)
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -141,3 +146,17 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, current_speed)
 
 	move_and_slide()
+	
+	if input_dir != Vector2.ZERO and is_on_floor():
+		if sprinting:
+			if not RunAudio.is_playing():
+				RunAudio.play()
+			WalkAudio.stop()
+		elif walking:
+			if not WalkAudio.is_playing():
+				WalkAudio.play()
+			RunAudio.stop()
+	else:
+		# stop audio if not moving or in air
+		WalkAudio.stop()
+		RunAudio.stop()
