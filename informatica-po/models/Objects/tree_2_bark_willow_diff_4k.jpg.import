@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g282r7txqyw6"
-path.s3tc="res://.godot/imported/tree_2_pngtree-green-leaf-for-element-png-image_14904901.png-1db5a42a31cdc5825baa013fa3ff6d78.s3tc.ctex"
+uid="uid://dpersgju3p7qk"
+path.s3tc="res://.godot/imported/tree_2_bark_willow_diff_4k.jpg-8c6e8b89f6ba94dcc3ef05a138ac6631.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f1897b2f2c83196e8f72038c48ab671e"
+"md5": "406c4497a616e28456e6642eb95be5cb"
 }
 
 [deps]
 
-source_file="res://models/tree_2_pngtree-green-leaf-for-element-png-image_14904901.png"
-dest_files=["res://.godot/imported/tree_2_pngtree-green-leaf-for-element-png-image_14904901.png-1db5a42a31cdc5825baa013fa3ff6d78.s3tc.ctex"]
+source_file="res://models/Objects/tree_2_bark_willow_diff_4k.jpg"
+dest_files=["res://.godot/imported/tree_2_bark_willow_diff_4k.jpg-8c6e8b89f6ba94dcc3ef05a138ac6631.s3tc.ctex"]
 
 [params]
 

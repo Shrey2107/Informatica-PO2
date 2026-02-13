@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df34icmr5i8hn"
-path.s3tc="res://.godot/imported/tree_3_bark_willow_diff_4k.jpg-2f1337b4ad67d5d8af4e816641575967.s3tc.ctex"
+uid="uid://c2ytbqy0oqxvk"
+path.s3tc="res://.godot/imported/tree_1_bark_willow_diff_4k.jpg-7f903b3d4cb9382c8bcc94b3055d6bfd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://models/tree_3_bark_willow_diff_4k.jpg"
-dest_files=["res://.godot/imported/tree_3_bark_willow_diff_4k.jpg-2f1337b4ad67d5d8af4e816641575967.s3tc.ctex"]
+source_file="res://models/Objects/tree_1_bark_willow_diff_4k.jpg"
+dest_files=["res://.godot/imported/tree_1_bark_willow_diff_4k.jpg-7f903b3d4cb9382c8bcc94b3055d6bfd.s3tc.ctex"]
 
 [params]
 

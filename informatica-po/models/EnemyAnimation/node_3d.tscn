@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://chopcall58xi8"]
+
+[ext_resource type="PackedScene" uid="uid://ftawgqb1oc30" path="res://models/EnemyAnimation/Zombie Walk.fbx" id="1_ptgo2"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Zombie Walk" parent="." instance=ExtResource("1_ptgo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.208133, 0)

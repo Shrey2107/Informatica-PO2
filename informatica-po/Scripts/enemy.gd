@@ -3,7 +3,7 @@ extends CharacterBody3D
 const  speed := 3.0
 
 @onready var nav_agent = $NavigationAgent3D
-
+@onready var anim_player: AnimationPlayer = $"Zombie Walk/AnimationPlayer"
 
 var player: Node3D
 
@@ -35,6 +35,7 @@ func _physics_process(delta):
 	velocity = nav_agent.get_velocity()
 
 	move_and_slide()
+
 
 
 func die():

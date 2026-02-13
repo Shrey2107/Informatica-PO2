@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg6yida5lr7vk"
-path.s3tc="res://.godot/imported/bush_1_pngtree-green-leaf-for-element-png-image_14904901.png-d5efe2c469f7d46da6bfb373cccd29fb.s3tc.ctex"
+uid="uid://bkf8apgya76wu"
+path.s3tc="res://.godot/imported/tree_3_pngtree-green-leaf-for-element-png-image_14904901.png-d67109f219acaf8d20987e69313099ff.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://models/bush_1_pngtree-green-leaf-for-element-png-image_14904901.png"
-dest_files=["res://.godot/imported/bush_1_pngtree-green-leaf-for-element-png-image_14904901.png-d5efe2c469f7d46da6bfb373cccd29fb.s3tc.ctex"]
+source_file="res://models/Objects/tree_3_pngtree-green-leaf-for-element-png-image_14904901.png"
+dest_files=["res://.godot/imported/tree_3_pngtree-green-leaf-for-element-png-image_14904901.png-d67109f219acaf8d20987e69313099ff.s3tc.ctex"]
 
 [params]
 
