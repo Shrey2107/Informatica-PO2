@@ -40,9 +40,9 @@ sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
 
 [sub_resource type="Environment" id="Environment_0xm2m"]
 background_mode = 2
-background_energy_multiplier = 0.7
+background_energy_multiplier = 3.0
 sky = SubResource("Sky_ig7tw")
-ambient_light_color = Color(0.332881, 0.332881, 0.332881, 1)
+ambient_light_color = Color(0.295867, 0.295866, 0.295866, 1)
 ambient_light_sky_contribution = 0.9
 ambient_light_energy = 2.7
 tonemap_mode = 4
@@ -212,7 +212,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.01317, 0.205786, 0)
 
 [node name="TestingLight" type="DirectionalLight3D" parent="env"]
 transform = Transform3D(-1.67155, -0.634395, 0.182873, 0, 0.732536, 0.633489, -0.965073, 1.0988, -0.316745, 0, 0, 0)
-visible = false
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
@@ -269,12 +268,14 @@ show_percentage = false
 [node name="Footsteps" type="AudioStreamPlayer3D" parent="player/PlayerAudios"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0382146, 0)
 stream = ExtResource("15_02sgy")
-volume_db = -30.271
+volume_db = -20.0
 
 [node name="Footsteps2" type="AudioStreamPlayer3D" parent="player/PlayerAudios"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0382146, 0)
 stream = ExtResource("16_02sgy")
-volume_db = 9.0
+attenuation_model = 3
+volume_db = 80.0
+max_db = 6.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
