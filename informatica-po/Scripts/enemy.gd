@@ -38,4 +38,5 @@ func _physics_process(delta):
 
 
 func die():
+	Global.score += 100
 	queue_free()

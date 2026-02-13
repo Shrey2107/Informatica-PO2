@@ -62,6 +62,7 @@ func _input(event):
 
 
 func _physics_process(delta):
+		
 	var input_dir := Input.get_vector("left", "right", "forward", "backward")
 	
 	#sprinten_stamina opnieuw opvullen
