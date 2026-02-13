@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwe4wrt8hby57"]
+[gd_scene load_steps=6 format=3 uid="uid://cwe4wrt8hby57"]
 
 [ext_resource type="Script" uid="uid://o646nlcb2558" path="res://Scripts/enemy.gd" id="1_7k104"]
+[ext_resource type="PackedScene" uid="uid://ftawgqb1oc30" path="res://models/EnemyAnimation/Zombie Walk.fbx" id="2_jrb3f"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7xaro"]
 
@@ -14,6 +15,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_7k104")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_7xaro")
 surface_material_override/0 = SubResource("StandardMaterial3D_7k104")
 
@@ -24,3 +26,6 @@ shape = SubResource("CapsuleShape3D_4gyqm")
 path_height_offset = -1.0
 avoidance_enabled = true
 radius = 0.6
+
+[node name="Zombie Walk" parent="." instance=ExtResource("2_jrb3f")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.00522757, -1.20699, 0.0530462)
