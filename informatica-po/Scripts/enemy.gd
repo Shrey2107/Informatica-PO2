@@ -57,4 +57,5 @@ func _physics_process(delta):
 		skeleton.set_bone_global_pose_override(hips_index, pose, 1.0, true)
 		
 func die():
+	Global.score += 100
 	queue_free()
