@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://drp5omctmvdkj" path="res://Scenes/ObjectScenes/flashlight.gd" id="1_6lf3s"]
 [ext_resource type="Texture2D" uid="uid://of0uqinnkqlf" path="res://Textures/UI_Folder/battery icon.png" id="2_6t02g"]
-[ext_resource type="ArrayMesh" path="res://models/Flashlight.obj" id="2_ampcr"]
+[ext_resource type="ArrayMesh" uid="uid://dm0dx50qlb1ah" path="res://models/Objects/Flashlight.obj" id="2_ampcr"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ampcr"]
 

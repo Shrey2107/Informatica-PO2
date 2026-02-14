@@ -2,7 +2,6 @@ extends Node3D
 
 @onready var Spawn_timer = $SpawnTimer
 
-
 const enemy = preload("res://Scenes/GameScenes/enemy.tscn")
 
 
@@ -16,6 +15,5 @@ func _on_spawn_timer_timeout():
 	print(Spawn_timer.wait_time)
 	get_parent().add_child(new_enemy)
 	
+	
 	new_enemy.global_position = global_position
-	
-	
