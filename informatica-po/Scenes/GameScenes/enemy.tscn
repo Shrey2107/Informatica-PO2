@@ -11,7 +11,7 @@ albedo_color = Color(0.918358, 0, 0.0681677, 1)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4gyqm"]
 
 [node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(-0.999841, 0, -0.0178538, 0, 1, 0, 0.0178538, 0, -0.999841, 0, 1, 0)
 script = ExtResource("1_7k104")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -20,6 +20,7 @@ mesh = SubResource("CapsuleMesh_7xaro")
 surface_material_override/0 = SubResource("StandardMaterial3D_7k104")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_4gyqm")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
@@ -27,5 +28,7 @@ path_height_offset = -1.0
 avoidance_enabled = true
 radius = 0.6
 
-[node name="Zombie Walk" parent="." instance=ExtResource("2_jrb3f")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.00522757, -1.20699, 0.0530462)
+[node name="ModelPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00522757, -1.20699, 0.0530462)
+
+[node name="Zombie Walk" parent="ModelPivot" instance=ExtResource("2_jrb3f")]
