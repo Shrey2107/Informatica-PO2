@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://biy4cnfchh7il"]
 
-[ext_resource type="PackedScene" uid="uid://7653mj84oei0" path="res://models/objects/bush_1.glb" id="1_b1ank"]
+[ext_resource type="PackedScene" uid="uid://7653mj84oei0" path="res://models/Objects/bush_1.glb" id="1_b1ank"]
 [ext_resource type="PackedScene" uid="uid://bg58mwg3i16c3" path="res://Scenes/GameScenes/EnemySpawner.tscn" id="2_c4qg8"]
 [ext_resource type="PackedScene" uid="uid://bel2mtvy6pu1r" path="res://Scenes/Nature/tree 1.tscn" id="2_krgib"]
 [ext_resource type="PackedScene" uid="uid://bumcggyqjwo5u" path="res://Scenes/Nature/tree 2.tscn" id="3_x4gqf"]
