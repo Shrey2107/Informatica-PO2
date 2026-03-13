@@ -1,7 +1,4 @@
-
 [gd_scene load_steps=56 format=3 uid="uid://biy4cnfchh7il"]
-[gd_scene load_steps=28 format=3 uid="uid://biy4cnfchh7il"]
-
 
 [ext_resource type="PackedScene" uid="uid://7653mj84oei0" path="res://models/Objects/bush_1.glb" id="1_b1ank"]
 [ext_resource type="PackedScene" uid="uid://bg58mwg3i16c3" path="res://Scenes/GameScenes/EnemySpawner.tscn" id="2_c4qg8"]
