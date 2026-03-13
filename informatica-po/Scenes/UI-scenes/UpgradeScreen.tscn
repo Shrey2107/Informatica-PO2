@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://brg64150kc1dx"]
+[gd_scene load_steps=0 format=3 uid="uid://brg64150kc1dx"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 process_mode = 3
