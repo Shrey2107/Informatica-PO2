@@ -15,8 +15,8 @@ extends CharacterBody3D
 #snelheden variables
 var current_speed = 5.0
 const crouch_speed = 3.0
-const walking_speed = 5.0 
-const sprinting_speed = 8.0 
+const walk_speed = 5.0 
+const sprint_speed = 8.0 
 const  jump_velocity = 4.5
 
 #looptoestanden	
@@ -64,6 +64,8 @@ func _input(event):
 func _physics_process(delta):
 	var input_dir := Input.get_vector("left", "right", "forward", "backward")
 	
+	var walking_speed = walk_speed* Global.speed_walk
+	var sprinting_speed = sprint_speed* Global.speed_sprint
 	#sprinten_stamina opnieuw opvullen
 	if Global.sprint_stamina == 1:
 		Global.sprint_stamina = 0

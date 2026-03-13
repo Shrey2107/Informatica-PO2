@@ -11,15 +11,17 @@ size = Vector3(5, 3, 5)
 [node name="Checkpoint" type="Node3D"]
 script = ExtResource("1_x67c6")
 
-[node name="StaticBody3D" type="Area3D" parent="."]
+[node name="Timer1" type="Timer" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="StaticBody3D" type="Area3D" parent="Timer1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Timer1/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("BoxShape3D_x67c6")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Timer1/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 mesh = SubResource("BoxMesh_x67c6")
 skeleton = NodePath("")
 
-[connection signal="body_entered" from="StaticBody3D" to="." method="_on_static_body_3d_body_entered"]
+[connection signal="body_entered" from="Timer1/StaticBody3D" to="." method="_on_static_body_3d_body_entered"]

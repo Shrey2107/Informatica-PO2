@@ -1,11 +1,12 @@
 extends Node3D
 
 @onready var light:= $SpotLight3D
+var base_max =1000.0
 
 
 func _physics_process(delta):
 	Global.battery = $Battery.value
-	
+	$Battery.max_value = base_max * Global.batt_eff
 	
 	if $SpotLight3D.light_energy == 12.0:
 		$Battery.value -= 1

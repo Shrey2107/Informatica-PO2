@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const  speed := 1.0
+const  speed_base := 1.0
 
 @onready var nav_agent = $NavigationAgent3D
 @onready var anim_player: AnimationPlayer = $"ModelPivot/Zombie Walk"/AnimationPlayer
@@ -29,7 +29,9 @@ func _ready():
 func _physics_process(delta):
 	if not player:
 		return
-
+	
+	var speed =speed_base*Global.enemy_speed
+	
 	nav_agent.target_position = player.global_position + offset
 	var next_point = nav_agent.get_next_path_position()
 	var desired_velocity = (next_point - global_position).normalized() * speed
@@ -58,4 +60,5 @@ func _physics_process(delta):
 		
 func die():
 	Global.score += 100
+	Global.xp +=10
 	queue_free()
