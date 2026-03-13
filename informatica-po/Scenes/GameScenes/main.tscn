@@ -1,32 +1,15 @@
-[gd_scene load_steps=56 format=3 uid="uid://biy4cnfchh7il"]
+[gd_scene load_steps=24 format=3 uid="uid://biy4cnfchh7il"]
 
 [ext_resource type="PackedScene" uid="uid://7653mj84oei0" path="res://models/Objects/bush_1.glb" id="1_b1ank"]
 [ext_resource type="PackedScene" uid="uid://bg58mwg3i16c3" path="res://Scenes/GameScenes/EnemySpawner.tscn" id="2_c4qg8"]
-[ext_resource type="Script" uid="uid://bpx8jx8p42cnl" path="res://addons/proton_scatter/src/scatter.gd" id="4_801v7"]
 [ext_resource type="Texture2D" uid="uid://buu2h0kqj86as" path="res://Textures/dry_decay_leaves_4k/textures/dry_decay_leaves_diff_4k.jpg" id="5_b728q"]
-[ext_resource type="Script" uid="uid://bpf0i58km3eja" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="5_ln2v3"]
-[ext_resource type="Script" uid="uid://hhbja7sjc3uc" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="6_jgdax"]
 [ext_resource type="PackedScene" uid="uid://dq75krv2by71" path="res://Scenes/Nature/struik.tscn" id="6_qvu0p"]
-
-[ext_resource type="Script" uid="uid://bll2p3ylaqwrs" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="7_3nnyw"]
 [ext_resource type="Script" uid="uid://pbx83k7hsd7p" path="res://addons/road-generator/nodes/road_manager.gd" id="7_q24ky"]
 [ext_resource type="Script" uid="uid://wak2gi6r7hfp" path="res://addons/road-generator/nodes/road_container.gd" id="8_c4qg8"]
-[ext_resource type="Script" uid="uid://b28dqihbpa511" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="8_ueh7n"]
 [ext_resource type="Script" uid="uid://c14wylkyeg8px" path="res://addons/road-generator/nodes/road_point.gd" id="9_02sgy"]
-[ext_resource type="Script" uid="uid://buxvs530f6b6d" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="9_yc7qy"]
-
-[ext_resource type="Script" path="res://addons/road-generator/nodes/road_manager.gd" id="7_q24ky"]
-[ext_resource type="Script" path="res://addons/road-generator/nodes/road_container.gd" id="8_c4qg8"]
-[ext_resource type="Script" path="res://addons/road-generator/nodes/road_point.gd" id="9_02sgy"]
-[ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="10_dsoec"]
-
 [ext_resource type="Script" uid="uid://chqiu1v51an5n" path="res://Scripts/player.gd" id="10_dvl8e"]
-[ext_resource type="Script" uid="uid://ckdqnl72ot8hr" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="10_nws1m"]
 [ext_resource type="PackedScene" uid="uid://bfb6wemwnyuhq" path="res://Scenes/GameScenes/checkpoint.tscn" id="11_b728q"]
-[ext_resource type="Script" uid="uid://bb3ycc8d3t55j" path="res://addons/proton_scatter/src/scatter_item.gd" id="11_r3xe8"]
 [ext_resource type="PackedScene" uid="uid://d37i6bf4utn57" path="res://Scenes/ObjectScenes/flashlight.tscn" id="12_x4gqf"]
-[ext_resource type="Script" uid="uid://xymgljukdd6h" path="res://addons/proton_scatter/src/scatter_shape.gd" id="12_ybcgd"]
-[ext_resource type="Script" uid="uid://ogoywh5bd5n1" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="13_ag1jy"]
 [ext_resource type="PackedScene" uid="uid://bhmj8bonoey0h" path="res://Scenes/UI-scenes/Pause_menu.tscn" id="13_x40c6"]
 [ext_resource type="AudioStream" uid="uid://do63wf5n1mmxe" path="res://Soundeffects/Sounds/walking-sound-effect-272246.mp3" id="15_02sgy"]
 [ext_resource type="AudioStream" uid="uid://bm5sp34y4ru4k" path="res://Soundeffects/Sounds/running-1-6846.mp3" id="16_02sgy"]
@@ -40,189 +23,6 @@ polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(0, 3, 2), PackedInt32Arr
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdnlq"]
 albedo_texture = ExtResource("5_b728q")
 uv1_triplanar = true
-
-[sub_resource type="Resource" id="Resource_5t1en"]
-script = ExtResource("8_ueh7n")
-position = Vector3(0.15, 0.15, 0.15)
-rotation = Vector3(5, 360, 5)
-scale = Vector3(0.1, 0.1, 0.1)
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = false
-reference_frame = 2
-
-[sub_resource type="Resource" id="Resource_le26f"]
-script = ExtResource("7_3nnyw")
-amount = 200
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = true
-reference_frame = 1
-
-[sub_resource type="Resource" id="Resource_3eksg"]
-script = ExtResource("9_yc7qy")
-iterations = 3
-offset_step = 0.2
-consecutive_step_multiplier = 0.75
-use_computeshader = true
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = true
-reference_frame = 0
-
-[sub_resource type="Resource" id="Resource_o638k"]
-script = ExtResource("10_nws1m")
-ray_direction = Vector3(0, -1, 0)
-ray_length = 5.0
-ray_offset = 5.0
-remove_points_on_miss = false
-align_with_collision_normal = false
-max_slope = 90.0
-collision_mask = 1
-exclude_mask = 2147483648
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = false
-reference_frame = 0
-
-[sub_resource type="Resource" id="Resource_d3n55"]
-script = ExtResource("5_ln2v3")
-stack = Array[ExtResource("6_jgdax")]([SubResource("Resource_5t1en"), SubResource("Resource_le26f"), SubResource("Resource_3eksg"), SubResource("Resource_o638k")])
-
-[sub_resource type="Resource" id="Resource_js26a"]
-script = ExtResource("13_ag1jy")
-radius = 95.0
-
-[sub_resource type="Resource" id="Resource_801v7"]
-script = ExtResource("13_ag1jy")
-radius = 50.0
-metadata/_custom_type_script = "uid://ogoywh5bd5n1"
-
-[sub_resource type="Resource" id="Resource_ln2v3"]
-script = ExtResource("7_3nnyw")
-amount = 300
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = true
-reference_frame = 1
-
-[sub_resource type="Resource" id="Resource_nws1m"]
-script = ExtResource("8_ueh7n")
-position = Vector3(0.15, 0.15, 0.15)
-rotation = Vector3(5, 360, 5)
-scale = Vector3(0.1, 0.1, 0.1)
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = false
-reference_frame = 2
-
-[sub_resource type="Resource" id="Resource_r3xe8"]
-script = ExtResource("9_yc7qy")
-iterations = 3
-offset_step = 0.2
-consecutive_step_multiplier = 0.75
-use_computeshader = true
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = true
-reference_frame = 0
-
-[sub_resource type="Resource" id="Resource_ybcgd"]
-script = ExtResource("10_nws1m")
-ray_direction = Vector3(0, -1, 0)
-ray_length = 5.0
-ray_offset = 5.0
-remove_points_on_miss = true
-align_with_collision_normal = false
-max_slope = 90.0
-collision_mask = 1
-exclude_mask = 2147483648
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = false
-reference_frame = 0
-
-[sub_resource type="Resource" id="Resource_ag1jy"]
-script = ExtResource("5_ln2v3")
-stack = Array[ExtResource("6_jgdax")]([SubResource("Resource_ln2v3"), SubResource("Resource_nws1m"), SubResource("Resource_r3xe8"), SubResource("Resource_ybcgd")])
-
-[sub_resource type="Resource" id="Resource_5ueps"]
-script = ExtResource("13_ag1jy")
-radius = 95.0
-
-[sub_resource type="Resource" id="Resource_0hli3"]
-script = ExtResource("13_ag1jy")
-radius = 50.0
-
-[sub_resource type="Resource" id="Resource_jh481"]
-script = ExtResource("7_3nnyw")
-amount = 200
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = true
-reference_frame = 1
-
-[sub_resource type="Resource" id="Resource_4denp"]
-script = ExtResource("8_ueh7n")
-position = Vector3(0.15, 0.15, 0.15)
-rotation = Vector3(5, 360, 5)
-scale = Vector3(0.1, 0.1, 0.1)
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = false
-reference_frame = 2
-
-[sub_resource type="Resource" id="Resource_c8kew"]
-script = ExtResource("9_yc7qy")
-iterations = 3
-offset_step = 0.2
-consecutive_step_multiplier = 0.75
-use_computeshader = true
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = true
-reference_frame = 0
-
-[sub_resource type="Resource" id="Resource_jgdax"]
-script = ExtResource("10_nws1m")
-ray_direction = Vector3(0, -1, 0)
-ray_length = 5.0
-ray_offset = 5.0
-remove_points_on_miss = false
-align_with_collision_normal = false
-max_slope = 90.0
-collision_mask = 1
-exclude_mask = 2147483648
-enabled = true
-override_global_seed = false
-custom_seed = 0
-restrict_height = false
-reference_frame = 0
-
-[sub_resource type="Resource" id="Resource_3nnyw"]
-script = ExtResource("5_ln2v3")
-stack = Array[ExtResource("6_jgdax")]([SubResource("Resource_jh481"), SubResource("Resource_4denp"), SubResource("Resource_c8kew"), SubResource("Resource_jgdax")])
-
-[sub_resource type="Resource" id="Resource_ueh7n"]
-script = ExtResource("13_ag1jy")
-radius = 95.0
-
-[sub_resource type="Resource" id="Resource_yc7qy"]
-script = ExtResource("13_ag1jy")
-radius = 50.0
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_k1apd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_top_color = Color(0.156863, 0.113725, 0.0745098, 1)
@@ -294,78 +94,6 @@ use_collision = true
 size = Vector3(123.468, 1, 149.882)
 material = SubResource("StandardMaterial3D_fdnlq")
 
-[node name="ProtonScatter2" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround"]
-transform = Transform3D(-0.0406587, 0, -0.397928, 0, 1.45349, 0, 0.397928, 0, -0.0406587, -41.5289, 0.878956, -3.95561)
-script = ExtResource("4_801v7")
-render_mode = 1
-modifier_stack = SubResource("Resource_d3n55")
-Performance/use_chunks = true
-Performance/chunk_dimensions = Vector3(15, 15, 15)
-metadata/_custom_type_script = "uid://bpx8jx8p42cnl"
-
-[node name="ScatterItem" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter2"]
-script = ExtResource("11_r3xe8")
-path = "uid://cwp3g52xt3dql"
-
-[node name="ScatterShape" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter2"]
-transform = Transform3D(1, 0, -3.72529e-08, 0, 1, 0, 3.72529e-08, 0, 1, -0.989319, 0, -106.573)
-script = ExtResource("12_ybcgd")
-shape = SubResource("Resource_js26a")
-
-[node name="ScatterShape2" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter2"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -2.05867, 0, -93.7707)
-script = ExtResource("12_ybcgd")
-negative = true
-shape = SubResource("Resource_801v7")
-
-[node name="ProtonScatter3" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround"]
-transform = Transform3D(-0.0406587, 0, -0.397928, 0, 1.45349, 0, 0.397928, 0, -0.0406587, -41.5289, 0.878956, -3.95561)
-script = ExtResource("4_801v7")
-modifier_stack = SubResource("Resource_ag1jy")
-Performance/use_chunks = true
-Performance/chunk_dimensions = Vector3(15, 15, 15)
-metadata/_custom_type_script = "uid://bpx8jx8p42cnl"
-
-[node name="ScatterItem" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter3"]
-script = ExtResource("11_r3xe8")
-path = "uid://7653mj84oei0"
-
-[node name="ScatterShape" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter3"]
-transform = Transform3D(1, 0, -3.72529e-08, 0, 1, 0, 3.72529e-08, 0, 1, -0.989319, 0, -106.573)
-script = ExtResource("12_ybcgd")
-shape = SubResource("Resource_5ueps")
-
-[node name="ScatterShape2" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter3"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -2.05867, 0, -93.7707)
-script = ExtResource("12_ybcgd")
-negative = true
-shape = SubResource("Resource_0hli3")
-
-[node name="Trees1" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround"]
-transform = Transform3D(0.4, 0, 0, 0, 1.45349, 0, 0, 0, 0.4, -3.29302, 0.878956, 36.2993)
-script = ExtResource("4_801v7")
-modifier_stack = SubResource("Resource_3nnyw")
-Performance/use_chunks = true
-Performance/chunk_dimensions = Vector3(15, 15, 15)
-metadata/_custom_type_script = "uid://bpx8jx8p42cnl"
-
-[node name="ScatterItem" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/Trees1"]
-script = ExtResource("11_r3xe8")
-source_scale_multiplier = 0.75
-path = "uid://bel2mtvy6pu1r"
-
-[node name="ScatterShape" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/Trees1"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 11.3445, 0, -93.7707)
-script = ExtResource("12_ybcgd")
-shape = SubResource("Resource_ueh7n")
-
-[node name="ProtonScatterShape" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/Trees1"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.990093, 0, -93.7707)
-script = ExtResource("12_ybcgd")
-negative = true
-shape = SubResource("Resource_yc7qy")
-metadata/_custom_type_script = "uid://xymgljukdd6h"
-
 [node name="Bushes" type="Node" parent="stage/Nature"]
 
 [node name="bush_1" parent="stage/Nature/Bushes" instance=ExtResource("1_b1ank")]
@@ -390,93 +118,115 @@ script = ExtResource("7_q24ky")
 
 [node name="RoadContainer" type="Node3D" parent="stage/Road/RoadManager"]
 script = ExtResource("8_c4qg8")
-material_resource = ExtResource("10_dsoec")
-use_lowpoly_preview = true
-
-physics_material = SubResource("PhysicsMaterial_k1apd")
-collision_layer = 2147483649
-collision_mask = 2147483649
 metadata/_custom_type_script = "uid://wak2gi6r7hfp"
 
+[node name="Road_001" type="Node3D" parent="stage/Road/RoadManager"]
+script = ExtResource("8_c4qg8")
+use_lowpoly_preview = true
+edge_containers = Array[NodePath]([NodePath(""), NodePath("")])
+edge_rp_targets = Array[NodePath]([NodePath(""), NodePath("")])
+edge_rp_target_dirs = Array[int]([-1, -1])
+edge_rp_locals = Array[NodePath]([NodePath("@Node3D@88118"), NodePath("@Node3D@88118")])
+edge_rp_local_dirs = Array[int]([0, 1])
 
-[node name="RP_001" type="Node3D" parent="stage/Road/RoadManager/RoadContainer"]
-transform = Transform3D(0.380308, -0.00357235, 0.924853, 0, 0.999993, 0.00386258, -0.92486, -0.00146897, 0.380305, -26.7307, 0.144912, 1.29362)
+[node name="RP_001" type="Node3D" parent="stage/Road/RoadManager/Road_001"]
+transform = Transform3D(0.995227, 0, -0.0975829, 0, 1, 0, 0.0975829, 0, 0.995227, 124.724, -0.010722, -71.8882)
 script = ExtResource("9_02sgy")
 traffic_dir = Array[int]([2, 1])
 lanes = Array[int]([5, 5])
-next_mag = 32.3637
+next_mag = 37.6915
 prior_pt_init = NodePath("../RP_002")
-next_pt_init = NodePath("../RP_008")
+next_pt_init = NodePath("../RP_010")
 
-[node name="RP_002" type="Node3D" parent="stage/Road/RoadManager/RoadContainer"]
-transform = Transform3D(0.811837, -0.00469914, 0.583866, 0, 0.999968, 0.00804807, -0.583885, -0.00653371, 0.81181, -75.9333, 0.144897, -34.5084)
+[node name="RP_002" type="Node3D" parent="stage/Road/RoadManager/Road_001"]
+transform = Transform3D(0.997185, 0, 0.0749787, 0, 1, 0, -0.0749787, 0, 0.997185, 119.069, -0.010722, -147.058)
 script = ExtResource("9_02sgy")
 traffic_dir = Array[int]([2, 1])
 lanes = Array[int]([5, 5])
-prior_mag = 41.8439
-next_mag = 32.3637
+prior_mag = 27.3493
+next_mag = 37.6915
 prior_pt_init = NodePath("../RP_003")
 next_pt_init = NodePath("../RP_001")
 
-[node name="RP_003" type="Node3D" parent="stage/Road/RoadManager/RoadContainer"]
-transform = Transform3D(0.856485, 0.00106502, -0.51617, 0, 0.999998, 0.00206331, 0.516171, -0.0017672, 0.856483, -79.152, 0.144927, -148.328)
+[node name="RP_003" type="Node3D" parent="stage/Road/RoadManager/Road_001"]
+transform = Transform3D(0.703395, -0.00744334, 0.71076, 0, 0.999945, 0.0104718, -0.710799, -0.0073658, 0.703356, 101.231, -0.010764, -206.014)
 script = ExtResource("9_02sgy")
 traffic_dir = Array[int]([2, 1])
 lanes = Array[int]([5, 5])
-prior_mag = 37.7529
-next_mag = 41.8439
+prior_mag = 25.9124
+next_mag = 27.3493
 prior_pt_init = NodePath("../RP_004")
 next_pt_init = NodePath("../RP_002")
 
-[node name="RP_004" type="Node3D" parent="stage/Road/RoadManager/RoadContainer"]
-transform = Transform3D(0.39931, 0.0067355, -0.916791, 0.00223944, 0.999963, 0.00832196, 0.916813, -0.00537618, 0.39928, -35.5785, 0.144912, -184.267)
+[node name="RP_004" type="Node3D" parent="stage/Road/RoadManager/Road_001"]
+transform = Transform3D(0.132256, -0.00691993, 0.991191, 0, 0.999976, 0.00698126, -0.991216, -0.000923316, 0.132253, 64.1257, -0.010722, -224.019)
 script = ExtResource("9_02sgy")
 traffic_dir = Array[int]([2, 1])
 lanes = Array[int]([5, 5])
-prior_mag = 45.1674
-next_mag = 37.7529
+prior_mag = 39.78
+next_mag = 25.9124
 prior_pt_init = NodePath("../RP_005")
 next_pt_init = NodePath("../RP_003")
 
-[node name="RP_005" type="Node3D" parent="stage/Road/RoadManager/RoadContainer"]
-transform = Transform3D(-0.476324, 9.86864e-05, -0.87927, 3.13425e-12, 1, 0.000112237, 0.87927, 5.34611e-05, -0.476324, 67.6629, 0.144927, -170.913)
+[node name="RP_005" type="Node3D" parent="stage/Road/RoadManager/Road_001"]
+transform = Transform3D(-0.306945, -0.00584147, 0.951709, 0, 0.999981, 0.00613776, -0.951727, 0.00188395, -0.306939, -30.9514, -0.010722, -215.635)
 script = ExtResource("9_02sgy")
 traffic_dir = Array[int]([2, 1])
 lanes = Array[int]([5, 5])
-prior_mag = 38.0947
-next_mag = 45.1674
+prior_mag = 33.3899
+next_mag = 39.78
 prior_pt_init = NodePath("../RP_006")
 next_pt_init = NodePath("../RP_004")
 
-[node name="RP_006" type="Node3D" parent="stage/Road/RoadManager/RoadContainer"]
-transform = Transform3D(-0.98979, 0.00152507, -0.142528, 0, 0.999943, 0.0106995, 0.142536, 0.0105903, -0.989733, 112.936, 0.144927, -95.9482)
+[node name="RP_006" type="Node3D" parent="stage/Road/RoadManager/Road_001"]
+transform = Transform3D(-0.850742, -0.00410766, 0.525568, 0, 0.999969, 0.00781542, -0.525584, 0.0066489, -0.850716, -90.3714, -0.010722, -179.279)
 script = ExtResource("9_02sgy")
 traffic_dir = Array[int]([2, 1])
 lanes = Array[int]([5, 5])
-prior_mag = 37.1339
-next_mag = 38.0947
+prior_mag = 40.4076
+next_mag = 33.3899
 prior_pt_init = NodePath("../RP_007")
 next_pt_init = NodePath("../RP_005")
 
-[node name="RP_007" type="Node3D" parent="stage/Road/RoadManager/RoadContainer"]
-transform = Transform3D(-0.798488, -0.0015221, 0.602008, 0, 0.999997, 0.00252837, -0.60201, 0.00201887, -0.798486, 91.7408, 0.144897, -22.7759)
+[node name="RP_007" type="Node3D" parent="stage/Road/RoadManager/Road_001"]
+transform = Transform3D(-0.998971, -0.000193944, 0.0453643, 0, 0.999991, 0.00427522, -0.0453647, 0.00427082, -0.998961, -103.514, -0.010722, -101.863)
 script = ExtResource("9_02sgy")
 traffic_dir = Array[int]([2, 1])
 lanes = Array[int]([5, 5])
-prior_mag = 24.3427
-next_mag = 37.1339
+prior_mag = 47.5893
+next_mag = 40.4076
 prior_pt_init = NodePath("../RP_008")
 next_pt_init = NodePath("../RP_006")
 
-[node name="RP_008" type="Node3D" parent="stage/Road/RoadManager/RoadContainer"]
-transform = Transform3D(-0.474324, -0.0144254, 0.880232, 0, 0.999866, 0.0163859, -0.880351, 0.00777224, -0.47426, 46.9196, 0.144912, 11.7366)
+[node name="RP_008" type="Node3D" parent="stage/Road/RoadManager/Road_001"]
+transform = Transform3D(-0.958282, 0.00173181, -0.28582, 0, 0.999982, 0.00605899, 0.285825, 0.00580622, -0.958264, -88.1975, -0.010722, -7.42297)
 script = ExtResource("9_02sgy")
 traffic_dir = Array[int]([2, 1])
 lanes = Array[int]([5, 5])
-prior_mag = 24.3427
-next_mag = 24.3427
-prior_pt_init = NodePath("../RP_001")
+prior_mag = 49.5528
+next_mag = 47.5893
+prior_pt_init = NodePath("../RP_009")
 next_pt_init = NodePath("../RP_007")
+
+[node name="RP_009" type="Node3D" parent="stage/Road/RoadManager/Road_001"]
+transform = Transform3D(-0.0296966, 0.00278631, -0.999555, 0, 0.999996, 0.00278754, 0.999559, 8.27804e-05, -0.0296964, 7.74084, -0.010722, 42.1898)
+script = ExtResource("9_02sgy")
+traffic_dir = Array[int]([2, 1])
+lanes = Array[int]([5, 5])
+prior_mag = 46.0195
+next_mag = 49.5528
+prior_pt_init = NodePath("../RP_010")
+next_pt_init = NodePath("../RP_008")
+
+[node name="RP_010" type="Node3D" parent="stage/Road/RoadManager/Road_001"]
+transform = Transform3D(0.509204, 0.0064242, -0.860622, 0, 0.999972, 0.00746439, 0.860646, -0.0038009, 0.50919, 96.5979, -0.010722, 18.1993)
+script = ExtResource("9_02sgy")
+traffic_dir = Array[int]([2, 1])
+lanes = Array[int]([5, 5])
+prior_mag = 46.0195
+next_mag = 46.0195
+prior_pt_init = NodePath("../RP_001")
+next_pt_init = NodePath("../RP_009")
 
 [node name="Checkpoint" parent="stage" instance=ExtResource("11_b728q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.01317, 0.205786, 0)
@@ -485,14 +235,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.01317, 0.205786, 0)
 
 [node name="TestingLight" type="DirectionalLight3D" parent="env"]
 transform = Transform3D(-1.67155, -0.634395, 0.182873, 0, 0.732536, 0.633489, -0.965073, 1.0988, -0.316745, 0, 0, 0)
-visible = false
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
 environment = SubResource("Environment_0xm2m")
 
 [node name="player" type="CharacterBody3D" parent="." groups=["player"]]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.16914, 0.338629, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 121.654, 0.338629, -109.204)
 script = ExtResource("10_dvl8e")
 
 [node name="standing_colision_shape" type="CollisionShape3D" parent="player"]
