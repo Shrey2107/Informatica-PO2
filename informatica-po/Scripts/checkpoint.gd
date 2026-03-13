@@ -13,8 +13,11 @@ func _ready():
 	start_y = position.y
 	
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 7dc14f073568fa64dd5aad3912db947b899fd45d
 func _on_static_body_3d_body_entered(body: Node3D) -> void:
 	print("Something entered:", body.name)
 	print(colision)
@@ -31,6 +34,12 @@ func _on_static_body_3d_body_entered(body: Node3D) -> void:
 		visible = false # hide when picked up
 
 
+<<<<<<< HEAD
+=======
+func _on_timer_timeout() -> void:
+	colision = 0
+	visible = true # show when ready again
+>>>>>>> 7dc14f073568fa64dd5aad3912db947b899fd45d
 
 
 # Called every frame
