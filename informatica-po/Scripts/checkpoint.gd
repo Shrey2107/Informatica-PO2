@@ -13,12 +13,6 @@ func _ready():
 	start_y = position.y
 	
 
-
-
-
-
-
-
 func _on_static_body_3d_body_entered(body: Node3D) -> void:
 	if colision == 0 and body.is_in_group("Player"):
 		colision = 1
@@ -34,7 +28,6 @@ func _on_static_body_3d_body_entered(body: Node3D) -> void:
 func _on_timer_timeout() -> void:
 	colision = 0
 	visible = true # show when ready again
-	queue_free()  # deletes this node
 
 
 # Called every frame

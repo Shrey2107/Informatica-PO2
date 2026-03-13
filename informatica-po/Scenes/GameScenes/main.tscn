@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://buu2h0kqj86as" path="res://Textures/dry_decay_leaves_4k/textures/dry_decay_leaves_diff_4k.jpg" id="5_b728q"]
 [ext_resource type="PackedScene" uid="uid://dq75krv2by71" path="res://Scenes/Nature/struik.tscn" id="6_qvu0p"]
 [ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="7_c4qg8"]
-[ext_resource type="Script" path="res://addons/road-generator/nodes/road_manager.gd" id="7_q24ky"]
+[ext_resource type="Script" uid="uid://pbx83k7hsd7p" path="res://addons/road-generator/nodes/road_manager.gd" id="7_q24ky"]
 [ext_resource type="Script" uid="uid://wak2gi6r7hfp" path="res://addons/road-generator/nodes/road_container.gd" id="8_c4qg8"]
-[ext_resource type="Script" path="res://addons/road-generator/nodes/road_point.gd" id="9_02sgy"]
+[ext_resource type="Script" uid="uid://c14wylkyeg8px" path="res://addons/road-generator/nodes/road_point.gd" id="9_02sgy"]
 [ext_resource type="Script" uid="uid://chqiu1v51an5n" path="res://Scripts/player.gd" id="10_dvl8e"]
 [ext_resource type="PackedScene" uid="uid://bfb6wemwnyuhq" path="res://Scenes/GameScenes/checkpoint.tscn" id="11_b728q"]
 [ext_resource type="PackedScene" uid="uid://d37i6bf4utn57" path="res://Scenes/ObjectScenes/flashlight.tscn" id="12_x4gqf"]
@@ -231,7 +231,10 @@ prior_pt_init = NodePath("../RP_001")
 next_pt_init = NodePath("../RP_009")
 
 [node name="Checkpoint" parent="stage" instance=ExtResource("11_b728q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122.144, 0.0333731, -98.8602)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.017, 0.0333731, -98.8602)
+
+[node name="Checkpoint2" parent="stage" instance=ExtResource("11_b728q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -103.888, 0.0333731, -98.8602)
 
 [node name="env" type="Node3D" parent="."]
 
