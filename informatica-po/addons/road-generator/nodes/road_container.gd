@@ -1217,6 +1217,8 @@ func _check_migrate_points():
 	push_warning("Perofrmed a one-time move of %s point(s) from points to RoadContainer parent %s" % [
 		moved_pts, self.name
 	])
+	
+	
 
 
 #endregion

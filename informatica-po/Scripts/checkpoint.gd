@@ -7,6 +7,17 @@ func _ready():
 	
 	
 
+var float_speed = 2.0
+var float_height = 0.1
+var rotate_speed = 1.5
+
+var start_y
+
+
+func _ready():
+	start_y = position.y
+
+
 func _on_static_body_3d_body_entered(body: Node3D) -> void:
 	if colision == 0 and body.is_in_group("Player"):
 		colision = 1
@@ -22,3 +33,14 @@ func _on_static_body_3d_body_entered(body: Node3D) -> void:
 func _on_timer_timeout() -> void:
 	colision = 0
 	visible = true # show when ready again
+		queue_free()  # deletes this node
+
+
+# Called every frame
+func _process(delta: float) -> void:
+
+	# rotate battery
+	rotate_y(rotate_speed * delta)
+
+	# floating animation
+	position.y = start_y + sin(Time.get_ticks_msec() * 0.002 * float_speed) * float_height
