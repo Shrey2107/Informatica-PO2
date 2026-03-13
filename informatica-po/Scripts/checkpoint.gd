@@ -2,20 +2,21 @@ extends Node3D
 
 var colision: int = 1 # 1 = on cooldown, 0 = ready
 
-func _ready():
-	visible = false # Start hidden
-	
-	
-
 var float_speed = 2.0
 var float_height = 0.1
 var rotate_speed = 1.5
 
 var start_y
 
-
 func _ready():
+	visible = false # Start hidden
 	start_y = position.y
+	
+
+
+
+
+
 
 
 func _on_static_body_3d_body_entered(body: Node3D) -> void:
@@ -33,7 +34,7 @@ func _on_static_body_3d_body_entered(body: Node3D) -> void:
 func _on_timer_timeout() -> void:
 	colision = 0
 	visible = true # show when ready again
-		queue_free()  # deletes this node
+	queue_free()  # deletes this node
 
 
 # Called every frame

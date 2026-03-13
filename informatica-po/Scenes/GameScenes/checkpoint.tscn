@@ -11,18 +11,16 @@ script = ExtResource("1_x67c6")
 
 [node name="Timer1" type="Timer" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 1, 0, 0, 0, 0.2, 0, 1.5, 0)
 shape = SubResource("BoxShape3D_x67c6")
 
-[node name="Sketchfab_Scene" parent="StaticBody3D" instance=ExtResource("2_nfy6i")]
+[node name="StaticBody3D#Sketchfab_Scene" parent="." instance=ExtResource("2_nfy6i")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 8.74228e-08, 0, -8.74228e-08, 0.5, 0, 0.426371, 0)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="StaticBody3D/Sketchfab_Scene"]
+[node name="StaticBody3D_Sketchfab_Scene#OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.15316, 2.01625e-07)
 light_color = Color(0.986923, 0.957798, 0, 1)
 light_energy = 2.809
 light_volumetric_fog_energy = 2.252
 omni_range = 2.5
-
-[connection signal="body_entered" from="Timer1/StaticBody3D" to="." method="_on_static_body_3d_body_entered"]
