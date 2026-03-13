@@ -1,4 +1,7 @@
+
 [gd_scene load_steps=56 format=3 uid="uid://biy4cnfchh7il"]
+[gd_scene load_steps=28 format=3 uid="uid://biy4cnfchh7il"]
+
 
 [ext_resource type="PackedScene" uid="uid://7653mj84oei0" path="res://models/Objects/bush_1.glb" id="1_b1ank"]
 [ext_resource type="PackedScene" uid="uid://bg58mwg3i16c3" path="res://Scenes/GameScenes/EnemySpawner.tscn" id="2_c4qg8"]
@@ -7,12 +10,19 @@
 [ext_resource type="Script" uid="uid://bpf0i58km3eja" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="5_ln2v3"]
 [ext_resource type="Script" uid="uid://hhbja7sjc3uc" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="6_jgdax"]
 [ext_resource type="PackedScene" uid="uid://dq75krv2by71" path="res://Scenes/Nature/struik.tscn" id="6_qvu0p"]
+
 [ext_resource type="Script" uid="uid://bll2p3ylaqwrs" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="7_3nnyw"]
 [ext_resource type="Script" uid="uid://pbx83k7hsd7p" path="res://addons/road-generator/nodes/road_manager.gd" id="7_q24ky"]
 [ext_resource type="Script" uid="uid://wak2gi6r7hfp" path="res://addons/road-generator/nodes/road_container.gd" id="8_c4qg8"]
 [ext_resource type="Script" uid="uid://b28dqihbpa511" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="8_ueh7n"]
 [ext_resource type="Script" uid="uid://c14wylkyeg8px" path="res://addons/road-generator/nodes/road_point.gd" id="9_02sgy"]
 [ext_resource type="Script" uid="uid://buxvs530f6b6d" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="9_yc7qy"]
+
+[ext_resource type="Script" path="res://addons/road-generator/nodes/road_manager.gd" id="7_q24ky"]
+[ext_resource type="Script" path="res://addons/road-generator/nodes/road_container.gd" id="8_c4qg8"]
+[ext_resource type="Script" path="res://addons/road-generator/nodes/road_point.gd" id="9_02sgy"]
+[ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="10_dsoec"]
+
 [ext_resource type="Script" uid="uid://chqiu1v51an5n" path="res://Scripts/player.gd" id="10_dvl8e"]
 [ext_resource type="Script" uid="uid://ckdqnl72ot8hr" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="10_nws1m"]
 [ext_resource type="PackedScene" uid="uid://bfb6wemwnyuhq" path="res://Scenes/GameScenes/checkpoint.tscn" id="11_b728q"]
@@ -380,15 +390,18 @@ transform = Transform3D(0.36, 0, 0, 0, 0.36, 0, 0, 0, 0.36, 9.01428, -0.377245, 
 
 [node name="RoadManager" type="Node3D" parent="stage/Road"]
 script = ExtResource("7_q24ky")
-metadata/_custom_type_script = "uid://pbx83k7hsd7p"
 
 [node name="RoadContainer" type="Node3D" parent="stage/Road/RoadManager"]
 script = ExtResource("8_c4qg8")
+material_resource = ExtResource("10_dsoec")
 use_lowpoly_preview = true
+<<<<<<< HEAD
 physics_material = SubResource("PhysicsMaterial_k1apd")
 collision_layer = 2147483649
 collision_mask = 2147483649
 metadata/_custom_type_script = "uid://wak2gi6r7hfp"
+=======
+>>>>>>> 79e62e027f9eb9634cfff171ca005902b2954864
 
 [node name="RP_001" type="Node3D" parent="stage/Road/RoadManager/RoadContainer"]
 transform = Transform3D(0.380308, -0.00357235, 0.924853, 0, 0.999993, 0.00386258, -0.92486, -0.00146897, 0.380305, -26.7307, 0.144912, 1.29362)
