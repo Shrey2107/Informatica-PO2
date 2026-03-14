@@ -1,6 +1,6 @@
 extends Node3D
 
-var colision: int = 1 # 1 = on cooldown, 0 = ready
+var colision: int = 0 # 1 = on cooldown, 0 = ready
 
 var float_speed = 2.0
 var float_height = 0.1
@@ -9,12 +9,21 @@ var rotate_speed = 1.5
 var start_y
 
 func _ready():
-	visible = false # Start hidden
+	visible = true # Start hidden
 	start_y = position.y
 	
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 7dc14f073568fa64dd5aad3912db947b899fd45d
 func _on_static_body_3d_body_entered(body: Node3D) -> void:
-	if colision == 0 and body.is_in_group("Player"):
+	print("Something entered:", body.name)
+	print(colision)
+	
+	if colision == 0 and body.is_in_group("player"):
+		print("Refill:", Global.refills)
 		colision = 1
 		var time = 60 * Global.batt_spawn_mult
 		time = clamp(time, 5, 60)
@@ -25,9 +34,12 @@ func _on_static_body_3d_body_entered(body: Node3D) -> void:
 		visible = false # hide when picked up
 
 
+<<<<<<< HEAD
+=======
 func _on_timer_timeout() -> void:
 	colision = 0
 	visible = true # show when ready again
+>>>>>>> 7dc14f073568fa64dd5aad3912db947b899fd45d
 
 
 # Called every frame
@@ -38,3 +50,9 @@ func _process(delta: float) -> void:
 
 	# floating animation
 	position.y = start_y + sin(Time.get_ticks_msec() * 0.002 * float_speed) * float_height
+
+
+
+func _on_timer_1_timeout():
+	colision = 0
+	visible = true # show when ready again

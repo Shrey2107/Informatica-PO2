@@ -79,6 +79,20 @@ navigation_mesh = SubResource("NavigationMesh_b728q")
 [node name="EnemySpawner" parent="stage/Nature/Colision objects/NavigationRegion3D/Enemy" instance=ExtResource("2_c4qg8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.78367, 0, 0)
 
+<<<<<<< HEAD
+[node name="Struik" type="Node" parent="stage/Nature/Colision objects/NavigationRegion3D"]
+
+[node name="Struik2" parent="stage/Nature/Colision objects/NavigationRegion3D/Struik" instance=ExtResource("6_qvu0p")]
+transform = Transform3D(0.837032, 0, -0.547154, 0, 1, 0, 0.547154, 0, 0.837032, 4.14196, -0.105088, 4.738)
+
+[node name="Struik" parent="stage/Nature/Colision objects/NavigationRegion3D/Struik" instance=ExtResource("6_qvu0p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84981, -0.250421, 9.05093)
+
+[node name="Struik3" parent="stage/Nature/Colision objects/NavigationRegion3D/Struik" instance=ExtResource("6_qvu0p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122, 0, -90.6664)
+
+=======
+>>>>>>> 7dc14f073568fa64dd5aad3912db947b899fd45d
 [node name="Other" type="Node" parent="stage/Nature/Colision objects/NavigationRegion3D"]
 
 [node name="BaseGround" type="CSGBox3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other"]
@@ -214,15 +228,24 @@ prior_pt_init = NodePath("../RP_001")
 next_pt_init = NodePath("../RP_009")
 
 [node name="Checkpoint" parent="stage" instance=ExtResource("11_b728q")]
+<<<<<<< HEAD
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122.144, 0.033, 1)
+
+[node name="Checkpoint2" parent="stage" instance=ExtResource("11_b728q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122.144, 0.0333731, -98.8602)
+=======
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.017, 0.0333731, -98.8602)
 
 [node name="Checkpoint2" parent="stage" instance=ExtResource("11_b728q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -103.888, 0.0333731, -98.8602)
+>>>>>>> 7dc14f073568fa64dd5aad3912db947b899fd45d
 
 [node name="env" type="Node3D" parent="."]
 
 [node name="TestingLight" type="DirectionalLight3D" parent="env"]
 transform = Transform3D(-1.67155, -0.634395, 0.182873, 0, 0.732536, 0.633489, -0.965073, 1.0988, -0.316745, 0, 0, 0)
+light_energy = 3.0
+light_volumetric_fog_energy = 0.0
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="env"]

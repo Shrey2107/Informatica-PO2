@@ -14,8 +14,7 @@ func _physics_process(delta):
 		Global.xp -= get_xp_needed(level)
 		level_up()
 
-	print(Global.xp)
-	print(Global.level)
+
 
 
 func level_up():
