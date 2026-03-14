@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const  speed_base := 1.0
+const  speed_base := 4.0
 
 @onready var nav_agent = $NavigationAgent3D
 @onready var anim_player: AnimationPlayer = $"ModelPivot/Zombie Walk"/AnimationPlayer
@@ -27,11 +27,23 @@ func _ready():
 
 
 func _physics_process(delta):
+	if Global.game_over_active:
+		# Stop movement and animations
+		nav_agent.velocity = Vector3.ZERO
+		velocity = Vector3.ZERO
+		if anim_player.is_playing():
+			anim_player.stop()
 	if not player:
 		return
-	
-	var speed =speed_base*Global.enemy_speed
-	
+
+	# Check distance to player
+	var dist_to_player = global_position.distance_to(player.global_position)
+	if dist_to_player > 75.0:
+		queue_free()  # self-destruct if too far
+		return  # skip the rest of the logic
+
+	var speed = speed_base * Global.enemy_speed
+
 	nav_agent.target_position = player.global_position + offset
 	var next_point = nav_agent.get_next_path_position()
 	var desired_velocity = (next_point - global_position).normalized() * speed
@@ -41,13 +53,13 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-	#Rotates to face the player
+	# Rotates to face the player
 	if velocity.length() > 0.1:
 		var direction = velocity.normalized()
 		var target_yaw = atan2(direction.x, direction.z)
 		rotation.y = lerp_angle(rotation.y, target_yaw, 6.0 * delta)
 
-# Get the Animation resource
+	# Play walk animation
 	if velocity.length() > 0.1:
 		if anim_player.current_animation != "mixamo_com":
 			anim_player.play("mixamo_com")

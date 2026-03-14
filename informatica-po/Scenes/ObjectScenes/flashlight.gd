@@ -16,15 +16,18 @@ func _physics_process(delta):
 	if Global.refills == 1:
 		Global.refills = 0;
 		$Battery.value = $Battery.max_value
-	
+		
+	if Global.game_over_active:
+		$SpotLight3D.light_energy = 0.0
 
 
 #flashlight aan en uit zetten
 func _input(event):
-	if Input.is_action_pressed("Toggle flashlight") and Global.battery >0 :
-		$SpotLight3D.light_energy = 12.0
-	else:
-		$SpotLight3D.light_energy = 0.0
+		if Input.is_action_pressed("Toggle flashlight") and Global.battery >0 :
+			$SpotLight3D.light_energy = 12.0
+		else:
+			$SpotLight3D.light_energy = 0.0
+			
 	
 	
 func kill_enemies_in_light():

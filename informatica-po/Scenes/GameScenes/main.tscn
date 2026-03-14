@@ -1,21 +1,32 @@
-[gd_scene load_steps=25 format=3 uid="uid://biy4cnfchh7il"]
+[gd_scene load_steps=96 format=3 uid="uid://biy4cnfchh7il"]
 
 [ext_resource type="PackedScene" uid="uid://7653mj84oei0" path="res://models/Objects/bush_1.glb" id="1_b1ank"]
 [ext_resource type="PackedScene" uid="uid://bg58mwg3i16c3" path="res://Scenes/GameScenes/EnemySpawner.tscn" id="2_c4qg8"]
+[ext_resource type="Script" uid="uid://bpx8jx8p42cnl" path="res://addons/proton_scatter/src/scatter.gd" id="4_4denp"]
 [ext_resource type="Texture2D" uid="uid://buu2h0kqj86as" path="res://Textures/dry_decay_leaves_4k/textures/dry_decay_leaves_diff_4k.jpg" id="5_b728q"]
+[ext_resource type="Script" uid="uid://bpf0i58km3eja" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="5_c8kew"]
+[ext_resource type="Script" uid="uid://hhbja7sjc3uc" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="6_801v7"]
 [ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="7_c4qg8"]
+[ext_resource type="Script" uid="uid://bll2p3ylaqwrs" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="7_ln2v3"]
 [ext_resource type="Script" uid="uid://pbx83k7hsd7p" path="res://addons/road-generator/nodes/road_manager.gd" id="7_q24ky"]
 [ext_resource type="Script" uid="uid://wak2gi6r7hfp" path="res://addons/road-generator/nodes/road_container.gd" id="8_c4qg8"]
+[ext_resource type="Script" uid="uid://b28dqihbpa511" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="8_jgdax"]
 [ext_resource type="Script" uid="uid://c14wylkyeg8px" path="res://addons/road-generator/nodes/road_point.gd" id="9_02sgy"]
+[ext_resource type="Script" uid="uid://buxvs530f6b6d" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="9_3nnyw"]
 [ext_resource type="Script" uid="uid://chqiu1v51an5n" path="res://Scripts/player.gd" id="10_dvl8e"]
+[ext_resource type="Script" uid="uid://ckdqnl72ot8hr" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="10_ueh7n"]
 [ext_resource type="PackedScene" uid="uid://bfb6wemwnyuhq" path="res://Scenes/GameScenes/checkpoint.tscn" id="11_b728q"]
+[ext_resource type="Script" uid="uid://bb3ycc8d3t55j" path="res://addons/proton_scatter/src/scatter_item.gd" id="11_yc7qy"]
+[ext_resource type="Script" uid="uid://xymgljukdd6h" path="res://addons/proton_scatter/src/scatter_shape.gd" id="12_nws1m"]
 [ext_resource type="PackedScene" uid="uid://d37i6bf4utn57" path="res://Scenes/ObjectScenes/flashlight.tscn" id="12_x4gqf"]
+[ext_resource type="Script" uid="uid://bo5e65a0b04x1" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="13_r3xe8"]
 [ext_resource type="PackedScene" uid="uid://bhmj8bonoey0h" path="res://Scenes/UI-scenes/Pause_menu.tscn" id="13_x40c6"]
 [ext_resource type="AudioStream" uid="uid://do63wf5n1mmxe" path="res://Soundeffects/Sounds/walking-sound-effect-272246.mp3" id="15_02sgy"]
 [ext_resource type="AudioStream" uid="uid://bm5sp34y4ru4k" path="res://Soundeffects/Sounds/running-1-6846.mp3" id="16_02sgy"]
 [ext_resource type="AudioStream" uid="uid://dqakopah253cl" path="res://Soundeffects/Sounds/Ambient.mp3" id="16_q24ky"]
 [ext_resource type="Script" uid="uid://dxjwjiiyr7e4u" path="res://Scenes/GameScenes/label.gd" id="18_dsoec"]
 [ext_resource type="Script" uid="uid://r1oyy3kdjnlg" path="res://Scenes/GameScenes/level.gd" id="18_lqacf"]
+[ext_resource type="Texture2D" uid="uid://5qha6a8dkosm" path="res://Textures/dry_decay_leaves_4k/textures/generated_text.png" id="26_c8kew"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_b728q"]
 vertices = PackedVector3Array(8.98899, 2.702, -15.8958, 8.98899, 2.702, -15.1458, 12.489, 2.702, -15.1458, 8.23899, 2.702, -16.3958, 12.489, 2.702, -58.3958, -6.76101, 2.702, -15.1458, 4.98899, 2.702, -15.1458, 5.48899, 2.702, -16.3958, -6.76101, 2.702, -58.3958, -47.761, 0.201999, -16.3958, -7.76101, 0.201999, -16.3958, -7.76101, 0.201999, -40.1458, -47.761, 0.201999, -40.1458, 13.489, 0.201999, -15.8958, 28.739, 0.201999, -15.6458, 28.739, 0.201999, -40.1458, 13.489, 0.201999, -40.1458, -7.26101, 0.201999, -9.1458, -6.26101, 0.201999, -9.3958, -6.26101, 0.201999, -14.1458, -7.76101, 0.201999, -14.3958, -7.26101, 0.201999, -8.3958, -47.761, 0.201999, -8.3958, 5.23899, 0.201999, 1.3542, 5.73899, 0.201999, 1.3542, 6.48899, 0.201999, 1.1042, 4.98899, 0.201999, -0.145798, 3.48899, 0.201999, -6.1458, 2.73899, 0.201999, -6.1458, 2.23899, 0.201999, -5.3958, 2.48899, 0.201999, -4.1458, 3.48899, 0.201999, -0.145798, 13.239, 0.201999, -14.1458, 7.73899, 0.201999, -11.6458, 3.73899, 0.201999, -6.8958, 28.739, 0.201999, 0.854202, 8.73899, 0.201999, -13.3958, 7.73899, 0.201999, -13.6458, 6.98899, 0.201999, -11.3958, 1.73899, 0.201999, -3.6458, 2.98899, 0.201999, 0.604202, 8.98899, 0.201999, -14.1458, 6.48899, 0.201999, -11.6458, 6.48899, 0.201999, -12.6458, 5.73899, 0.201999, -12.8958, 2.73899, 0.201999, -7.3958, 3.48899, 0.201999, -7.3958, 5.73899, 0.201999, -13.6458, 4.98899, 0.201999, -14.1458, 0.988991, 0.201999, -5.8958, -5.26101, 0.201999, -8.8958, -5.26101, 0.201999, -7.6458, 0.238991, 0.201999, -5.1458, -5.76101, 0.201999, -7.3958, -1.26101, 0.201999, 6.6042, -0.511009, 0.201999, 7.3542, 0.488991, 0.201999, 7.1042, 0.738991, 0.201999, 5.8542, -1.01101, 0.201999, 5.8542, -2.76101, 0.201999, 6.1042, -3.01101, 0.201999, 4.3542, -4.51101, 0.201999, 6.8542, 0.238991, 0.201999, -4.1458, -7.01101, 0.201999, -7.3958, -1.26101, 0.201999, 4.1042, 1.73899, 0.201999, 3.3542, -47.761, 0.201999, 8.6042, -5.26101, 0.201999, 8.6042, 3.73899, 0.201999, 2.1042, 2.98899, 0.201999, 1.3542, 1.98899, 0.201999, 5.8542, 4.48899, 0.201999, 2.3542, 5.48899, 0.201999, 2.3542, 6.98899, 0.201999, 1.3542, 5.73899, 0.201999, 2.3542, 6.73899, 0.201999, 2.6042, 6.98899, 0.201999, 4.3542, 6.98899, 0.201999, 5.6042, 28.739, 0.201999, 6.1042, 6.48899, 0.201999, 6.1042, 3.98899, 1.702, 4.6042, 4.98899, 1.702, 4.3542, 4.23899, 1.452, 3.3542, 3.48899, 1.452, 3.8542, 5.98899, 0.201999, 6.1042, 5.98899, 0.201999, 6.8542, 5.48899, 0.201999, 7.1042, 5.23899, 0.201999, 8.6042, 3.98899, 0.201999, 8.6042, 3.48899, 0.201999, 9.3542, 3.73899, 0.201999, 11.1042, 2.73899, 0.201999, 11.3542, 2.73899, 0.201999, 36.3542, 28.739, 0.201999, 36.3542, 3.48899, 0.201999, 8.3542, 1.98899, 0.201999, 7.8542, 0.988991, 0.201999, 7.8542, 1.73899, 0.201999, 9.6042, -0.761009, 0.201999, 10.8542, 1.73899, 0.201999, 11.1042, 3.48899, 0.201999, 6.8542, 2.48899, 0.201999, 7.1042, -2.76101, 0.201999, 11.3542, -2.76101, 0.201999, 36.3542, -5.01101, 0.201999, 10.3542, -47.761, 0.201999, 36.3542, -4.01101, 1.202, 9.1042, -4.01101, 1.202, 9.8542, -3.51101, 1.202, 9.8542)
@@ -24,6 +35,344 @@ polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(0, 3, 2), PackedInt32Arr
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdnlq"]
 albedo_texture = ExtResource("5_b728q")
 uv1_triplanar = true
+
+[sub_resource type="Resource" id="Resource_c8kew"]
+script = ExtResource("7_ln2v3")
+amount = 500
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_801v7"]
+script = ExtResource("8_jgdax")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(5, 360, 5)
+scale = Vector3(0.1, 0.1, 0.1)
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_ln2v3"]
+script = ExtResource("9_3nnyw")
+iterations = 3
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+use_computeshader = true
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_jgdax"]
+script = ExtResource("10_ueh7n")
+ray_direction = Vector3(0, -1, 0)
+ray_length = 5.0
+ray_offset = 5.0
+remove_points_on_miss = false
+align_with_collision_normal = false
+max_slope = 90.0
+collision_mask = 1
+exclude_mask = 0
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_3eksg"]
+script = ExtResource("5_c8kew")
+stack = Array[ExtResource("6_801v7")]([SubResource("Resource_c8kew"), SubResource("Resource_801v7"), SubResource("Resource_ln2v3"), SubResource("Resource_jgdax")])
+
+[sub_resource type="Resource" id="Resource_uek03"]
+script = ExtResource("13_r3xe8")
+size = Vector3(140, 10, 150)
+metadata/_custom_type_script = "uid://bo5e65a0b04x1"
+
+[sub_resource type="Resource" id="Resource_rlm8b"]
+script = ExtResource("13_r3xe8")
+size = Vector3(9, 30, 74.69)
+metadata/_custom_type_script = "uid://bo5e65a0b04x1"
+
+[sub_resource type="Resource" id="Resource_3nnyw"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 21.597)
+
+[sub_resource type="Resource" id="Resource_5ueps"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 38.676)
+
+[sub_resource type="Resource" id="Resource_ueh7n"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 43.285)
+
+[sub_resource type="Resource" id="Resource_yc7qy"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 1, 24.0991)
+
+[sub_resource type="Resource" id="Resource_nws1m"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 20.944)
+
+[sub_resource type="Resource" id="Resource_0hli3"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 30, 10.596)
+
+[sub_resource type="Resource" id="Resource_5t1en"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 12.435)
+
+[sub_resource type="Resource" id="Resource_r3xe8"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 19.335)
+
+[sub_resource type="Resource" id="Resource_k1apd"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 19.335)
+
+[sub_resource type="Resource" id="Resource_ybcgd"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 16.692)
+
+[sub_resource type="Resource" id="Resource_dg70m"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 16.692)
+
+[sub_resource type="Resource" id="Resource_ag1jy"]
+script = ExtResource("13_r3xe8")
+size = Vector3(5.61, 10, 17.351)
+
+[sub_resource type="Resource" id="Resource_le26f"]
+script = ExtResource("13_r3xe8")
+size = Vector3(5.61, 10, 17.351)
+
+[sub_resource type="Resource" id="Resource_o638k"]
+script = ExtResource("7_ln2v3")
+amount = 600
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_d3n55"]
+script = ExtResource("8_jgdax")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(5, 360, 5)
+scale = Vector3(0.1, 0.1, 0.1)
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_js26a"]
+script = ExtResource("9_3nnyw")
+iterations = 3
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+use_computeshader = true
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_sekv8"]
+script = ExtResource("10_ueh7n")
+ray_direction = Vector3(0, -1, 0)
+ray_length = 5.0
+ray_offset = 5.0
+remove_points_on_miss = false
+align_with_collision_normal = false
+max_slope = 90.0
+collision_mask = 1
+exclude_mask = 0
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_lhsdr"]
+script = ExtResource("5_c8kew")
+stack = Array[ExtResource("6_801v7")]([SubResource("Resource_o638k"), SubResource("Resource_d3n55"), SubResource("Resource_js26a"), SubResource("Resource_sekv8")])
+
+[sub_resource type="Resource" id="Resource_t1qri"]
+script = ExtResource("13_r3xe8")
+size = Vector3(140, 10, 150)
+
+[sub_resource type="Resource" id="Resource_ovk78"]
+script = ExtResource("13_r3xe8")
+size = Vector3(9, 30, 74.69)
+
+[sub_resource type="Resource" id="Resource_pvhtp"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 21.597)
+
+[sub_resource type="Resource" id="Resource_0icu3"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 38.676)
+
+[sub_resource type="Resource" id="Resource_kbyr4"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 43.285)
+
+[sub_resource type="Resource" id="Resource_s5h4m"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 1, 24.0991)
+
+[sub_resource type="Resource" id="Resource_mv08r"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 20.944)
+
+[sub_resource type="Resource" id="Resource_ao8hs"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 30, 10.596)
+
+[sub_resource type="Resource" id="Resource_6ldk0"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 12.435)
+
+[sub_resource type="Resource" id="Resource_imugr"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 19.335)
+
+[sub_resource type="Resource" id="Resource_st745"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 19.335)
+
+[sub_resource type="Resource" id="Resource_fwupx"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 16.692)
+
+[sub_resource type="Resource" id="Resource_l57n2"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 16.692)
+
+[sub_resource type="Resource" id="Resource_fwfnl"]
+script = ExtResource("13_r3xe8")
+size = Vector3(5.61, 10, 17.351)
+
+[sub_resource type="Resource" id="Resource_ib5ih"]
+script = ExtResource("13_r3xe8")
+size = Vector3(5.61, 10, 17.351)
+
+[sub_resource type="Resource" id="Resource_np1sr"]
+script = ExtResource("7_ln2v3")
+amount = 400
+enabled = true
+override_global_seed = true
+custom_seed = 0
+restrict_height = true
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_8kikq"]
+script = ExtResource("8_jgdax")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(5, 360, 5)
+scale = Vector3(0.1, 0.1, 0.1)
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_avwru"]
+script = ExtResource("9_3nnyw")
+iterations = 3
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+use_computeshader = true
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_6uhu1"]
+script = ExtResource("10_ueh7n")
+ray_direction = Vector3(0, -1, 0)
+ray_length = 5.0
+ray_offset = 5.0
+remove_points_on_miss = false
+align_with_collision_normal = false
+max_slope = 90.0
+collision_mask = 1
+exclude_mask = 0
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_ekx2a"]
+script = ExtResource("5_c8kew")
+stack = Array[ExtResource("6_801v7")]([SubResource("Resource_np1sr"), SubResource("Resource_8kikq"), SubResource("Resource_avwru"), SubResource("Resource_6uhu1")])
+
+[sub_resource type="Resource" id="Resource_oejj0"]
+script = ExtResource("13_r3xe8")
+size = Vector3(140, 10, 150)
+
+[sub_resource type="Resource" id="Resource_bi50w"]
+script = ExtResource("13_r3xe8")
+size = Vector3(9, 30, 74.69)
+
+[sub_resource type="Resource" id="Resource_eq1cm"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 21.597)
+
+[sub_resource type="Resource" id="Resource_ay5ec"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 38.676)
+
+[sub_resource type="Resource" id="Resource_stw3m"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 43.285)
+
+[sub_resource type="Resource" id="Resource_em2u6"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 1, 24.0991)
+
+[sub_resource type="Resource" id="Resource_qiguv"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 20.944)
+
+[sub_resource type="Resource" id="Resource_qyrtf"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 30, 10.596)
+
+[sub_resource type="Resource" id="Resource_8o2a3"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 12.435)
+
+[sub_resource type="Resource" id="Resource_phnf6"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 19.335)
+
+[sub_resource type="Resource" id="Resource_1lupv"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 19.335)
+
+[sub_resource type="Resource" id="Resource_uja0f"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 16.692)
+
+[sub_resource type="Resource" id="Resource_u0hgw"]
+script = ExtResource("13_r3xe8")
+size = Vector3(7, 10, 16.692)
+
+[sub_resource type="Resource" id="Resource_mqa8a"]
+script = ExtResource("13_r3xe8")
+size = Vector3(5.61, 10, 17.351)
+
+[sub_resource type="Resource" id="Resource_weky4"]
+script = ExtResource("13_r3xe8")
+size = Vector3(5.61, 10, 17.351)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_top_color = Color(0.156863, 0.113725, 0.0745098, 1)
@@ -43,8 +392,10 @@ ambient_light_sky_contribution = 0.9
 ambient_light_energy = 2.7
 tonemap_mode = 4
 tonemap_exposure = 0.6
+fog_enabled = true
 fog_light_color = Color(0.266667, 0.266667, 0.266667, 1)
 fog_light_energy = 0.14
+volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.61339, 0.61339, 0.61339, 1)
 volumetric_fog_emission = Color(0.239216, 0.0745098, 0.0588235, 1)
 volumetric_fog_emission_energy = 0.1
@@ -72,34 +423,355 @@ dof_blur_amount = 0.2
 [node name="Colision objects" type="Node" parent="stage/Nature"]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="stage/Nature/Colision objects"]
+transform = Transform3D(5, 0, 0, 0, 0.1, 0, 0, 0, 5, 43.9843, -0.26247, -73.1266)
 navigation_mesh = SubResource("NavigationMesh_b728q")
 
 [node name="Enemy" type="Node" parent="stage/Nature/Colision objects/NavigationRegion3D"]
 
 [node name="EnemySpawner" parent="stage/Nature/Colision objects/NavigationRegion3D/Enemy" instance=ExtResource("2_c4qg8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.78367, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.78367, 0, 23.765)
 
-<<<<<<< HEAD
-[node name="Struik" type="Node" parent="stage/Nature/Colision objects/NavigationRegion3D"]
+[node name="EnemySpawner3" parent="stage/Nature/Colision objects/NavigationRegion3D/Enemy" instance=ExtResource("2_c4qg8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.489, 0, 29.4494)
 
-[node name="Struik2" parent="stage/Nature/Colision objects/NavigationRegion3D/Struik" instance=ExtResource("6_qvu0p")]
-transform = Transform3D(0.837032, 0, -0.547154, 0, 1, 0, 0.547154, 0, 0.837032, 4.14196, -0.105088, 4.738)
+[node name="EnemySpawner2" parent="stage/Nature/Colision objects/NavigationRegion3D/Enemy" instance=ExtResource("2_c4qg8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.1715, 0, 49.7423)
 
-[node name="Struik" parent="stage/Nature/Colision objects/NavigationRegion3D/Struik" instance=ExtResource("6_qvu0p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84981, -0.250421, 9.05093)
+[node name="EnemySpawner4" parent="stage/Nature/Colision objects/NavigationRegion3D/Enemy" instance=ExtResource("2_c4qg8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.366, 0, -49.0859)
 
-[node name="Struik3" parent="stage/Nature/Colision objects/NavigationRegion3D/Struik" instance=ExtResource("6_qvu0p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122, 0, -90.6664)
+[node name="EnemySpawner5" parent="stage/Nature/Colision objects/NavigationRegion3D/Enemy" instance=ExtResource("2_c4qg8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.1184, 0, -135.365)
 
-=======
->>>>>>> 7dc14f073568fa64dd5aad3912db947b899fd45d
+[node name="EnemySpawner6" parent="stage/Nature/Colision objects/NavigationRegion3D/Enemy" instance=ExtResource("2_c4qg8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.7057, 0, -219.944)
+
+[node name="EnemySpawner7" parent="stage/Nature/Colision objects/NavigationRegion3D/Enemy" instance=ExtResource("2_c4qg8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.558, 0, -210.072)
+
+[node name="EnemySpawner8" parent="stage/Nature/Colision objects/NavigationRegion3D/Enemy" instance=ExtResource("2_c4qg8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.198, 0, -210.072)
+
+[node name="EnemySpawner9" parent="stage/Nature/Colision objects/NavigationRegion3D/Enemy" instance=ExtResource("2_c4qg8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.3018, 0, -100.468)
+
 [node name="Other" type="Node" parent="stage/Nature/Colision objects/NavigationRegion3D"]
 
 [node name="BaseGround" type="CSGBox3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other"]
 transform = Transform3D(2.5, 0, 0, 0, 0.688, 0, 0, 0, 2.5, 8.23254, -0.604722, -90.7484)
 use_collision = true
-size = Vector3(123.468, 1, 149.882)
+size = Vector3(150, 1, 200)
 material = SubResource("StandardMaterial3D_fdnlq")
+
+[node name="ProtonScatter" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.706157, 0)
+script = ExtResource("4_4denp")
+modifier_stack = SubResource("Resource_3eksg")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://bpx8jx8p42cnl"
+
+[node name="ScatterItem" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter"]
+script = ExtResource("11_yc7qy")
+visibility_range_end = 50.0
+visibility_range_fade_mode = 1
+path = "uid://655ydmwn4ug4"
+
+[node name="ScatterShape" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 1.67359, 0)
+script = ExtResource("12_nws1m")
+shape = SubResource("Resource_uek03")
+
+[node name="ScatterShape2" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter"]
+transform = Transform3D(0.998521, 0, 0.0543751, 0, 1, 0, -0.0543751, 0, 0.998521, 45.655, 0, -4.1481)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_rlm8b")
+
+[node name="ScatterShape3" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter"]
+transform = Transform3D(0.959913, 0, 0.280298, 0, 1, 0, -0.280298, 0, 0.959913, -41.0599, 0, 24.2785)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_3nnyw")
+
+[node name="ScatterShape13" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter"]
+transform = Transform3D(0.999773, 0, 0.0213088, 0, 1, 0, -0.0213088, 0, 0.999773, -44.7905, 0, -3.65314)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_5ueps")
+
+[node name="ScatterShape4" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter"]
+transform = Transform3D(0.0131245, 0, -0.999914, 0, 1, 0, 0.999914, 0, 0.0131245, 1.88551, 0, 52.4856)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_ueh7n")
+
+[node name="ScatterShape5" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter"]
+transform = Transform3D(0.205008, 0.00183482, -0.978759, -0.0235903, 0.999717, -0.00306704, 0.978476, 0.0237179, 0.204994, -9.03441, -1.10865e-05, -51.5823)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_yc7qy")
+
+[node name="ScatterShape6" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter"]
+transform = Transform3D(-0.627624, 0, -0.778517, 0, 1, 0, 0.778517, 0, -0.627624, 36.5932, 1.10865e-05, -46.31)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_nws1m")
+
+[node name="ScatterShape10" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter"]
+transform = Transform3D(-0.163239, -0.00350248, -0.986581, 0.010194, 0.999934, -0.00523658, 0.986534, -0.010912, -0.163192, 22.4829, 0.0156746, -53.9018)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_0hli3")
+
+[node name="ScatterShape15" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter"]
+transform = Transform3D(0.0657165, 0, -0.997839, 0, 1, 0, 0.997839, 0, 0.0657165, 9.46263, 1.10865e-05, -54.8998)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_5t1en")
+
+[node name="ScatterShape7" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter"]
+transform = Transform3D(0.891867, -0.0357126, -0.450886, 0.075549, 0.994636, 0.0706579, 0.445944, -0.0970814, 0.889781, -41.468, 0, -30.7015)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_r3xe8")
+
+[node name="ScatterShape14" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter"]
+transform = Transform3D(0.506364, 0.0227753, -0.862019, 0.075549, 0.994636, 0.0706579, 0.859004, -0.100903, 0.501927, -29.7775, 0, -43.9653)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_k1apd")
+
+[node name="ScatterShape8" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter"]
+transform = Transform3D(0.44426, 0, 0.895898, 0, 1, 0, -0.895898, 0, 0.44426, -25.7768, -2.57906, 49.4651)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_ybcgd")
+
+[node name="ScatterShape12" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter"]
+transform = Transform3D(0.860796, 0, 0.508951, 0, 1, 0, -0.508951, 0, 0.860796, -35.0887, -2.57906, 40.5587)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_dg70m")
+
+[node name="ScatterShape9" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter"]
+transform = Transform3D(-0.719073, 0, 0.694935, 0, 1, 0, -0.694935, 0, -0.719073, 40.5776, 0, 38.8235)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_ag1jy")
+
+[node name="ScatterShape11" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter"]
+transform = Transform3D(-0.539624, 0, 0.841907, 0, 1, 0, -0.841907, 0, -0.539624, 30.863, 0, 46.1455)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_le26f")
+
+[node name="ProtonScatter2" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.706157, 0)
+script = ExtResource("4_4denp")
+modifier_stack = SubResource("Resource_lhsdr")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://bpx8jx8p42cnl"
+
+[node name="ScatterItem" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter2"]
+script = ExtResource("11_yc7qy")
+override_cast_shadow = 0
+visibility_range_end = 50.0
+visibility_range_fade_mode = 1
+path = "uid://7653mj84oei0"
+
+[node name="ScatterShape" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter2"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 1.67359, 0)
+script = ExtResource("12_nws1m")
+shape = SubResource("Resource_t1qri")
+
+[node name="ScatterShape2" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter2"]
+transform = Transform3D(0.998521, 0, 0.0543751, 0, 1, 0, -0.0543751, 0, 0.998521, 45.655, 0, -4.1481)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_ovk78")
+
+[node name="ScatterShape3" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter2"]
+transform = Transform3D(0.959913, 0, 0.280298, 0, 1, 0, -0.280298, 0, 0.959913, -41.0599, 0, 24.2785)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_pvhtp")
+
+[node name="ScatterShape13" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter2"]
+transform = Transform3D(0.999773, 0, 0.0213088, 0, 1, 0, -0.0213088, 0, 0.999773, -44.7905, 0, -3.65314)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_0icu3")
+
+[node name="ScatterShape4" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter2"]
+transform = Transform3D(0.0131245, 0, -0.999914, 0, 1, 0, 0.999914, 0, 0.0131245, 1.88551, 0, 52.4856)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_kbyr4")
+
+[node name="ScatterShape5" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter2"]
+transform = Transform3D(0.205008, 0.00183482, -0.978759, -0.0235903, 0.999717, -0.00306704, 0.978476, 0.0237179, 0.204994, -9.03441, -1.10865e-05, -51.5823)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_s5h4m")
+
+[node name="ScatterShape6" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter2"]
+transform = Transform3D(-0.627624, 0, -0.778517, 0, 1, 0, 0.778517, 0, -0.627624, 36.5932, 1.10865e-05, -46.31)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_mv08r")
+
+[node name="ScatterShape10" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter2"]
+transform = Transform3D(-0.163239, -0.00350248, -0.986581, 0.010194, 0.999934, -0.00523658, 0.986534, -0.010912, -0.163192, 22.4829, 0.0156746, -53.9018)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_ao8hs")
+
+[node name="ScatterShape15" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter2"]
+transform = Transform3D(0.0657165, 0, -0.997839, 0, 1, 0, 0.997839, 0, 0.0657165, 9.46263, 1.10865e-05, -54.8998)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_6ldk0")
+
+[node name="ScatterShape7" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter2"]
+transform = Transform3D(0.891867, -0.0357126, -0.450886, 0.075549, 0.994636, 0.0706579, 0.445944, -0.0970814, 0.889781, -41.468, 0, -30.7015)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_imugr")
+
+[node name="ScatterShape14" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter2"]
+transform = Transform3D(0.506364, 0.0227753, -0.862019, 0.075549, 0.994636, 0.0706579, 0.859004, -0.100903, 0.501927, -29.7775, 0, -43.9653)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_st745")
+
+[node name="ScatterShape8" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter2"]
+transform = Transform3D(0.44426, 0, 0.895898, 0, 1, 0, -0.895898, 0, 0.44426, -25.7768, -2.57906, 49.4651)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_fwupx")
+
+[node name="ScatterShape12" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter2"]
+transform = Transform3D(0.860796, 0, 0.508951, 0, 1, 0, -0.508951, 0, 0.860796, -35.0887, -2.57906, 40.5587)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_l57n2")
+
+[node name="ScatterShape9" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter2"]
+transform = Transform3D(-0.719073, 0, 0.694935, 0, 1, 0, -0.694935, 0, -0.719073, 40.5776, 0, 38.8235)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_fwfnl")
+
+[node name="ScatterShape11" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter2"]
+transform = Transform3D(-0.539624, 0, 0.841907, 0, 1, 0, -0.841907, 0, -0.539624, 30.863, 0, 46.1455)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_ib5ih")
+
+[node name="ProtonScatter3" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.706157, 0)
+script = ExtResource("4_4denp")
+modifier_stack = SubResource("Resource_ekx2a")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://bpx8jx8p42cnl"
+
+[node name="ScatterItem" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter3"]
+script = ExtResource("11_yc7qy")
+visibility_range_end = 50.0
+visibility_range_fade_mode = 1
+path = "uid://cwp3g52xt3dql"
+
+[node name="ScatterShape" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter3"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 1.67359, 0)
+script = ExtResource("12_nws1m")
+shape = SubResource("Resource_oejj0")
+
+[node name="ScatterShape2" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter3"]
+transform = Transform3D(0.998521, 0, 0.0543751, 0, 1, 0, -0.0543751, 0, 0.998521, 45.655, 0, -4.1481)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_bi50w")
+
+[node name="ScatterShape3" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter3"]
+transform = Transform3D(0.959913, 0, 0.280298, 0, 1, 0, -0.280298, 0, 0.959913, -41.0599, 0, 24.2785)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_eq1cm")
+
+[node name="ScatterShape13" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter3"]
+transform = Transform3D(0.999773, 0, 0.0213088, 0, 1, 0, -0.0213088, 0, 0.999773, -44.7905, 0, -3.65314)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_ay5ec")
+
+[node name="ScatterShape4" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter3"]
+transform = Transform3D(0.0131245, 0, -0.999914, 0, 1, 0, 0.999914, 0, 0.0131245, 1.88551, 0, 52.4856)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_stw3m")
+
+[node name="ScatterShape5" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter3"]
+transform = Transform3D(0.205008, 0.00183482, -0.978759, -0.0235903, 0.999717, -0.00306704, 0.978476, 0.0237179, 0.204994, -9.03441, -1.10865e-05, -51.5823)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_em2u6")
+
+[node name="ScatterShape6" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter3"]
+transform = Transform3D(-0.627624, 0, -0.778517, 0, 1, 0, 0.778517, 0, -0.627624, 36.5932, 1.10865e-05, -46.31)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_qiguv")
+
+[node name="ScatterShape10" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter3"]
+transform = Transform3D(-0.163239, -0.00350248, -0.986581, 0.010194, 0.999934, -0.00523658, 0.986534, -0.010912, -0.163192, 22.4829, 0.0156746, -53.9018)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_qyrtf")
+
+[node name="ScatterShape15" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter3"]
+transform = Transform3D(0.0657165, 0, -0.997839, 0, 1, 0, 0.997839, 0, 0.0657165, 9.46263, 1.10865e-05, -54.8998)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_8o2a3")
+
+[node name="ScatterShape7" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter3"]
+transform = Transform3D(0.891867, -0.0357126, -0.450886, 0.075549, 0.994636, 0.0706579, 0.445944, -0.0970814, 0.889781, -41.468, 0, -30.7015)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_phnf6")
+
+[node name="ScatterShape14" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter3"]
+transform = Transform3D(0.506364, 0.0227753, -0.862019, 0.075549, 0.994636, 0.0706579, 0.859004, -0.100903, 0.501927, -29.7775, 0, -43.9653)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_1lupv")
+
+[node name="ScatterShape8" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter3"]
+transform = Transform3D(0.44426, 0, 0.895898, 0, 1, 0, -0.895898, 0, 0.44426, -25.7768, -2.57906, 49.4651)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_uja0f")
+
+[node name="ScatterShape12" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter3"]
+transform = Transform3D(0.860796, 0, 0.508951, 0, 1, 0, -0.508951, 0, 0.860796, -35.0887, -2.57906, 40.5587)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_u0hgw")
+
+[node name="ScatterShape9" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter3"]
+transform = Transform3D(-0.719073, 0, 0.694935, 0, 1, 0, -0.694935, 0, -0.719073, 40.5776, 0, 38.8235)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_mqa8a")
+
+[node name="ScatterShape11" type="Node3D" parent="stage/Nature/Colision objects/NavigationRegion3D/Other/BaseGround/ProtonScatter3"]
+transform = Transform3D(-0.539624, 0, 0.841907, 0, 1, 0, -0.841907, 0, -0.539624, 30.863, 0, 46.1455)
+script = ExtResource("12_nws1m")
+negative = true
+shape = SubResource("Resource_weky4")
 
 [node name="Bushes" type="Node" parent="stage/Nature"]
 
@@ -227,23 +899,23 @@ next_mag = 46.0195
 prior_pt_init = NodePath("../RP_001")
 next_pt_init = NodePath("../RP_009")
 
-[node name="Checkpoint" parent="stage" instance=ExtResource("11_b728q")]
-<<<<<<< HEAD
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122.144, 0.033, 1)
-
 [node name="Checkpoint2" parent="stage" instance=ExtResource("11_b728q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122.144, 0.0333731, -98.8602)
-=======
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.017, 0.0333731, -98.8602)
 
-[node name="Checkpoint2" parent="stage" instance=ExtResource("11_b728q")]
+[node name="Checkpoint3" parent="stage" instance=ExtResource("11_b728q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -103.888, 0.0333731, -98.8602)
->>>>>>> 7dc14f073568fa64dd5aad3912db947b899fd45d
+
+[node name="Checkpoint4" parent="stage" instance=ExtResource("11_b728q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2614, 0.0333731, 42.1699)
+
+[node name="Checkpoint5" parent="stage" instance=ExtResource("11_b728q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2614, 0.0333731, -226.495)
 
 [node name="env" type="Node3D" parent="."]
 
 [node name="TestingLight" type="DirectionalLight3D" parent="env"]
 transform = Transform3D(-1.67155, -0.634395, 0.182873, 0, 0.732536, 0.633489, -0.965073, 1.0988, -0.316745, 0, 0, 0)
+visible = false
 light_energy = 3.0
 light_volumetric_fog_energy = 0.0
 shadow_enabled = true
@@ -319,13 +991,32 @@ script = ExtResource("18_dsoec")
 [node name="Level" type="Node" parent="player"]
 script = ExtResource("18_lqacf")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("13_x40c6")]
+[node name="Pause Menu" parent="UI" instance=ExtResource("13_x40c6")]
 offset_left = -554.0
 offset_top = -307.0
 offset_right = -554.0
 offset_bottom = -307.0
+
+[node name="GameOverScreen" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1167.0
+offset_bottom = 646.0
+
+[node name="RestartButton" type="Button" parent="UI/GameOverScreen"]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 333.0
+offset_right = 690.0
+offset_bottom = 409.0
+text = "RESTART"
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/GameOverScreen"]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("26_c8kew")
+offset = Vector2(800, 150)
 
 [node name="AudioManager" type="Node" parent="."]
 
@@ -334,3 +1025,5 @@ stream = ExtResource("16_q24ky")
 attenuation_model = 3
 volume_db = -6.0
 autoplay = true
+
+[connection signal="pressed" from="UI/GameOverScreen/RestartButton" to="player" method="_on_restart_button_pressed"]

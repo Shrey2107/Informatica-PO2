@@ -11,7 +11,7 @@ var score =0
 var xp =0
 var level =0
 
-
+var game_over_active := false
 
 var speed_sprint=1
 var speed_walk = 1
